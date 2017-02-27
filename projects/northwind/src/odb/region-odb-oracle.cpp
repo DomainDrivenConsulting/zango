@@ -194,40 +194,40 @@ namespace odb
   }
 
   const char access::object_traits_impl< ::zango::northwind::region, id_oracle >::persist_statement[] =
-  "INSERT INTO \"northwind\".\"region\" "
+  "INSERT INTO \"NORTHWIND\".\"REGION\" "
   "(\"region_id\", "
-  "\"region_description\") "
+  "\"REGION_DESCRIPTION\") "
   "VALUES "
   "(:1, :2)";
 
   const char access::object_traits_impl< ::zango::northwind::region, id_oracle >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"region\".\"region_id\", "
-  "\"northwind\".\"region\".\"region_description\" "
-  "FROM \"northwind\".\"region\" "
-  "WHERE \"northwind\".\"region\".\"region_id\"=:1";
+  "\"NORTHWIND\".\"REGION\".\"region_id\", "
+  "\"NORTHWIND\".\"REGION\".\"REGION_DESCRIPTION\" "
+  "FROM \"NORTHWIND\".\"REGION\" "
+  "WHERE \"NORTHWIND\".\"REGION\".\"region_id\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::region, id_oracle >::update_statement[] =
-  "UPDATE \"northwind\".\"region\" "
+  "UPDATE \"NORTHWIND\".\"REGION\" "
   "SET "
-  "\"region_description\"=:1 "
+  "\"REGION_DESCRIPTION\"=:1 "
   "WHERE \"region_id\"=:2";
 
   const char access::object_traits_impl< ::zango::northwind::region, id_oracle >::erase_statement[] =
-  "DELETE FROM \"northwind\".\"region\" "
+  "DELETE FROM \"NORTHWIND\".\"REGION\" "
   "WHERE \"region_id\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::region, id_oracle >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"region\".\"region_id\", "
-  "\"northwind\".\"region\".\"region_description\" "
-  "FROM \"northwind\".\"region\"";
+  "\"NORTHWIND\".\"REGION\".\"region_id\", "
+  "\"NORTHWIND\".\"REGION\".\"REGION_DESCRIPTION\" "
+  "FROM \"NORTHWIND\".\"REGION\"";
 
   const char access::object_traits_impl< ::zango::northwind::region, id_oracle >::erase_query_statement[] =
-  "DELETE FROM \"northwind\".\"region\"";
+  "DELETE FROM \"NORTHWIND\".\"REGION\"";
 
   const char access::object_traits_impl< ::zango::northwind::region, id_oracle >::table_name[] =
-  "\"northwind\".\"region\"";
+  "\"NORTHWIND\".\"REGION\"";
 
   void access::object_traits_impl< ::zango::northwind::region, id_oracle >::
   persist (database& db, const object_type& obj)
@@ -612,7 +612,7 @@ namespace odb
         {
           db.execute ("BEGIN\n"
                       "  BEGIN\n"
-                      "    EXECUTE IMMEDIATE 'DROP TABLE \"northwind\".\"region\" CASCADE CONSTRAINTS';\n"
+                      "    EXECUTE IMMEDIATE 'DROP TABLE \"NORTHWIND\".\"REGION\" CASCADE CONSTRAINTS';\n"
                       "  EXCEPTION\n"
                       "    WHEN OTHERS THEN\n"
                       "      IF SQLCODE != -942 THEN RAISE; END IF;\n"
@@ -628,9 +628,9 @@ namespace odb
       {
         case 1:
         {
-          db.execute ("CREATE TABLE \"northwind\".\"region\" (\n"
+          db.execute ("CREATE TABLE \"NORTHWIND\".\"REGION\" (\n"
                       "  \"region_id\" NUMBER(10) NOT NULL PRIMARY KEY,\n"
-                      "  \"region_description\" VARCHAR2(512) NOT NULL)");
+                      "  \"REGION_DESCRIPTION\" VARCHAR2(512) NOT NULL)");
           return false;
         }
       }

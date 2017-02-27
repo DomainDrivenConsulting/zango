@@ -28,22 +28,22 @@ namespace odb
   //
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::
-  persist_statement_name[] = "persist_zango_northwind_employees";
+  persist_statement_name[] = "PERSIST_ZANGO_NORTHWIND_EMPLOYEES";
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::
-  find_statement_name[] = "find_zango_northwind_employees";
+  find_statement_name[] = "FIND_ZANGO_NORTHWIND_EMPLOYEES";
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::
-  update_statement_name[] = "update_zango_northwind_employees";
+  update_statement_name[] = "UPDATE_ZANGO_NORTHWIND_EMPLOYEES";
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::
-  erase_statement_name[] = "erase_zango_northwind_employees";
+  erase_statement_name[] = "ERASE_ZANGO_NORTHWIND_EMPLOYEES";
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::
-  query_statement_name[] = "query_zango_northwind_employees";
+  query_statement_name[] = "QUERY_ZANGO_NORTHWIND_EMPLOYEES";
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::
-  erase_query_statement_name[] = "erase_query_zango_northwind_employees";
+  erase_query_statement_name[] = "ERASE_QUERY_ZANGO_NORTHWIND_EMPLOYEES";
 
   const unsigned int access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::
   persist_statement_types[] =
@@ -1097,104 +1097,104 @@ namespace odb
   }
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::persist_statement[] =
-  "INSERT INTO \"northwind\".\"employees\" "
+  "INSERT INTO \"NORTHWIND\".\"EMPLOYEES\" "
   "(\"employee_id\", "
-  "\"last_name\", "
-  "\"first_name\", "
-  "\"title\", "
-  "\"title_of_courtesy\", "
-  "\"birth_date\", "
-  "\"hire_date\", "
-  "\"address\", "
-  "\"city\", "
-  "\"region\", "
-  "\"postal_code\", "
-  "\"country\", "
-  "\"home_phone\", "
-  "\"extension\", "
-  "\"photo\", "
-  "\"notes\", "
-  "\"reports_to_employee_id\", "
-  "\"photo_path\") "
+  "\"LAST_NAME\", "
+  "\"FIRST_NAME\", "
+  "\"TITLE\", "
+  "\"TITLE_OF_COURTESY\", "
+  "\"BIRTH_DATE\", "
+  "\"HIRE_DATE\", "
+  "\"ADDRESS\", "
+  "\"CITY\", "
+  "\"REGION\", "
+  "\"POSTAL_CODE\", "
+  "\"COUNTRY\", "
+  "\"HOME_PHONE\", "
+  "\"EXTENSION\", "
+  "\"PHOTO\", "
+  "\"NOTES\", "
+  "\"REPORTS_TO_employee_id\", "
+  "\"PHOTO_PATH\") "
   "VALUES "
   "($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)";
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"employees\".\"employee_id\", "
-  "\"northwind\".\"employees\".\"last_name\", "
-  "\"northwind\".\"employees\".\"first_name\", "
-  "\"northwind\".\"employees\".\"title\", "
-  "\"northwind\".\"employees\".\"title_of_courtesy\", "
-  "\"northwind\".\"employees\".\"birth_date\", "
-  "\"northwind\".\"employees\".\"hire_date\", "
-  "\"northwind\".\"employees\".\"address\", "
-  "\"northwind\".\"employees\".\"city\", "
-  "\"northwind\".\"employees\".\"region\", "
-  "\"northwind\".\"employees\".\"postal_code\", "
-  "\"northwind\".\"employees\".\"country\", "
-  "\"northwind\".\"employees\".\"home_phone\", "
-  "\"northwind\".\"employees\".\"extension\", "
-  "\"northwind\".\"employees\".\"photo\", "
-  "\"northwind\".\"employees\".\"notes\", "
-  "\"northwind\".\"employees\".\"reports_to_employee_id\", "
-  "\"northwind\".\"employees\".\"photo_path\" "
-  "FROM \"northwind\".\"employees\" "
-  "WHERE \"northwind\".\"employees\".\"employee_id\"=$1";
+  "\"NORTHWIND\".\"EMPLOYEES\".\"employee_id\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"LAST_NAME\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"FIRST_NAME\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"TITLE\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"TITLE_OF_COURTESY\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"BIRTH_DATE\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"HIRE_DATE\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"ADDRESS\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"CITY\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"REGION\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"POSTAL_CODE\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"COUNTRY\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"HOME_PHONE\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"EXTENSION\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"PHOTO\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"NOTES\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"REPORTS_TO_employee_id\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"PHOTO_PATH\" "
+  "FROM \"NORTHWIND\".\"EMPLOYEES\" "
+  "WHERE \"NORTHWIND\".\"EMPLOYEES\".\"employee_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::update_statement[] =
-  "UPDATE \"northwind\".\"employees\" "
+  "UPDATE \"NORTHWIND\".\"EMPLOYEES\" "
   "SET "
-  "\"last_name\"=$1, "
-  "\"first_name\"=$2, "
-  "\"title\"=$3, "
-  "\"title_of_courtesy\"=$4, "
-  "\"birth_date\"=$5, "
-  "\"hire_date\"=$6, "
-  "\"address\"=$7, "
-  "\"city\"=$8, "
-  "\"region\"=$9, "
-  "\"postal_code\"=$10, "
-  "\"country\"=$11, "
-  "\"home_phone\"=$12, "
-  "\"extension\"=$13, "
-  "\"photo\"=$14, "
-  "\"notes\"=$15, "
-  "\"reports_to_employee_id\"=$16, "
-  "\"photo_path\"=$17 "
+  "\"LAST_NAME\"=$1, "
+  "\"FIRST_NAME\"=$2, "
+  "\"TITLE\"=$3, "
+  "\"TITLE_OF_COURTESY\"=$4, "
+  "\"BIRTH_DATE\"=$5, "
+  "\"HIRE_DATE\"=$6, "
+  "\"ADDRESS\"=$7, "
+  "\"CITY\"=$8, "
+  "\"REGION\"=$9, "
+  "\"POSTAL_CODE\"=$10, "
+  "\"COUNTRY\"=$11, "
+  "\"HOME_PHONE\"=$12, "
+  "\"EXTENSION\"=$13, "
+  "\"PHOTO\"=$14, "
+  "\"NOTES\"=$15, "
+  "\"REPORTS_TO_employee_id\"=$16, "
+  "\"PHOTO_PATH\"=$17 "
   "WHERE \"employee_id\"=$18";
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::erase_statement[] =
-  "DELETE FROM \"northwind\".\"employees\" "
+  "DELETE FROM \"NORTHWIND\".\"EMPLOYEES\" "
   "WHERE \"employee_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"employees\".\"employee_id\", "
-  "\"northwind\".\"employees\".\"last_name\", "
-  "\"northwind\".\"employees\".\"first_name\", "
-  "\"northwind\".\"employees\".\"title\", "
-  "\"northwind\".\"employees\".\"title_of_courtesy\", "
-  "\"northwind\".\"employees\".\"birth_date\", "
-  "\"northwind\".\"employees\".\"hire_date\", "
-  "\"northwind\".\"employees\".\"address\", "
-  "\"northwind\".\"employees\".\"city\", "
-  "\"northwind\".\"employees\".\"region\", "
-  "\"northwind\".\"employees\".\"postal_code\", "
-  "\"northwind\".\"employees\".\"country\", "
-  "\"northwind\".\"employees\".\"home_phone\", "
-  "\"northwind\".\"employees\".\"extension\", "
-  "\"northwind\".\"employees\".\"photo\", "
-  "\"northwind\".\"employees\".\"notes\", "
-  "\"northwind\".\"employees\".\"reports_to_employee_id\", "
-  "\"northwind\".\"employees\".\"photo_path\" "
-  "FROM \"northwind\".\"employees\"";
+  "\"NORTHWIND\".\"EMPLOYEES\".\"employee_id\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"LAST_NAME\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"FIRST_NAME\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"TITLE\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"TITLE_OF_COURTESY\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"BIRTH_DATE\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"HIRE_DATE\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"ADDRESS\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"CITY\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"REGION\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"POSTAL_CODE\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"COUNTRY\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"HOME_PHONE\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"EXTENSION\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"PHOTO\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"NOTES\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"REPORTS_TO_employee_id\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"PHOTO_PATH\" "
+  "FROM \"NORTHWIND\".\"EMPLOYEES\"";
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::erase_query_statement[] =
-  "DELETE FROM \"northwind\".\"employees\"";
+  "DELETE FROM \"NORTHWIND\".\"EMPLOYEES\"";
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::table_name[] =
-  "\"northwind\".\"employees\"";
+  "\"NORTHWIND\".\"EMPLOYEES\"";
 
   void access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::
   persist (database& db, const object_type& obj)
@@ -1597,7 +1597,7 @@ namespace odb
         }
         case 2:
         {
-          db.execute ("DROP TABLE IF EXISTS \"northwind\".\"employees\" CASCADE");
+          db.execute ("DROP TABLE IF EXISTS \"NORTHWIND\".\"EMPLOYEES\" CASCADE");
           return false;
         }
       }
@@ -1608,25 +1608,25 @@ namespace odb
       {
         case 1:
         {
-          db.execute ("CREATE TABLE \"northwind\".\"employees\" (\n"
+          db.execute ("CREATE TABLE \"NORTHWIND\".\"EMPLOYEES\" (\n"
                       "  \"employee_id\" INTEGER NOT NULL PRIMARY KEY,\n"
-                      "  \"last_name\" TEXT NOT NULL,\n"
-                      "  \"first_name\" TEXT NOT NULL,\n"
-                      "  \"title\" TEXT NULL,\n"
-                      "  \"title_of_courtesy\" TEXT NULL,\n"
-                      "  \"birth_date\" DATE NULL,\n"
-                      "  \"hire_date\" DATE NULL,\n"
-                      "  \"address\" TEXT NULL,\n"
-                      "  \"city\" TEXT NULL,\n"
-                      "  \"region\" TEXT NULL,\n"
-                      "  \"postal_code\" TEXT NULL,\n"
-                      "  \"country\" TEXT NULL,\n"
-                      "  \"home_phone\" TEXT NULL,\n"
-                      "  \"extension\" TEXT NULL,\n"
-                      "  \"photo\" BYTEA NULL,\n"
-                      "  \"notes\" TEXT NULL,\n"
-                      "  \"reports_to_employee_id\" INTEGER NULL,\n"
-                      "  \"photo_path\" TEXT NULL)");
+                      "  \"LAST_NAME\" TEXT NOT NULL,\n"
+                      "  \"FIRST_NAME\" TEXT NOT NULL,\n"
+                      "  \"TITLE\" TEXT NULL,\n"
+                      "  \"TITLE_OF_COURTESY\" TEXT NULL,\n"
+                      "  \"BIRTH_DATE\" DATE NULL,\n"
+                      "  \"HIRE_DATE\" DATE NULL,\n"
+                      "  \"ADDRESS\" TEXT NULL,\n"
+                      "  \"CITY\" TEXT NULL,\n"
+                      "  \"REGION\" TEXT NULL,\n"
+                      "  \"POSTAL_CODE\" TEXT NULL,\n"
+                      "  \"COUNTRY\" TEXT NULL,\n"
+                      "  \"HOME_PHONE\" TEXT NULL,\n"
+                      "  \"EXTENSION\" TEXT NULL,\n"
+                      "  \"PHOTO\" BYTEA NULL,\n"
+                      "  \"NOTES\" TEXT NULL,\n"
+                      "  \"REPORTS_TO_employee_id\" INTEGER NULL,\n"
+                      "  \"PHOTO_PATH\" TEXT NULL)");
           return false;
         }
       }

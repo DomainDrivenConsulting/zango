@@ -28,22 +28,22 @@ namespace odb
   //
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_pgsql >::
-  persist_statement_name[] = "persist_zango_northwind_supplier";
+  persist_statement_name[] = "PERSIST_ZANGO_NORTHWIND_SUPPLIER";
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_pgsql >::
-  find_statement_name[] = "find_zango_northwind_supplier";
+  find_statement_name[] = "FIND_ZANGO_NORTHWIND_SUPPLIER";
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_pgsql >::
-  update_statement_name[] = "update_zango_northwind_supplier";
+  update_statement_name[] = "UPDATE_ZANGO_NORTHWIND_SUPPLIER";
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_pgsql >::
-  erase_statement_name[] = "erase_zango_northwind_supplier";
+  erase_statement_name[] = "ERASE_ZANGO_NORTHWIND_SUPPLIER";
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_pgsql >::
-  query_statement_name[] = "query_zango_northwind_supplier";
+  query_statement_name[] = "QUERY_ZANGO_NORTHWIND_SUPPLIER";
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_pgsql >::
-  erase_query_statement_name[] = "erase_query_zango_northwind_supplier";
+  erase_query_statement_name[] = "ERASE_QUERY_ZANGO_NORTHWIND_SUPPLIER";
 
   const unsigned int access::object_traits_impl< ::zango::northwind::supplier, id_pgsql >::
   persist_statement_types[] =
@@ -812,80 +812,80 @@ namespace odb
   }
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_pgsql >::persist_statement[] =
-  "INSERT INTO \"northwind\".\"supplier\" "
+  "INSERT INTO \"NORTHWIND\".\"SUPPLIER\" "
   "(\"supplier_id\", "
-  "\"company_name\", "
-  "\"contact_name\", "
-  "\"contact_title\", "
-  "\"address\", "
-  "\"city\", "
-  "\"region\", "
-  "\"postal_code\", "
-  "\"country\", "
-  "\"phone\", "
-  "\"fax\", "
-  "\"home_page\") "
+  "\"COMPANY_NAME\", "
+  "\"CONTACT_NAME\", "
+  "\"CONTACT_TITLE\", "
+  "\"ADDRESS\", "
+  "\"CITY\", "
+  "\"REGION\", "
+  "\"POSTAL_CODE\", "
+  "\"COUNTRY\", "
+  "\"PHONE\", "
+  "\"FAX\", "
+  "\"HOME_PAGE\") "
   "VALUES "
   "($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)";
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_pgsql >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"supplier\".\"supplier_id\", "
-  "\"northwind\".\"supplier\".\"company_name\", "
-  "\"northwind\".\"supplier\".\"contact_name\", "
-  "\"northwind\".\"supplier\".\"contact_title\", "
-  "\"northwind\".\"supplier\".\"address\", "
-  "\"northwind\".\"supplier\".\"city\", "
-  "\"northwind\".\"supplier\".\"region\", "
-  "\"northwind\".\"supplier\".\"postal_code\", "
-  "\"northwind\".\"supplier\".\"country\", "
-  "\"northwind\".\"supplier\".\"phone\", "
-  "\"northwind\".\"supplier\".\"fax\", "
-  "\"northwind\".\"supplier\".\"home_page\" "
-  "FROM \"northwind\".\"supplier\" "
-  "WHERE \"northwind\".\"supplier\".\"supplier_id\"=$1";
+  "\"NORTHWIND\".\"SUPPLIER\".\"supplier_id\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"COMPANY_NAME\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"CONTACT_NAME\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"CONTACT_TITLE\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"ADDRESS\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"CITY\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"REGION\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"POSTAL_CODE\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"COUNTRY\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"PHONE\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"FAX\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"HOME_PAGE\" "
+  "FROM \"NORTHWIND\".\"SUPPLIER\" "
+  "WHERE \"NORTHWIND\".\"SUPPLIER\".\"supplier_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_pgsql >::update_statement[] =
-  "UPDATE \"northwind\".\"supplier\" "
+  "UPDATE \"NORTHWIND\".\"SUPPLIER\" "
   "SET "
-  "\"company_name\"=$1, "
-  "\"contact_name\"=$2, "
-  "\"contact_title\"=$3, "
-  "\"address\"=$4, "
-  "\"city\"=$5, "
-  "\"region\"=$6, "
-  "\"postal_code\"=$7, "
-  "\"country\"=$8, "
-  "\"phone\"=$9, "
-  "\"fax\"=$10, "
-  "\"home_page\"=$11 "
+  "\"COMPANY_NAME\"=$1, "
+  "\"CONTACT_NAME\"=$2, "
+  "\"CONTACT_TITLE\"=$3, "
+  "\"ADDRESS\"=$4, "
+  "\"CITY\"=$5, "
+  "\"REGION\"=$6, "
+  "\"POSTAL_CODE\"=$7, "
+  "\"COUNTRY\"=$8, "
+  "\"PHONE\"=$9, "
+  "\"FAX\"=$10, "
+  "\"HOME_PAGE\"=$11 "
   "WHERE \"supplier_id\"=$12";
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_pgsql >::erase_statement[] =
-  "DELETE FROM \"northwind\".\"supplier\" "
+  "DELETE FROM \"NORTHWIND\".\"SUPPLIER\" "
   "WHERE \"supplier_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_pgsql >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"supplier\".\"supplier_id\", "
-  "\"northwind\".\"supplier\".\"company_name\", "
-  "\"northwind\".\"supplier\".\"contact_name\", "
-  "\"northwind\".\"supplier\".\"contact_title\", "
-  "\"northwind\".\"supplier\".\"address\", "
-  "\"northwind\".\"supplier\".\"city\", "
-  "\"northwind\".\"supplier\".\"region\", "
-  "\"northwind\".\"supplier\".\"postal_code\", "
-  "\"northwind\".\"supplier\".\"country\", "
-  "\"northwind\".\"supplier\".\"phone\", "
-  "\"northwind\".\"supplier\".\"fax\", "
-  "\"northwind\".\"supplier\".\"home_page\" "
-  "FROM \"northwind\".\"supplier\"";
+  "\"NORTHWIND\".\"SUPPLIER\".\"supplier_id\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"COMPANY_NAME\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"CONTACT_NAME\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"CONTACT_TITLE\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"ADDRESS\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"CITY\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"REGION\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"POSTAL_CODE\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"COUNTRY\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"PHONE\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"FAX\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"HOME_PAGE\" "
+  "FROM \"NORTHWIND\".\"SUPPLIER\"";
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_pgsql >::erase_query_statement[] =
-  "DELETE FROM \"northwind\".\"supplier\"";
+  "DELETE FROM \"NORTHWIND\".\"SUPPLIER\"";
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_pgsql >::table_name[] =
-  "\"northwind\".\"supplier\"";
+  "\"NORTHWIND\".\"SUPPLIER\"";
 
   void access::object_traits_impl< ::zango::northwind::supplier, id_pgsql >::
   persist (database& db, const object_type& obj)
@@ -1288,7 +1288,7 @@ namespace odb
         }
         case 2:
         {
-          db.execute ("DROP TABLE IF EXISTS \"northwind\".\"supplier\" CASCADE");
+          db.execute ("DROP TABLE IF EXISTS \"NORTHWIND\".\"SUPPLIER\" CASCADE");
           return false;
         }
       }
@@ -1299,19 +1299,19 @@ namespace odb
       {
         case 1:
         {
-          db.execute ("CREATE TABLE \"northwind\".\"supplier\" (\n"
+          db.execute ("CREATE TABLE \"NORTHWIND\".\"SUPPLIER\" (\n"
                       "  \"supplier_id\" INTEGER NOT NULL PRIMARY KEY,\n"
-                      "  \"company_name\" TEXT NOT NULL,\n"
-                      "  \"contact_name\" TEXT NULL,\n"
-                      "  \"contact_title\" TEXT NULL,\n"
-                      "  \"address\" TEXT NULL,\n"
-                      "  \"city\" TEXT NULL,\n"
-                      "  \"region\" TEXT NULL,\n"
-                      "  \"postal_code\" TEXT NULL,\n"
-                      "  \"country\" TEXT NULL,\n"
-                      "  \"phone\" TEXT NULL,\n"
-                      "  \"fax\" TEXT NULL,\n"
-                      "  \"home_page\" TEXT NULL)");
+                      "  \"COMPANY_NAME\" TEXT NOT NULL,\n"
+                      "  \"CONTACT_NAME\" TEXT NULL,\n"
+                      "  \"CONTACT_TITLE\" TEXT NULL,\n"
+                      "  \"ADDRESS\" TEXT NULL,\n"
+                      "  \"CITY\" TEXT NULL,\n"
+                      "  \"REGION\" TEXT NULL,\n"
+                      "  \"POSTAL_CODE\" TEXT NULL,\n"
+                      "  \"COUNTRY\" TEXT NULL,\n"
+                      "  \"PHONE\" TEXT NULL,\n"
+                      "  \"FAX\" TEXT NULL,\n"
+                      "  \"HOME_PAGE\" TEXT NULL)");
           return false;
         }
       }

@@ -28,22 +28,22 @@ namespace odb
   //
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_pgsql >::
-  persist_statement_name[] = "persist_zango_northwind_shippers";
+  persist_statement_name[] = "PERSIST_ZANGO_NORTHWIND_SHIPPERS";
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_pgsql >::
-  find_statement_name[] = "find_zango_northwind_shippers";
+  find_statement_name[] = "FIND_ZANGO_NORTHWIND_SHIPPERS";
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_pgsql >::
-  update_statement_name[] = "update_zango_northwind_shippers";
+  update_statement_name[] = "UPDATE_ZANGO_NORTHWIND_SHIPPERS";
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_pgsql >::
-  erase_statement_name[] = "erase_zango_northwind_shippers";
+  erase_statement_name[] = "ERASE_ZANGO_NORTHWIND_SHIPPERS";
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_pgsql >::
-  query_statement_name[] = "query_zango_northwind_shippers";
+  query_statement_name[] = "QUERY_ZANGO_NORTHWIND_SHIPPERS";
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_pgsql >::
-  erase_query_statement_name[] = "erase_query_zango_northwind_shippers";
+  erase_query_statement_name[] = "ERASE_QUERY_ZANGO_NORTHWIND_SHIPPERS";
 
   const unsigned int access::object_traits_impl< ::zango::northwind::shippers, id_pgsql >::
   persist_statement_types[] =
@@ -317,44 +317,44 @@ namespace odb
   }
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_pgsql >::persist_statement[] =
-  "INSERT INTO \"northwind\".\"shippers\" "
+  "INSERT INTO \"NORTHWIND\".\"SHIPPERS\" "
   "(\"shipper_id\", "
-  "\"company_name\", "
-  "\"phone\") "
+  "\"COMPANY_NAME\", "
+  "\"PHONE\") "
   "VALUES "
   "($1, $2, $3)";
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_pgsql >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"shippers\".\"shipper_id\", "
-  "\"northwind\".\"shippers\".\"company_name\", "
-  "\"northwind\".\"shippers\".\"phone\" "
-  "FROM \"northwind\".\"shippers\" "
-  "WHERE \"northwind\".\"shippers\".\"shipper_id\"=$1";
+  "\"NORTHWIND\".\"SHIPPERS\".\"shipper_id\", "
+  "\"NORTHWIND\".\"SHIPPERS\".\"COMPANY_NAME\", "
+  "\"NORTHWIND\".\"SHIPPERS\".\"PHONE\" "
+  "FROM \"NORTHWIND\".\"SHIPPERS\" "
+  "WHERE \"NORTHWIND\".\"SHIPPERS\".\"shipper_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_pgsql >::update_statement[] =
-  "UPDATE \"northwind\".\"shippers\" "
+  "UPDATE \"NORTHWIND\".\"SHIPPERS\" "
   "SET "
-  "\"company_name\"=$1, "
-  "\"phone\"=$2 "
+  "\"COMPANY_NAME\"=$1, "
+  "\"PHONE\"=$2 "
   "WHERE \"shipper_id\"=$3";
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_pgsql >::erase_statement[] =
-  "DELETE FROM \"northwind\".\"shippers\" "
+  "DELETE FROM \"NORTHWIND\".\"SHIPPERS\" "
   "WHERE \"shipper_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_pgsql >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"shippers\".\"shipper_id\", "
-  "\"northwind\".\"shippers\".\"company_name\", "
-  "\"northwind\".\"shippers\".\"phone\" "
-  "FROM \"northwind\".\"shippers\"";
+  "\"NORTHWIND\".\"SHIPPERS\".\"shipper_id\", "
+  "\"NORTHWIND\".\"SHIPPERS\".\"COMPANY_NAME\", "
+  "\"NORTHWIND\".\"SHIPPERS\".\"PHONE\" "
+  "FROM \"NORTHWIND\".\"SHIPPERS\"";
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_pgsql >::erase_query_statement[] =
-  "DELETE FROM \"northwind\".\"shippers\"";
+  "DELETE FROM \"NORTHWIND\".\"SHIPPERS\"";
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_pgsql >::table_name[] =
-  "\"northwind\".\"shippers\"";
+  "\"NORTHWIND\".\"SHIPPERS\"";
 
   void access::object_traits_impl< ::zango::northwind::shippers, id_pgsql >::
   persist (database& db, const object_type& obj)
@@ -757,7 +757,7 @@ namespace odb
         }
         case 2:
         {
-          db.execute ("DROP TABLE IF EXISTS \"northwind\".\"shippers\" CASCADE");
+          db.execute ("DROP TABLE IF EXISTS \"NORTHWIND\".\"SHIPPERS\" CASCADE");
           return false;
         }
       }
@@ -768,10 +768,10 @@ namespace odb
       {
         case 1:
         {
-          db.execute ("CREATE TABLE \"northwind\".\"shippers\" (\n"
+          db.execute ("CREATE TABLE \"NORTHWIND\".\"SHIPPERS\" (\n"
                       "  \"shipper_id\" INTEGER NOT NULL PRIMARY KEY,\n"
-                      "  \"company_name\" TEXT NOT NULL,\n"
-                      "  \"phone\" TEXT NOT NULL)");
+                      "  \"COMPANY_NAME\" TEXT NOT NULL,\n"
+                      "  \"PHONE\" TEXT NOT NULL)");
           return false;
         }
       }

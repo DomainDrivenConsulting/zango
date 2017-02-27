@@ -280,48 +280,48 @@ namespace odb
   }
 
   const char access::object_traits_impl< ::zango::northwind::categories, id_oracle >::persist_statement[] =
-  "INSERT INTO \"Mnorthwind\".\"categories\" "
+  "INSERT INTO \"NORTHWIND\".\"CATEGORIES\" "
   "(\"category_id\", "
-  "\"category_name\", "
-  "\"description\", "
-  "\"picutre\") "
+  "\"CATEGORY_NAME\", "
+  "\"DESCRIPTION\", "
+  "\"PICUTRE\") "
   "VALUES "
   "(:1, :2, :3, :4)";
 
   const char access::object_traits_impl< ::zango::northwind::categories, id_oracle >::find_statement[] =
   "SELECT "
-  "\"Mnorthwind\".\"categories\".\"category_id\", "
-  "\"Mnorthwind\".\"categories\".\"category_name\", "
-  "\"Mnorthwind\".\"categories\".\"description\", "
-  "\"Mnorthwind\".\"categories\".\"picutre\" "
-  "FROM \"Mnorthwind\".\"categories\" "
-  "WHERE \"Mnorthwind\".\"categories\".\"category_id\"=:1";
+  "\"NORTHWIND\".\"CATEGORIES\".\"category_id\", "
+  "\"NORTHWIND\".\"CATEGORIES\".\"CATEGORY_NAME\", "
+  "\"NORTHWIND\".\"CATEGORIES\".\"DESCRIPTION\", "
+  "\"NORTHWIND\".\"CATEGORIES\".\"PICUTRE\" "
+  "FROM \"NORTHWIND\".\"CATEGORIES\" "
+  "WHERE \"NORTHWIND\".\"CATEGORIES\".\"category_id\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::categories, id_oracle >::update_statement[] =
-  "UPDATE \"Mnorthwind\".\"categories\" "
+  "UPDATE \"NORTHWIND\".\"CATEGORIES\" "
   "SET "
-  "\"category_name\"=:1, "
-  "\"description\"=:2, "
-  "\"picutre\"=:3 "
+  "\"CATEGORY_NAME\"=:1, "
+  "\"DESCRIPTION\"=:2, "
+  "\"PICUTRE\"=:3 "
   "WHERE \"category_id\"=:4";
 
   const char access::object_traits_impl< ::zango::northwind::categories, id_oracle >::erase_statement[] =
-  "DELETE FROM \"Mnorthwind\".\"categories\" "
+  "DELETE FROM \"NORTHWIND\".\"CATEGORIES\" "
   "WHERE \"category_id\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::categories, id_oracle >::query_statement[] =
   "SELECT "
-  "\"Mnorthwind\".\"categories\".\"category_id\", "
-  "\"Mnorthwind\".\"categories\".\"category_name\", "
-  "\"Mnorthwind\".\"categories\".\"description\", "
-  "\"Mnorthwind\".\"categories\".\"picutre\" "
-  "FROM \"Mnorthwind\".\"categories\"";
+  "\"NORTHWIND\".\"CATEGORIES\".\"category_id\", "
+  "\"NORTHWIND\".\"CATEGORIES\".\"CATEGORY_NAME\", "
+  "\"NORTHWIND\".\"CATEGORIES\".\"DESCRIPTION\", "
+  "\"NORTHWIND\".\"CATEGORIES\".\"PICUTRE\" "
+  "FROM \"NORTHWIND\".\"CATEGORIES\"";
 
   const char access::object_traits_impl< ::zango::northwind::categories, id_oracle >::erase_query_statement[] =
-  "DELETE FROM \"Mnorthwind\".\"categories\"";
+  "DELETE FROM \"NORTHWIND\".\"CATEGORIES\"";
 
   const char access::object_traits_impl< ::zango::northwind::categories, id_oracle >::table_name[] =
-  "\"Mnorthwind\".\"categories\"";
+  "\"NORTHWIND\".\"CATEGORIES\"";
 
   void access::object_traits_impl< ::zango::northwind::categories, id_oracle >::
   persist (database& db, const object_type& obj)
@@ -706,7 +706,7 @@ namespace odb
         {
           db.execute ("BEGIN\n"
                       "  BEGIN\n"
-                      "    EXECUTE IMMEDIATE 'DROP TABLE \"Mnorthwind\".\"categories\" CASCADE CONSTRAINTS';\n"
+                      "    EXECUTE IMMEDIATE 'DROP TABLE \"NORTHWIND\".\"CATEGORIES\" CASCADE CONSTRAINTS';\n"
                       "  EXCEPTION\n"
                       "    WHEN OTHERS THEN\n"
                       "      IF SQLCODE != -942 THEN RAISE; END IF;\n"
@@ -722,11 +722,11 @@ namespace odb
       {
         case 1:
         {
-          db.execute ("CREATE TABLE \"Mnorthwind\".\"categories\" (\n"
+          db.execute ("CREATE TABLE \"NORTHWIND\".\"CATEGORIES\" (\n"
                       "  \"category_id\" NUMBER(10) NOT NULL PRIMARY KEY,\n"
-                      "  \"category_name\" VARCHAR2(512) NULL,\n"
-                      "  \"description\" VARCHAR2(512) NULL,\n"
-                      "  \"picutre\" BLOB NULL)");
+                      "  \"CATEGORY_NAME\" VARCHAR2(512) NULL,\n"
+                      "  \"DESCRIPTION\" VARCHAR2(512) NULL,\n"
+                      "  \"PICUTRE\" BLOB NULL)");
           return false;
         }
       }

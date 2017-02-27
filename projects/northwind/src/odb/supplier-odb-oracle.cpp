@@ -634,80 +634,80 @@ namespace odb
   }
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_oracle >::persist_statement[] =
-  "INSERT INTO \"northwind\".\"supplier\" "
+  "INSERT INTO \"NORTHWIND\".\"SUPPLIER\" "
   "(\"supplier_id\", "
-  "\"company_name\", "
-  "\"contact_name\", "
-  "\"contact_title\", "
-  "\"address\", "
-  "\"city\", "
-  "\"region\", "
-  "\"postal_code\", "
-  "\"country\", "
-  "\"phone\", "
-  "\"fax\", "
-  "\"home_page\") "
+  "\"COMPANY_NAME\", "
+  "\"CONTACT_NAME\", "
+  "\"CONTACT_TITLE\", "
+  "\"ADDRESS\", "
+  "\"CITY\", "
+  "\"REGION\", "
+  "\"POSTAL_CODE\", "
+  "\"COUNTRY\", "
+  "\"PHONE\", "
+  "\"FAX\", "
+  "\"HOME_PAGE\") "
   "VALUES "
   "(:1, :2, :3, :4, :5, :6, :7, :8, :9, :10, :11, :12)";
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_oracle >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"supplier\".\"supplier_id\", "
-  "\"northwind\".\"supplier\".\"company_name\", "
-  "\"northwind\".\"supplier\".\"contact_name\", "
-  "\"northwind\".\"supplier\".\"contact_title\", "
-  "\"northwind\".\"supplier\".\"address\", "
-  "\"northwind\".\"supplier\".\"city\", "
-  "\"northwind\".\"supplier\".\"region\", "
-  "\"northwind\".\"supplier\".\"postal_code\", "
-  "\"northwind\".\"supplier\".\"country\", "
-  "\"northwind\".\"supplier\".\"phone\", "
-  "\"northwind\".\"supplier\".\"fax\", "
-  "\"northwind\".\"supplier\".\"home_page\" "
-  "FROM \"northwind\".\"supplier\" "
-  "WHERE \"northwind\".\"supplier\".\"supplier_id\"=:1";
+  "\"NORTHWIND\".\"SUPPLIER\".\"supplier_id\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"COMPANY_NAME\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"CONTACT_NAME\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"CONTACT_TITLE\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"ADDRESS\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"CITY\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"REGION\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"POSTAL_CODE\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"COUNTRY\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"PHONE\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"FAX\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"HOME_PAGE\" "
+  "FROM \"NORTHWIND\".\"SUPPLIER\" "
+  "WHERE \"NORTHWIND\".\"SUPPLIER\".\"supplier_id\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_oracle >::update_statement[] =
-  "UPDATE \"northwind\".\"supplier\" "
+  "UPDATE \"NORTHWIND\".\"SUPPLIER\" "
   "SET "
-  "\"company_name\"=:1, "
-  "\"contact_name\"=:2, "
-  "\"contact_title\"=:3, "
-  "\"address\"=:4, "
-  "\"city\"=:5, "
-  "\"region\"=:6, "
-  "\"postal_code\"=:7, "
-  "\"country\"=:8, "
-  "\"phone\"=:9, "
-  "\"fax\"=:10, "
-  "\"home_page\"=:11 "
+  "\"COMPANY_NAME\"=:1, "
+  "\"CONTACT_NAME\"=:2, "
+  "\"CONTACT_TITLE\"=:3, "
+  "\"ADDRESS\"=:4, "
+  "\"CITY\"=:5, "
+  "\"REGION\"=:6, "
+  "\"POSTAL_CODE\"=:7, "
+  "\"COUNTRY\"=:8, "
+  "\"PHONE\"=:9, "
+  "\"FAX\"=:10, "
+  "\"HOME_PAGE\"=:11 "
   "WHERE \"supplier_id\"=:12";
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_oracle >::erase_statement[] =
-  "DELETE FROM \"northwind\".\"supplier\" "
+  "DELETE FROM \"NORTHWIND\".\"SUPPLIER\" "
   "WHERE \"supplier_id\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_oracle >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"supplier\".\"supplier_id\", "
-  "\"northwind\".\"supplier\".\"company_name\", "
-  "\"northwind\".\"supplier\".\"contact_name\", "
-  "\"northwind\".\"supplier\".\"contact_title\", "
-  "\"northwind\".\"supplier\".\"address\", "
-  "\"northwind\".\"supplier\".\"city\", "
-  "\"northwind\".\"supplier\".\"region\", "
-  "\"northwind\".\"supplier\".\"postal_code\", "
-  "\"northwind\".\"supplier\".\"country\", "
-  "\"northwind\".\"supplier\".\"phone\", "
-  "\"northwind\".\"supplier\".\"fax\", "
-  "\"northwind\".\"supplier\".\"home_page\" "
-  "FROM \"northwind\".\"supplier\"";
+  "\"NORTHWIND\".\"SUPPLIER\".\"supplier_id\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"COMPANY_NAME\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"CONTACT_NAME\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"CONTACT_TITLE\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"ADDRESS\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"CITY\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"REGION\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"POSTAL_CODE\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"COUNTRY\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"PHONE\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"FAX\", "
+  "\"NORTHWIND\".\"SUPPLIER\".\"HOME_PAGE\" "
+  "FROM \"NORTHWIND\".\"SUPPLIER\"";
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_oracle >::erase_query_statement[] =
-  "DELETE FROM \"northwind\".\"supplier\"";
+  "DELETE FROM \"NORTHWIND\".\"SUPPLIER\"";
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_oracle >::table_name[] =
-  "\"northwind\".\"supplier\"";
+  "\"NORTHWIND\".\"SUPPLIER\"";
 
   void access::object_traits_impl< ::zango::northwind::supplier, id_oracle >::
   persist (database& db, const object_type& obj)
@@ -1092,7 +1092,7 @@ namespace odb
         {
           db.execute ("BEGIN\n"
                       "  BEGIN\n"
-                      "    EXECUTE IMMEDIATE 'DROP TABLE \"northwind\".\"supplier\" CASCADE CONSTRAINTS';\n"
+                      "    EXECUTE IMMEDIATE 'DROP TABLE \"NORTHWIND\".\"SUPPLIER\" CASCADE CONSTRAINTS';\n"
                       "  EXCEPTION\n"
                       "    WHEN OTHERS THEN\n"
                       "      IF SQLCODE != -942 THEN RAISE; END IF;\n"
@@ -1108,19 +1108,19 @@ namespace odb
       {
         case 1:
         {
-          db.execute ("CREATE TABLE \"northwind\".\"supplier\" (\n"
+          db.execute ("CREATE TABLE \"NORTHWIND\".\"SUPPLIER\" (\n"
                       "  \"supplier_id\" NUMBER(10) NOT NULL PRIMARY KEY,\n"
-                      "  \"company_name\" VARCHAR2(512) NULL,\n"
-                      "  \"contact_name\" VARCHAR2(512) NULL,\n"
-                      "  \"contact_title\" VARCHAR2(512) NULL,\n"
-                      "  \"address\" VARCHAR2(512) NULL,\n"
-                      "  \"city\" VARCHAR2(512) NULL,\n"
-                      "  \"region\" VARCHAR2(512) NULL,\n"
-                      "  \"postal_code\" VARCHAR2(512) NULL,\n"
-                      "  \"country\" VARCHAR2(512) NULL,\n"
-                      "  \"phone\" VARCHAR2(512) NULL,\n"
-                      "  \"fax\" VARCHAR2(512) NULL,\n"
-                      "  \"home_page\" VARCHAR2(512) NULL)");
+                      "  \"COMPANY_NAME\" VARCHAR2(512) NULL,\n"
+                      "  \"CONTACT_NAME\" VARCHAR2(512) NULL,\n"
+                      "  \"CONTACT_TITLE\" VARCHAR2(512) NULL,\n"
+                      "  \"ADDRESS\" VARCHAR2(512) NULL,\n"
+                      "  \"CITY\" VARCHAR2(512) NULL,\n"
+                      "  \"REGION\" VARCHAR2(512) NULL,\n"
+                      "  \"POSTAL_CODE\" VARCHAR2(512) NULL,\n"
+                      "  \"COUNTRY\" VARCHAR2(512) NULL,\n"
+                      "  \"PHONE\" VARCHAR2(512) NULL,\n"
+                      "  \"FAX\" VARCHAR2(512) NULL,\n"
+                      "  \"HOME_PAGE\" VARCHAR2(512) NULL)");
           return false;
         }
       }

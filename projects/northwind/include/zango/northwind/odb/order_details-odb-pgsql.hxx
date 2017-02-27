@@ -173,17 +173,17 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::order_details, id_pgsql, A >::unit_price_type_
   query_columns< ::zango::northwind::order_details, id_pgsql, A >::
-  unit_price (A::table_name, "\"unit_price\"", 0);
+  unit_price (A::table_name, "\"UNIT_PRICE\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::order_details, id_pgsql, A >::quantity_type_
   query_columns< ::zango::northwind::order_details, id_pgsql, A >::
-  quantity (A::table_name, "\"quantity\"", 0);
+  quantity (A::table_name, "\"QUANTITY\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::order_details, id_pgsql, A >::discount_type_
   query_columns< ::zango::northwind::order_details, id_pgsql, A >::
-  discount (A::table_name, "\"discount\"", 0);
+  discount (A::table_name, "\"DISCOUNT\"", 0);
 
   template <typename A>
   struct pointer_query_columns< ::zango::northwind::order_details, id_pgsql, A >:

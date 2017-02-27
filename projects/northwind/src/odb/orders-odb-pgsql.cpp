@@ -28,22 +28,22 @@ namespace odb
   //
 
   const char access::object_traits_impl< ::zango::northwind::orders, id_pgsql >::
-  persist_statement_name[] = "persist_zango_northwind_orders";
+  persist_statement_name[] = "PERSIST_ZANGO_NORTHWIND_ORDERS";
 
   const char access::object_traits_impl< ::zango::northwind::orders, id_pgsql >::
-  find_statement_name[] = "find_zango_northwind_orders";
+  find_statement_name[] = "FIND_ZANGO_NORTHWIND_ORDERS";
 
   const char access::object_traits_impl< ::zango::northwind::orders, id_pgsql >::
-  update_statement_name[] = "update_zango_northwind_orders";
+  update_statement_name[] = "UPDATE_ZANGO_NORTHWIND_ORDERS";
 
   const char access::object_traits_impl< ::zango::northwind::orders, id_pgsql >::
-  erase_statement_name[] = "erase_zango_northwind_orders";
+  erase_statement_name[] = "ERASE_ZANGO_NORTHWIND_ORDERS";
 
   const char access::object_traits_impl< ::zango::northwind::orders, id_pgsql >::
-  query_statement_name[] = "query_zango_northwind_orders";
+  query_statement_name[] = "QUERY_ZANGO_NORTHWIND_ORDERS";
 
   const char access::object_traits_impl< ::zango::northwind::orders, id_pgsql >::
-  erase_query_statement_name[] = "erase_query_zango_northwind_orders";
+  erase_query_statement_name[] = "ERASE_QUERY_ZANGO_NORTHWIND_ORDERS";
 
   const unsigned int access::object_traits_impl< ::zango::northwind::orders, id_pgsql >::
   persist_statement_types[] =
@@ -820,88 +820,88 @@ namespace odb
   }
 
   const char access::object_traits_impl< ::zango::northwind::orders, id_pgsql >::persist_statement[] =
-  "INSERT INTO \"northwind\".\"orders\" "
+  "INSERT INTO \"NORTHWIND\".\"ORDERS\" "
   "(\"order_id\", "
   "\"customer_id\", "
   "\"employee_id\", "
-  "\"order_date\", "
-  "\"required_date\", "
-  "\"shipped_date\", "
-  "\"ship_via\", "
-  "\"freight\", "
-  "\"ship_name\", "
-  "\"ship_address\", "
-  "\"ship_city\", "
-  "\"ship_region\", "
-  "\"ship_postal_code\", "
-  "\"ship_country\") "
+  "\"ORDER_DATE\", "
+  "\"REQUIRED_DATE\", "
+  "\"SHIPPED_DATE\", "
+  "\"SHIP_VIA\", "
+  "\"FREIGHT\", "
+  "\"SHIP_NAME\", "
+  "\"SHIP_ADDRESS\", "
+  "\"SHIP_CITY\", "
+  "\"SHIP_REGION\", "
+  "\"SHIP_POSTAL_CODE\", "
+  "\"SHIP_COUNTRY\") "
   "VALUES "
   "($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)";
 
   const char access::object_traits_impl< ::zango::northwind::orders, id_pgsql >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"orders\".\"order_id\", "
-  "\"northwind\".\"orders\".\"customer_id\", "
-  "\"northwind\".\"orders\".\"employee_id\", "
-  "\"northwind\".\"orders\".\"order_date\", "
-  "\"northwind\".\"orders\".\"required_date\", "
-  "\"northwind\".\"orders\".\"shipped_date\", "
-  "\"northwind\".\"orders\".\"ship_via\", "
-  "\"northwind\".\"orders\".\"freight\", "
-  "\"northwind\".\"orders\".\"ship_name\", "
-  "\"northwind\".\"orders\".\"ship_address\", "
-  "\"northwind\".\"orders\".\"ship_city\", "
-  "\"northwind\".\"orders\".\"ship_region\", "
-  "\"northwind\".\"orders\".\"ship_postal_code\", "
-  "\"northwind\".\"orders\".\"ship_country\" "
-  "FROM \"northwind\".\"orders\" "
-  "WHERE \"northwind\".\"orders\".\"order_id\"=$1";
+  "\"NORTHWIND\".\"ORDERS\".\"order_id\", "
+  "\"NORTHWIND\".\"ORDERS\".\"customer_id\", "
+  "\"NORTHWIND\".\"ORDERS\".\"employee_id\", "
+  "\"NORTHWIND\".\"ORDERS\".\"ORDER_DATE\", "
+  "\"NORTHWIND\".\"ORDERS\".\"REQUIRED_DATE\", "
+  "\"NORTHWIND\".\"ORDERS\".\"SHIPPED_DATE\", "
+  "\"NORTHWIND\".\"ORDERS\".\"SHIP_VIA\", "
+  "\"NORTHWIND\".\"ORDERS\".\"FREIGHT\", "
+  "\"NORTHWIND\".\"ORDERS\".\"SHIP_NAME\", "
+  "\"NORTHWIND\".\"ORDERS\".\"SHIP_ADDRESS\", "
+  "\"NORTHWIND\".\"ORDERS\".\"SHIP_CITY\", "
+  "\"NORTHWIND\".\"ORDERS\".\"SHIP_REGION\", "
+  "\"NORTHWIND\".\"ORDERS\".\"SHIP_POSTAL_CODE\", "
+  "\"NORTHWIND\".\"ORDERS\".\"SHIP_COUNTRY\" "
+  "FROM \"NORTHWIND\".\"ORDERS\" "
+  "WHERE \"NORTHWIND\".\"ORDERS\".\"order_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::orders, id_pgsql >::update_statement[] =
-  "UPDATE \"northwind\".\"orders\" "
+  "UPDATE \"NORTHWIND\".\"ORDERS\" "
   "SET "
   "\"customer_id\"=$1, "
   "\"employee_id\"=$2, "
-  "\"order_date\"=$3, "
-  "\"required_date\"=$4, "
-  "\"shipped_date\"=$5, "
-  "\"ship_via\"=$6, "
-  "\"freight\"=$7, "
-  "\"ship_name\"=$8, "
-  "\"ship_address\"=$9, "
-  "\"ship_city\"=$10, "
-  "\"ship_region\"=$11, "
-  "\"ship_postal_code\"=$12, "
-  "\"ship_country\"=$13 "
+  "\"ORDER_DATE\"=$3, "
+  "\"REQUIRED_DATE\"=$4, "
+  "\"SHIPPED_DATE\"=$5, "
+  "\"SHIP_VIA\"=$6, "
+  "\"FREIGHT\"=$7, "
+  "\"SHIP_NAME\"=$8, "
+  "\"SHIP_ADDRESS\"=$9, "
+  "\"SHIP_CITY\"=$10, "
+  "\"SHIP_REGION\"=$11, "
+  "\"SHIP_POSTAL_CODE\"=$12, "
+  "\"SHIP_COUNTRY\"=$13 "
   "WHERE \"order_id\"=$14";
 
   const char access::object_traits_impl< ::zango::northwind::orders, id_pgsql >::erase_statement[] =
-  "DELETE FROM \"northwind\".\"orders\" "
+  "DELETE FROM \"NORTHWIND\".\"ORDERS\" "
   "WHERE \"order_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::orders, id_pgsql >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"orders\".\"order_id\", "
-  "\"northwind\".\"orders\".\"customer_id\", "
-  "\"northwind\".\"orders\".\"employee_id\", "
-  "\"northwind\".\"orders\".\"order_date\", "
-  "\"northwind\".\"orders\".\"required_date\", "
-  "\"northwind\".\"orders\".\"shipped_date\", "
-  "\"northwind\".\"orders\".\"ship_via\", "
-  "\"northwind\".\"orders\".\"freight\", "
-  "\"northwind\".\"orders\".\"ship_name\", "
-  "\"northwind\".\"orders\".\"ship_address\", "
-  "\"northwind\".\"orders\".\"ship_city\", "
-  "\"northwind\".\"orders\".\"ship_region\", "
-  "\"northwind\".\"orders\".\"ship_postal_code\", "
-  "\"northwind\".\"orders\".\"ship_country\" "
-  "FROM \"northwind\".\"orders\"";
+  "\"NORTHWIND\".\"ORDERS\".\"order_id\", "
+  "\"NORTHWIND\".\"ORDERS\".\"customer_id\", "
+  "\"NORTHWIND\".\"ORDERS\".\"employee_id\", "
+  "\"NORTHWIND\".\"ORDERS\".\"ORDER_DATE\", "
+  "\"NORTHWIND\".\"ORDERS\".\"REQUIRED_DATE\", "
+  "\"NORTHWIND\".\"ORDERS\".\"SHIPPED_DATE\", "
+  "\"NORTHWIND\".\"ORDERS\".\"SHIP_VIA\", "
+  "\"NORTHWIND\".\"ORDERS\".\"FREIGHT\", "
+  "\"NORTHWIND\".\"ORDERS\".\"SHIP_NAME\", "
+  "\"NORTHWIND\".\"ORDERS\".\"SHIP_ADDRESS\", "
+  "\"NORTHWIND\".\"ORDERS\".\"SHIP_CITY\", "
+  "\"NORTHWIND\".\"ORDERS\".\"SHIP_REGION\", "
+  "\"NORTHWIND\".\"ORDERS\".\"SHIP_POSTAL_CODE\", "
+  "\"NORTHWIND\".\"ORDERS\".\"SHIP_COUNTRY\" "
+  "FROM \"NORTHWIND\".\"ORDERS\"";
 
   const char access::object_traits_impl< ::zango::northwind::orders, id_pgsql >::erase_query_statement[] =
-  "DELETE FROM \"northwind\".\"orders\"";
+  "DELETE FROM \"NORTHWIND\".\"ORDERS\"";
 
   const char access::object_traits_impl< ::zango::northwind::orders, id_pgsql >::table_name[] =
-  "\"northwind\".\"orders\"";
+  "\"NORTHWIND\".\"ORDERS\"";
 
   void access::object_traits_impl< ::zango::northwind::orders, id_pgsql >::
   persist (database& db, const object_type& obj)
@@ -1304,7 +1304,7 @@ namespace odb
         }
         case 2:
         {
-          db.execute ("DROP TABLE IF EXISTS \"northwind\".\"orders\" CASCADE");
+          db.execute ("DROP TABLE IF EXISTS \"NORTHWIND\".\"ORDERS\" CASCADE");
           return false;
         }
       }
@@ -1315,21 +1315,21 @@ namespace odb
       {
         case 1:
         {
-          db.execute ("CREATE TABLE \"northwind\".\"orders\" (\n"
+          db.execute ("CREATE TABLE \"NORTHWIND\".\"ORDERS\" (\n"
                       "  \"order_id\" INTEGER NOT NULL PRIMARY KEY,\n"
                       "  \"customer_id\" INTEGER NULL,\n"
                       "  \"employee_id\" INTEGER NULL,\n"
-                      "  \"order_date\" DATE NULL,\n"
-                      "  \"required_date\" DATE NULL,\n"
-                      "  \"shipped_date\" DATE NULL,\n"
-                      "  \"ship_via\" INTEGER NULL,\n"
-                      "  \"freight\" DOUBLE PRECISION NULL,\n"
-                      "  \"ship_name\" TEXT NULL,\n"
-                      "  \"ship_address\" TEXT NULL,\n"
-                      "  \"ship_city\" TEXT NULL,\n"
-                      "  \"ship_region\" TEXT NULL,\n"
-                      "  \"ship_postal_code\" TEXT NULL,\n"
-                      "  \"ship_country\" TEXT NULL)");
+                      "  \"ORDER_DATE\" DATE NULL,\n"
+                      "  \"REQUIRED_DATE\" DATE NULL,\n"
+                      "  \"SHIPPED_DATE\" DATE NULL,\n"
+                      "  \"SHIP_VIA\" INTEGER NULL,\n"
+                      "  \"FREIGHT\" DOUBLE PRECISION NULL,\n"
+                      "  \"SHIP_NAME\" TEXT NULL,\n"
+                      "  \"SHIP_ADDRESS\" TEXT NULL,\n"
+                      "  \"SHIP_CITY\" TEXT NULL,\n"
+                      "  \"SHIP_REGION\" TEXT NULL,\n"
+                      "  \"SHIP_POSTAL_CODE\" TEXT NULL,\n"
+                      "  \"SHIP_COUNTRY\" TEXT NULL)");
           return false;
         }
       }

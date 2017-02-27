@@ -28,22 +28,22 @@ namespace odb
   //
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_pgsql >::
-  persist_statement_name[] = "persist_zango_northwind_territory";
+  persist_statement_name[] = "PERSIST_ZANGO_NORTHWIND_TERRITORY";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_pgsql >::
-  find_statement_name[] = "find_zango_northwind_territory";
+  find_statement_name[] = "FIND_ZANGO_NORTHWIND_TERRITORY";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_pgsql >::
-  update_statement_name[] = "update_zango_northwind_territory";
+  update_statement_name[] = "UPDATE_ZANGO_NORTHWIND_TERRITORY";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_pgsql >::
-  erase_statement_name[] = "erase_zango_northwind_territory";
+  erase_statement_name[] = "ERASE_ZANGO_NORTHWIND_TERRITORY";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_pgsql >::
-  query_statement_name[] = "query_zango_northwind_territory";
+  query_statement_name[] = "QUERY_ZANGO_NORTHWIND_TERRITORY";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_pgsql >::
-  erase_query_statement_name[] = "erase_query_zango_northwind_territory";
+  erase_query_statement_name[] = "ERASE_QUERY_ZANGO_NORTHWIND_TERRITORY";
 
   const unsigned int access::object_traits_impl< ::zango::northwind::territory, id_pgsql >::
   persist_statement_types[] =
@@ -306,44 +306,44 @@ namespace odb
   }
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_pgsql >::persist_statement[] =
-  "INSERT INTO \"northwind\".\"territory\" "
+  "INSERT INTO \"NORTHWIND\".\"TERRITORY\" "
   "(\"territory_id\", "
-  "\"territory_description\", "
+  "\"TERRITORY_DESCRIPTION\", "
   "\"region_id\") "
   "VALUES "
   "($1, $2, $3)";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_pgsql >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"territory\".\"territory_id\", "
-  "\"northwind\".\"territory\".\"territory_description\", "
-  "\"northwind\".\"territory\".\"region_id\" "
-  "FROM \"northwind\".\"territory\" "
-  "WHERE \"northwind\".\"territory\".\"territory_id\"=$1";
+  "\"NORTHWIND\".\"TERRITORY\".\"territory_id\", "
+  "\"NORTHWIND\".\"TERRITORY\".\"TERRITORY_DESCRIPTION\", "
+  "\"NORTHWIND\".\"TERRITORY\".\"region_id\" "
+  "FROM \"NORTHWIND\".\"TERRITORY\" "
+  "WHERE \"NORTHWIND\".\"TERRITORY\".\"territory_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_pgsql >::update_statement[] =
-  "UPDATE \"northwind\".\"territory\" "
+  "UPDATE \"NORTHWIND\".\"TERRITORY\" "
   "SET "
-  "\"territory_description\"=$1, "
+  "\"TERRITORY_DESCRIPTION\"=$1, "
   "\"region_id\"=$2 "
   "WHERE \"territory_id\"=$3";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_pgsql >::erase_statement[] =
-  "DELETE FROM \"northwind\".\"territory\" "
+  "DELETE FROM \"NORTHWIND\".\"TERRITORY\" "
   "WHERE \"territory_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_pgsql >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"territory\".\"territory_id\", "
-  "\"northwind\".\"territory\".\"territory_description\", "
-  "\"northwind\".\"territory\".\"region_id\" "
-  "FROM \"northwind\".\"territory\"";
+  "\"NORTHWIND\".\"TERRITORY\".\"territory_id\", "
+  "\"NORTHWIND\".\"TERRITORY\".\"TERRITORY_DESCRIPTION\", "
+  "\"NORTHWIND\".\"TERRITORY\".\"region_id\" "
+  "FROM \"NORTHWIND\".\"TERRITORY\"";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_pgsql >::erase_query_statement[] =
-  "DELETE FROM \"northwind\".\"territory\"";
+  "DELETE FROM \"NORTHWIND\".\"TERRITORY\"";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_pgsql >::table_name[] =
-  "\"northwind\".\"territory\"";
+  "\"NORTHWIND\".\"TERRITORY\"";
 
   void access::object_traits_impl< ::zango::northwind::territory, id_pgsql >::
   persist (database& db, const object_type& obj)
@@ -746,7 +746,7 @@ namespace odb
         }
         case 2:
         {
-          db.execute ("DROP TABLE IF EXISTS \"northwind\".\"territory\" CASCADE");
+          db.execute ("DROP TABLE IF EXISTS \"NORTHWIND\".\"TERRITORY\" CASCADE");
           return false;
         }
       }
@@ -757,9 +757,9 @@ namespace odb
       {
         case 1:
         {
-          db.execute ("CREATE TABLE \"northwind\".\"territory\" (\n"
+          db.execute ("CREATE TABLE \"NORTHWIND\".\"TERRITORY\" (\n"
                       "  \"territory_id\" TEXT NOT NULL PRIMARY KEY,\n"
-                      "  \"territory_description\" TEXT NOT NULL,\n"
+                      "  \"TERRITORY_DESCRIPTION\" TEXT NOT NULL,\n"
                       "  \"region_id\" INTEGER NOT NULL)");
           return false;
         }

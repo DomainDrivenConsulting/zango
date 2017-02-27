@@ -124,17 +124,17 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::categories, id_pgsql, A >::category_name_type_
   query_columns< ::zango::northwind::categories, id_pgsql, A >::
-  category_name (A::table_name, "\"category_name\"", 0);
+  category_name (A::table_name, "\"CATEGORY_NAME\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::categories, id_pgsql, A >::description_type_
   query_columns< ::zango::northwind::categories, id_pgsql, A >::
-  description (A::table_name, "\"description\"", 0);
+  description (A::table_name, "\"DESCRIPTION\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::categories, id_pgsql, A >::picutre_type_
   query_columns< ::zango::northwind::categories, id_pgsql, A >::
-  picutre (A::table_name, "\"picutre\"", 0);
+  picutre (A::table_name, "\"PICUTRE\"", 0);
 
   template <typename A>
   struct pointer_query_columns< ::zango::northwind::categories, id_pgsql, A >:

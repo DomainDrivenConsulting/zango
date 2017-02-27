@@ -112,12 +112,12 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::shippers, id_pgsql, A >::company_name_type_
   query_columns< ::zango::northwind::shippers, id_pgsql, A >::
-  company_name (A::table_name, "\"company_name\"", 0);
+  company_name (A::table_name, "\"COMPANY_NAME\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::shippers, id_pgsql, A >::phone_type_
   query_columns< ::zango::northwind::shippers, id_pgsql, A >::
-  phone (A::table_name, "\"phone\"", 0);
+  phone (A::table_name, "\"PHONE\"", 0);
 
   template <typename A>
   struct pointer_query_columns< ::zango::northwind::shippers, id_pgsql, A >:

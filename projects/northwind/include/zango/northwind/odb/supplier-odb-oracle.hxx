@@ -220,57 +220,57 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::supplier, id_oracle, A >::company_name_type_
   query_columns< ::zango::northwind::supplier, id_oracle, A >::
-  company_name (A::table_name, "\"company_name\"", 0, 512);
+  company_name (A::table_name, "\"COMPANY_NAME\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::supplier, id_oracle, A >::contact_name_type_
   query_columns< ::zango::northwind::supplier, id_oracle, A >::
-  contact_name (A::table_name, "\"contact_name\"", 0, 512);
+  contact_name (A::table_name, "\"CONTACT_NAME\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::supplier, id_oracle, A >::contact_title_type_
   query_columns< ::zango::northwind::supplier, id_oracle, A >::
-  contact_title (A::table_name, "\"contact_title\"", 0, 512);
+  contact_title (A::table_name, "\"CONTACT_TITLE\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::supplier, id_oracle, A >::address_type_
   query_columns< ::zango::northwind::supplier, id_oracle, A >::
-  address (A::table_name, "\"address\"", 0, 512);
+  address (A::table_name, "\"ADDRESS\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::supplier, id_oracle, A >::city_type_
   query_columns< ::zango::northwind::supplier, id_oracle, A >::
-  city (A::table_name, "\"city\"", 0, 512);
+  city (A::table_name, "\"CITY\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::supplier, id_oracle, A >::region_type_
   query_columns< ::zango::northwind::supplier, id_oracle, A >::
-  region (A::table_name, "\"region\"", 0, 512);
+  region (A::table_name, "\"REGION\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::supplier, id_oracle, A >::postal_code_type_
   query_columns< ::zango::northwind::supplier, id_oracle, A >::
-  postal_code (A::table_name, "\"postal_code\"", 0, 512);
+  postal_code (A::table_name, "\"POSTAL_CODE\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::supplier, id_oracle, A >::country_type_
   query_columns< ::zango::northwind::supplier, id_oracle, A >::
-  country (A::table_name, "\"country\"", 0, 512);
+  country (A::table_name, "\"COUNTRY\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::supplier, id_oracle, A >::phone_type_
   query_columns< ::zango::northwind::supplier, id_oracle, A >::
-  phone (A::table_name, "\"phone\"", 0, 512);
+  phone (A::table_name, "\"PHONE\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::supplier, id_oracle, A >::fax_type_
   query_columns< ::zango::northwind::supplier, id_oracle, A >::
-  fax (A::table_name, "\"fax\"", 0, 512);
+  fax (A::table_name, "\"FAX\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::supplier, id_oracle, A >::home_page_type_
   query_columns< ::zango::northwind::supplier, id_oracle, A >::
-  home_page (A::table_name, "\"home_page\"", 0, 512);
+  home_page (A::table_name, "\"HOME_PAGE\"", 0, 512);
 
   template <typename A>
   struct pointer_query_columns< ::zango::northwind::supplier, id_oracle, A >:

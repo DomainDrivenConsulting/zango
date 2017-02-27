@@ -220,7 +220,7 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::products, id_oracle, A >::product_name_type_
   query_columns< ::zango::northwind::products, id_oracle, A >::
-  product_name (A::table_name, "\"product_name\"", 0, 512);
+  product_name (A::table_name, "\"PRODUCT_NAME\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::products, id_oracle, A >::supplier_id_class_::value_type_
@@ -243,32 +243,32 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::products, id_oracle, A >::quantity_per_unit_type_
   query_columns< ::zango::northwind::products, id_oracle, A >::
-  quantity_per_unit (A::table_name, "\"quantity_per_unit\"", 0, 512);
+  quantity_per_unit (A::table_name, "\"QUANTITY_PER_UNIT\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::products, id_oracle, A >::unit_price_type_
   query_columns< ::zango::northwind::products, id_oracle, A >::
-  unit_price (A::table_name, "\"unit_price\"", 0);
+  unit_price (A::table_name, "\"UNIT_PRICE\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::products, id_oracle, A >::units_in_stock_type_
   query_columns< ::zango::northwind::products, id_oracle, A >::
-  units_in_stock (A::table_name, "\"units_in_stock\"", 0, 10);
+  units_in_stock (A::table_name, "\"UNITS_IN_STOCK\"", 0, 10);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::products, id_oracle, A >::units_in_order_type_
   query_columns< ::zango::northwind::products, id_oracle, A >::
-  units_in_order (A::table_name, "\"units_in_order\"", 0, 10);
+  units_in_order (A::table_name, "\"UNITS_IN_ORDER\"", 0, 10);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::products, id_oracle, A >::reorder_level_type_
   query_columns< ::zango::northwind::products, id_oracle, A >::
-  reorder_level (A::table_name, "\"reorder_level\"", 0, 10);
+  reorder_level (A::table_name, "\"REORDER_LEVEL\"", 0, 10);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::products, id_oracle, A >::discontinued_type_
   query_columns< ::zango::northwind::products, id_oracle, A >::
-  discontinued (A::table_name, "\"discontinued\"", 0, 1);
+  discontinued (A::table_name, "\"DISCONTINUED\"", 0, 1);
 
   template <typename A>
   struct pointer_query_columns< ::zango::northwind::products, id_oracle, A >:

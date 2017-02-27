@@ -150,7 +150,7 @@ It's objective is to test Dogen integration with ODB.
       </dia:attribute>
       <dia:attribute name="comment">
         <dia:string>##DOGEN yarn.primitive.underlying_element=int
-#DOGEN odb_pragma=schema("northwind")
+#DOGEN odb_pragma=schema("NORTHWIND")
 #</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
@@ -261,7 +261,7 @@ It's objective is to test Dogen integration with ODB.
         <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("northwind")#</dia:string>
+        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -606,7 +606,7 @@ It's objective is to test Dogen integration with ODB.
       </dia:attribute>
       <dia:attribute name="comment">
         <dia:string>##DOGEN yarn.primitive.underlying_element=int
-#DOGEN odb_pragma=schema("northwind")#</dia:string>
+#DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -716,7 +716,7 @@ It's objective is to test Dogen integration with ODB.
         <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("northwind")#</dia:string>
+        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -1105,7 +1105,7 @@ It's objective is to test Dogen integration with ODB.
       </dia:attribute>
       <dia:attribute name="comment">
         <dia:string>##DOGEN yarn.primitive.underlying_element=int
-#DOGEN odb_pragma=schema("northwind")#</dia:string>
+#DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -1215,7 +1215,7 @@ It's objective is to test Dogen integration with ODB.
         <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("northwind")#</dia:string>
+        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -1374,7 +1374,7 @@ It's objective is to test Dogen integration with ODB.
       </dia:attribute>
       <dia:attribute name="comment">
         <dia:string>##DOGEN yarn.primitive.underlying_element=int
-#DOGEN odb_pragma=schema("northwind")
+#DOGEN odb_pragma=schema("NORTHWIND")
 #</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
@@ -1485,7 +1485,7 @@ It's objective is to test Dogen integration with ODB.
         <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("northwind")#</dia:string>
+        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -1690,7 +1690,7 @@ It's objective is to test Dogen integration with ODB.
       </dia:attribute>
       <dia:attribute name="comment">
         <dia:string>##DOGEN odb_is_value=true
-#DOGEN odb_pragma=schema("northwind")#</dia:string>
+#DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -1847,7 +1847,7 @@ It's objective is to test Dogen integration with ODB.
         <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("northwind")#</dia:string>
+        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -2284,7 +2284,7 @@ It's objective is to test Dogen integration with ODB.
       </dia:attribute>
       <dia:attribute name="comment">
         <dia:string>##DOGEN yarn.primitive.underlying_element=int
-#DOGEN odb_pragma=schema("northwind")#</dia:string>
+#DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -2395,7 +2395,7 @@ It's objective is to test Dogen integration with ODB.
       </dia:attribute>
       <dia:attribute name="comment">
         <dia:string>##DOGEN yarn.primitive.underlying_element=int
-#DOGEN odb_pragma=schema("northwind")#</dia:string>
+#DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -2505,7 +2505,7 @@ It's objective is to test Dogen integration with ODB.
         <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("Mnorthwind")#</dia:string>
+        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -2710,7 +2710,7 @@ It's objective is to test Dogen integration with ODB.
         <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("northwind")#</dia:string>
+        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -3173,7 +3173,7 @@ It's objective is to test Dogen integration with ODB.
           </dia:attribute>
           <dia:attribute name="comment">
             <dia:string>##DOGEN odb_pragma=null
-#DOGEN odb_pragma=column("reports_to")#</dia:string>
+#DOGEN odb_pragma=column("REPORTS_TO")#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -3238,7 +3238,7 @@ It's objective is to test Dogen integration with ODB.
         <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("northwind")#</dia:string>
+        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -3374,7 +3374,7 @@ It's objective is to test Dogen integration with ODB.
       </dia:attribute>
       <dia:attribute name="comment">
         <dia:string>##DOGEN yarn.primitive.underlying_element=std::string
-#DOGEN odb_pragma=schema("northwind")#</dia:string>
+#DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -3485,7 +3485,7 @@ It's objective is to test Dogen integration with ODB.
       </dia:attribute>
       <dia:attribute name="comment">
         <dia:string>##DOGEN odb_is_value=true
-#DOGEN odb_pragma=schema("northwind")#</dia:string>
+#DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -3642,7 +3642,7 @@ It's objective is to test Dogen integration with ODB.
         <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("northwind")#</dia:string>
+        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -3825,7 +3825,7 @@ It's objective is to test Dogen integration with ODB.
       </dia:attribute>
       <dia:attribute name="comment">
         <dia:string>##DOGEN yarn.primitive.underlying_element=int
-#DOGEN odb_pragma=schema("northwind")#</dia:string>
+#DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -3935,7 +3935,7 @@ It's objective is to test Dogen integration with ODB.
         <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("northwind")#</dia:string>
+        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -4117,7 +4117,7 @@ It's objective is to test Dogen integration with ODB.
       </dia:attribute>
       <dia:attribute name="comment">
         <dia:string>##DOGEN yarn.primitive.underlying_element=int
-#DOGEN odb_pragma=schema("northwind")
+#DOGEN odb_pragma=schema("NORTHWIND")
 #</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
@@ -4228,7 +4228,7 @@ It's objective is to test Dogen integration with ODB.
         <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("northwind")#</dia:string>
+        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -4594,7 +4594,7 @@ It's objective is to test Dogen integration with ODB.
       </dia:attribute>
       <dia:attribute name="comment">
         <dia:string>##DOGEN odb_is_value=true
-#DOGEN odb_pragma=schema("northwind")#</dia:string>
+#DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -4751,7 +4751,7 @@ It's objective is to test Dogen integration with ODB.
         <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("northwind")#</dia:string>
+        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -4910,7 +4910,7 @@ It's objective is to test Dogen integration with ODB.
       </dia:attribute>
       <dia:attribute name="comment">
         <dia:string>##DOGEN yarn.primitive.underlying_element=std::string
-#DOGEN odb_pragma=schema("northwind")
+#DOGEN odb_pragma=schema("NORTHWIND")
 #</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
@@ -6725,7 +6725,7 @@ It's objective is to test Dogen integration with ODB.
         <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("northwind")#</dia:string>
+        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>

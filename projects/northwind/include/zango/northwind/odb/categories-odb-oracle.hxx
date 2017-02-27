@@ -124,17 +124,17 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::categories, id_oracle, A >::category_name_type_
   query_columns< ::zango::northwind::categories, id_oracle, A >::
-  category_name (A::table_name, "\"category_name\"", 0, 512);
+  category_name (A::table_name, "\"CATEGORY_NAME\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::categories, id_oracle, A >::description_type_
   query_columns< ::zango::northwind::categories, id_oracle, A >::
-  description (A::table_name, "\"description\"", 0, 512);
+  description (A::table_name, "\"DESCRIPTION\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::categories, id_oracle, A >::picutre_type_
   query_columns< ::zango::northwind::categories, id_oracle, A >::
-  picutre (A::table_name, "\"picutre\"", 0);
+  picutre (A::table_name, "\"PICUTRE\"", 0);
 
   template <typename A>
   struct pointer_query_columns< ::zango::northwind::categories, id_oracle, A >:

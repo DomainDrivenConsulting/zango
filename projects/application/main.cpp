@@ -52,15 +52,6 @@ int main(int argc, char *argv[]) {
 
     {
         odb::oracle::transaction t(db->begin());
-
-        typedef odb::oracle::query<zango::northwind::customers> query;
-        typedef odb::result<zango::northwind::customers> result;
-        try {
-            result r(db->query<zango::northwind::customers>());
-        } catch(const std::exception& e) {
-            std::cout << e.what() << std::endl;
-        }
-
         odb::schema_catalog::create_schema(*db);
         t.commit();
     }

@@ -34,7 +34,7 @@ namespace northwind {
 
 #ifdef ODB_COMPILER
 
-#pragma db value(customer_customer_demo_key) schema("northwind")
+#pragma db value(customer_customer_demo_key) schema("NORTHWIND")
 
 #pragma db member(customer_customer_demo_key::customer_id_) column("")
 #pragma db member(customer_customer_demo_key::customer_type_id_) column("")

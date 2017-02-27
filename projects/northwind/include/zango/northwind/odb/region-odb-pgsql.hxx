@@ -100,7 +100,7 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::region, id_pgsql, A >::region_description_type_
   query_columns< ::zango::northwind::region, id_pgsql, A >::
-  region_description (A::table_name, "\"region_description\"", 0);
+  region_description (A::table_name, "\"REGION_DESCRIPTION\"", 0);
 
   template <typename A>
   struct pointer_query_columns< ::zango::northwind::region, id_pgsql, A >:

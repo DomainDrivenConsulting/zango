@@ -28,19 +28,19 @@ namespace odb
   //
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_pgsql >::
-  persist_statement_name[] = "persist_zango_northwind_customer_customer_demo";
+  persist_statement_name[] = "PERSIST_ZANGO_NORTHWIND_CUSTOMER_CUSTOMER_DEMO";
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_pgsql >::
-  find_statement_name[] = "find_zango_northwind_customer_customer_demo";
+  find_statement_name[] = "FIND_ZANGO_NORTHWIND_CUSTOMER_CUSTOMER_DEMO";
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_pgsql >::
-  erase_statement_name[] = "erase_zango_northwind_customer_customer_demo";
+  erase_statement_name[] = "ERASE_ZANGO_NORTHWIND_CUSTOMER_CUSTOMER_DEMO";
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_pgsql >::
-  query_statement_name[] = "query_zango_northwind_customer_customer_demo";
+  query_statement_name[] = "QUERY_ZANGO_NORTHWIND_CUSTOMER_CUSTOMER_DEMO";
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_pgsql >::
-  erase_query_statement_name[] = "erase_query_zango_northwind_customer_customer_demo";
+  erase_query_statement_name[] = "ERASE_QUERY_ZANGO_NORTHWIND_CUSTOMER_CUSTOMER_DEMO";
 
   const unsigned int access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_pgsql >::
   persist_statement_types[] =
@@ -206,7 +206,7 @@ namespace odb
   }
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_pgsql >::persist_statement[] =
-  "INSERT INTO \"northwind\".\"customer_customer_demo\" "
+  "INSERT INTO \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\" "
   "(\"customer_id\", "
   "\"customer_type_id\") "
   "VALUES "
@@ -214,26 +214,26 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_pgsql >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"customer_customer_demo\".\"customer_id\", "
-  "\"northwind\".\"customer_customer_demo\".\"customer_type_id\" "
-  "FROM \"northwind\".\"customer_customer_demo\" "
-  "WHERE \"northwind\".\"customer_customer_demo\".\"customer_id\"=$1 AND \"northwind\".\"customer_customer_demo\".\"customer_type_id\"=$2";
+  "\"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\".\"customer_id\", "
+  "\"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\".\"customer_type_id\" "
+  "FROM \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\" "
+  "WHERE \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\".\"customer_id\"=$1 AND \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\".\"customer_type_id\"=$2";
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_pgsql >::erase_statement[] =
-  "DELETE FROM \"northwind\".\"customer_customer_demo\" "
+  "DELETE FROM \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\" "
   "WHERE \"customer_id\"=$1 AND \"customer_type_id\"=$2";
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_pgsql >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"customer_customer_demo\".\"customer_id\", "
-  "\"northwind\".\"customer_customer_demo\".\"customer_type_id\" "
-  "FROM \"northwind\".\"customer_customer_demo\"";
+  "\"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\".\"customer_id\", "
+  "\"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\".\"customer_type_id\" "
+  "FROM \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\"";
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_pgsql >::erase_query_statement[] =
-  "DELETE FROM \"northwind\".\"customer_customer_demo\"";
+  "DELETE FROM \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\"";
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_pgsql >::table_name[] =
-  "\"northwind\".\"customer_customer_demo\"";
+  "\"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\"";
 
   void access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_pgsql >::
   persist (database& db, const object_type& obj)
@@ -589,7 +589,7 @@ namespace odb
         }
         case 2:
         {
-          db.execute ("DROP TABLE IF EXISTS \"northwind\".\"customer_customer_demo\" CASCADE");
+          db.execute ("DROP TABLE IF EXISTS \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\" CASCADE");
           return false;
         }
       }
@@ -600,7 +600,7 @@ namespace odb
       {
         case 1:
         {
-          db.execute ("CREATE TABLE \"northwind\".\"customer_customer_demo\" (\n"
+          db.execute ("CREATE TABLE \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\" (\n"
                       "  \"customer_id\" INTEGER NOT NULL,\n"
                       "  \"customer_type_id\" TEXT NOT NULL,\n"
                       "  PRIMARY KEY (\"customer_id\",\n"

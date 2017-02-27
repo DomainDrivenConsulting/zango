@@ -220,57 +220,57 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::supplier, id_pgsql, A >::company_name_type_
   query_columns< ::zango::northwind::supplier, id_pgsql, A >::
-  company_name (A::table_name, "\"company_name\"", 0);
+  company_name (A::table_name, "\"COMPANY_NAME\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::supplier, id_pgsql, A >::contact_name_type_
   query_columns< ::zango::northwind::supplier, id_pgsql, A >::
-  contact_name (A::table_name, "\"contact_name\"", 0);
+  contact_name (A::table_name, "\"CONTACT_NAME\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::supplier, id_pgsql, A >::contact_title_type_
   query_columns< ::zango::northwind::supplier, id_pgsql, A >::
-  contact_title (A::table_name, "\"contact_title\"", 0);
+  contact_title (A::table_name, "\"CONTACT_TITLE\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::supplier, id_pgsql, A >::address_type_
   query_columns< ::zango::northwind::supplier, id_pgsql, A >::
-  address (A::table_name, "\"address\"", 0);
+  address (A::table_name, "\"ADDRESS\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::supplier, id_pgsql, A >::city_type_
   query_columns< ::zango::northwind::supplier, id_pgsql, A >::
-  city (A::table_name, "\"city\"", 0);
+  city (A::table_name, "\"CITY\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::supplier, id_pgsql, A >::region_type_
   query_columns< ::zango::northwind::supplier, id_pgsql, A >::
-  region (A::table_name, "\"region\"", 0);
+  region (A::table_name, "\"REGION\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::supplier, id_pgsql, A >::postal_code_type_
   query_columns< ::zango::northwind::supplier, id_pgsql, A >::
-  postal_code (A::table_name, "\"postal_code\"", 0);
+  postal_code (A::table_name, "\"POSTAL_CODE\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::supplier, id_pgsql, A >::country_type_
   query_columns< ::zango::northwind::supplier, id_pgsql, A >::
-  country (A::table_name, "\"country\"", 0);
+  country (A::table_name, "\"COUNTRY\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::supplier, id_pgsql, A >::phone_type_
   query_columns< ::zango::northwind::supplier, id_pgsql, A >::
-  phone (A::table_name, "\"phone\"", 0);
+  phone (A::table_name, "\"PHONE\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::supplier, id_pgsql, A >::fax_type_
   query_columns< ::zango::northwind::supplier, id_pgsql, A >::
-  fax (A::table_name, "\"fax\"", 0);
+  fax (A::table_name, "\"FAX\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::supplier, id_pgsql, A >::home_page_type_
   query_columns< ::zango::northwind::supplier, id_pgsql, A >::
-  home_page (A::table_name, "\"home_page\"", 0);
+  home_page (A::table_name, "\"HOME_PAGE\"", 0);
 
   template <typename A>
   struct pointer_query_columns< ::zango::northwind::supplier, id_pgsql, A >:

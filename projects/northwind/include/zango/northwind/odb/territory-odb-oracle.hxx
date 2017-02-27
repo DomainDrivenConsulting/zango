@@ -124,7 +124,7 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::territory, id_oracle, A >::territory_description_type_
   query_columns< ::zango::northwind::territory, id_oracle, A >::
-  territory_description (A::table_name, "\"territory_description\"", 0, 512);
+  territory_description (A::table_name, "\"TERRITORY_DESCRIPTION\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::territory, id_oracle, A >::region_id_class_::value_type_

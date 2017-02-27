@@ -28,22 +28,22 @@ namespace odb
   //
 
   const char access::object_traits_impl< ::zango::northwind::products, id_pgsql >::
-  persist_statement_name[] = "persist_zango_northwind_products";
+  persist_statement_name[] = "PERSIST_ZANGO_NORTHWIND_PRODUCTS";
 
   const char access::object_traits_impl< ::zango::northwind::products, id_pgsql >::
-  find_statement_name[] = "find_zango_northwind_products";
+  find_statement_name[] = "FIND_ZANGO_NORTHWIND_PRODUCTS";
 
   const char access::object_traits_impl< ::zango::northwind::products, id_pgsql >::
-  update_statement_name[] = "update_zango_northwind_products";
+  update_statement_name[] = "UPDATE_ZANGO_NORTHWIND_PRODUCTS";
 
   const char access::object_traits_impl< ::zango::northwind::products, id_pgsql >::
-  erase_statement_name[] = "erase_zango_northwind_products";
+  erase_statement_name[] = "ERASE_ZANGO_NORTHWIND_PRODUCTS";
 
   const char access::object_traits_impl< ::zango::northwind::products, id_pgsql >::
-  query_statement_name[] = "query_zango_northwind_products";
+  query_statement_name[] = "QUERY_ZANGO_NORTHWIND_PRODUCTS";
 
   const char access::object_traits_impl< ::zango::northwind::products, id_pgsql >::
-  erase_query_statement_name[] = "erase_query_zango_northwind_products";
+  erase_query_statement_name[] = "ERASE_QUERY_ZANGO_NORTHWIND_PRODUCTS";
 
   const unsigned int access::object_traits_impl< ::zango::northwind::products, id_pgsql >::
   persist_statement_types[] =
@@ -603,72 +603,72 @@ namespace odb
   }
 
   const char access::object_traits_impl< ::zango::northwind::products, id_pgsql >::persist_statement[] =
-  "INSERT INTO \"northwind\".\"products\" "
+  "INSERT INTO \"NORTHWIND\".\"PRODUCTS\" "
   "(\"product_id\", "
-  "\"product_name\", "
+  "\"PRODUCT_NAME\", "
   "\"supplier_id\", "
   "\"category_id\", "
-  "\"quantity_per_unit\", "
-  "\"unit_price\", "
-  "\"units_in_stock\", "
-  "\"units_in_order\", "
-  "\"reorder_level\", "
-  "\"discontinued\") "
+  "\"QUANTITY_PER_UNIT\", "
+  "\"UNIT_PRICE\", "
+  "\"UNITS_IN_STOCK\", "
+  "\"UNITS_IN_ORDER\", "
+  "\"REORDER_LEVEL\", "
+  "\"DISCONTINUED\") "
   "VALUES "
   "($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)";
 
   const char access::object_traits_impl< ::zango::northwind::products, id_pgsql >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"products\".\"product_id\", "
-  "\"northwind\".\"products\".\"product_name\", "
-  "\"northwind\".\"products\".\"supplier_id\", "
-  "\"northwind\".\"products\".\"category_id\", "
-  "\"northwind\".\"products\".\"quantity_per_unit\", "
-  "\"northwind\".\"products\".\"unit_price\", "
-  "\"northwind\".\"products\".\"units_in_stock\", "
-  "\"northwind\".\"products\".\"units_in_order\", "
-  "\"northwind\".\"products\".\"reorder_level\", "
-  "\"northwind\".\"products\".\"discontinued\" "
-  "FROM \"northwind\".\"products\" "
-  "WHERE \"northwind\".\"products\".\"product_id\"=$1";
+  "\"NORTHWIND\".\"PRODUCTS\".\"product_id\", "
+  "\"NORTHWIND\".\"PRODUCTS\".\"PRODUCT_NAME\", "
+  "\"NORTHWIND\".\"PRODUCTS\".\"supplier_id\", "
+  "\"NORTHWIND\".\"PRODUCTS\".\"category_id\", "
+  "\"NORTHWIND\".\"PRODUCTS\".\"QUANTITY_PER_UNIT\", "
+  "\"NORTHWIND\".\"PRODUCTS\".\"UNIT_PRICE\", "
+  "\"NORTHWIND\".\"PRODUCTS\".\"UNITS_IN_STOCK\", "
+  "\"NORTHWIND\".\"PRODUCTS\".\"UNITS_IN_ORDER\", "
+  "\"NORTHWIND\".\"PRODUCTS\".\"REORDER_LEVEL\", "
+  "\"NORTHWIND\".\"PRODUCTS\".\"DISCONTINUED\" "
+  "FROM \"NORTHWIND\".\"PRODUCTS\" "
+  "WHERE \"NORTHWIND\".\"PRODUCTS\".\"product_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::products, id_pgsql >::update_statement[] =
-  "UPDATE \"northwind\".\"products\" "
+  "UPDATE \"NORTHWIND\".\"PRODUCTS\" "
   "SET "
-  "\"product_name\"=$1, "
+  "\"PRODUCT_NAME\"=$1, "
   "\"supplier_id\"=$2, "
   "\"category_id\"=$3, "
-  "\"quantity_per_unit\"=$4, "
-  "\"unit_price\"=$5, "
-  "\"units_in_stock\"=$6, "
-  "\"units_in_order\"=$7, "
-  "\"reorder_level\"=$8, "
-  "\"discontinued\"=$9 "
+  "\"QUANTITY_PER_UNIT\"=$4, "
+  "\"UNIT_PRICE\"=$5, "
+  "\"UNITS_IN_STOCK\"=$6, "
+  "\"UNITS_IN_ORDER\"=$7, "
+  "\"REORDER_LEVEL\"=$8, "
+  "\"DISCONTINUED\"=$9 "
   "WHERE \"product_id\"=$10";
 
   const char access::object_traits_impl< ::zango::northwind::products, id_pgsql >::erase_statement[] =
-  "DELETE FROM \"northwind\".\"products\" "
+  "DELETE FROM \"NORTHWIND\".\"PRODUCTS\" "
   "WHERE \"product_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::products, id_pgsql >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"products\".\"product_id\", "
-  "\"northwind\".\"products\".\"product_name\", "
-  "\"northwind\".\"products\".\"supplier_id\", "
-  "\"northwind\".\"products\".\"category_id\", "
-  "\"northwind\".\"products\".\"quantity_per_unit\", "
-  "\"northwind\".\"products\".\"unit_price\", "
-  "\"northwind\".\"products\".\"units_in_stock\", "
-  "\"northwind\".\"products\".\"units_in_order\", "
-  "\"northwind\".\"products\".\"reorder_level\", "
-  "\"northwind\".\"products\".\"discontinued\" "
-  "FROM \"northwind\".\"products\"";
+  "\"NORTHWIND\".\"PRODUCTS\".\"product_id\", "
+  "\"NORTHWIND\".\"PRODUCTS\".\"PRODUCT_NAME\", "
+  "\"NORTHWIND\".\"PRODUCTS\".\"supplier_id\", "
+  "\"NORTHWIND\".\"PRODUCTS\".\"category_id\", "
+  "\"NORTHWIND\".\"PRODUCTS\".\"QUANTITY_PER_UNIT\", "
+  "\"NORTHWIND\".\"PRODUCTS\".\"UNIT_PRICE\", "
+  "\"NORTHWIND\".\"PRODUCTS\".\"UNITS_IN_STOCK\", "
+  "\"NORTHWIND\".\"PRODUCTS\".\"UNITS_IN_ORDER\", "
+  "\"NORTHWIND\".\"PRODUCTS\".\"REORDER_LEVEL\", "
+  "\"NORTHWIND\".\"PRODUCTS\".\"DISCONTINUED\" "
+  "FROM \"NORTHWIND\".\"PRODUCTS\"";
 
   const char access::object_traits_impl< ::zango::northwind::products, id_pgsql >::erase_query_statement[] =
-  "DELETE FROM \"northwind\".\"products\"";
+  "DELETE FROM \"NORTHWIND\".\"PRODUCTS\"";
 
   const char access::object_traits_impl< ::zango::northwind::products, id_pgsql >::table_name[] =
-  "\"northwind\".\"products\"";
+  "\"NORTHWIND\".\"PRODUCTS\"";
 
   void access::object_traits_impl< ::zango::northwind::products, id_pgsql >::
   persist (database& db, const object_type& obj)
@@ -1071,7 +1071,7 @@ namespace odb
         }
         case 2:
         {
-          db.execute ("DROP TABLE IF EXISTS \"northwind\".\"products\" CASCADE");
+          db.execute ("DROP TABLE IF EXISTS \"NORTHWIND\".\"PRODUCTS\" CASCADE");
           return false;
         }
       }
@@ -1082,17 +1082,17 @@ namespace odb
       {
         case 1:
         {
-          db.execute ("CREATE TABLE \"northwind\".\"products\" (\n"
+          db.execute ("CREATE TABLE \"NORTHWIND\".\"PRODUCTS\" (\n"
                       "  \"product_id\" INTEGER NOT NULL PRIMARY KEY,\n"
-                      "  \"product_name\" TEXT NOT NULL,\n"
+                      "  \"PRODUCT_NAME\" TEXT NOT NULL,\n"
                       "  \"supplier_id\" INTEGER NULL,\n"
                       "  \"category_id\" INTEGER NULL,\n"
-                      "  \"quantity_per_unit\" TEXT NOT NULL,\n"
-                      "  \"unit_price\" DOUBLE PRECISION NOT NULL,\n"
-                      "  \"units_in_stock\" INTEGER NOT NULL,\n"
-                      "  \"units_in_order\" INTEGER NOT NULL,\n"
-                      "  \"reorder_level\" INTEGER NOT NULL,\n"
-                      "  \"discontinued\" BOOLEAN NOT NULL)");
+                      "  \"QUANTITY_PER_UNIT\" TEXT NOT NULL,\n"
+                      "  \"UNIT_PRICE\" DOUBLE PRECISION NOT NULL,\n"
+                      "  \"UNITS_IN_STOCK\" INTEGER NOT NULL,\n"
+                      "  \"UNITS_IN_ORDER\" INTEGER NOT NULL,\n"
+                      "  \"REORDER_LEVEL\" INTEGER NOT NULL,\n"
+                      "  \"DISCONTINUED\" BOOLEAN NOT NULL)");
           return false;
         }
       }

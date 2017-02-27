@@ -286,57 +286,57 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::orders, id_oracle, A >::order_date_type_
   query_columns< ::zango::northwind::orders, id_oracle, A >::
-  order_date (A::table_name, "\"order_date\"", 0);
+  order_date (A::table_name, "\"ORDER_DATE\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::orders, id_oracle, A >::required_date_type_
   query_columns< ::zango::northwind::orders, id_oracle, A >::
-  required_date (A::table_name, "\"required_date\"", 0);
+  required_date (A::table_name, "\"REQUIRED_DATE\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::orders, id_oracle, A >::shipped_date_type_
   query_columns< ::zango::northwind::orders, id_oracle, A >::
-  shipped_date (A::table_name, "\"shipped_date\"", 0);
+  shipped_date (A::table_name, "\"SHIPPED_DATE\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::orders, id_oracle, A >::ship_via_type_
   query_columns< ::zango::northwind::orders, id_oracle, A >::
-  ship_via (A::table_name, "\"ship_via\"", 0, 10);
+  ship_via (A::table_name, "\"SHIP_VIA\"", 0, 10);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::orders, id_oracle, A >::freight_type_
   query_columns< ::zango::northwind::orders, id_oracle, A >::
-  freight (A::table_name, "\"freight\"", 0);
+  freight (A::table_name, "\"FREIGHT\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::orders, id_oracle, A >::ship_name_type_
   query_columns< ::zango::northwind::orders, id_oracle, A >::
-  ship_name (A::table_name, "\"ship_name\"", 0, 512);
+  ship_name (A::table_name, "\"SHIP_NAME\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::orders, id_oracle, A >::ship_address_type_
   query_columns< ::zango::northwind::orders, id_oracle, A >::
-  ship_address (A::table_name, "\"ship_address\"", 0, 512);
+  ship_address (A::table_name, "\"SHIP_ADDRESS\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::orders, id_oracle, A >::ship_city_type_
   query_columns< ::zango::northwind::orders, id_oracle, A >::
-  ship_city (A::table_name, "\"ship_city\"", 0, 512);
+  ship_city (A::table_name, "\"SHIP_CITY\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::orders, id_oracle, A >::ship_region_type_
   query_columns< ::zango::northwind::orders, id_oracle, A >::
-  ship_region (A::table_name, "\"ship_region\"", 0, 512);
+  ship_region (A::table_name, "\"SHIP_REGION\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::orders, id_oracle, A >::ship_postal_code_type_
   query_columns< ::zango::northwind::orders, id_oracle, A >::
-  ship_postal_code (A::table_name, "\"ship_postal_code\"", 0, 512);
+  ship_postal_code (A::table_name, "\"SHIP_POSTAL_CODE\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::orders, id_oracle, A >::ship_country_type_
   query_columns< ::zango::northwind::orders, id_oracle, A >::
-  ship_country (A::table_name, "\"ship_country\"", 0, 512);
+  ship_country (A::table_name, "\"SHIP_COUNTRY\"", 0, 512);
 
   template <typename A>
   struct pointer_query_columns< ::zango::northwind::orders, id_oracle, A >:

@@ -28,22 +28,22 @@ namespace odb
   //
 
   const char access::object_traits_impl< ::zango::northwind::customer_demographics, id_pgsql >::
-  persist_statement_name[] = "persist_zango_northwind_customer_demographics";
+  persist_statement_name[] = "PERSIST_ZANGO_NORTHWIND_CUSTOMER_DEMOGRAPHICS";
 
   const char access::object_traits_impl< ::zango::northwind::customer_demographics, id_pgsql >::
-  find_statement_name[] = "find_zango_northwind_customer_demographics";
+  find_statement_name[] = "FIND_ZANGO_NORTHWIND_CUSTOMER_DEMOGRAPHICS";
 
   const char access::object_traits_impl< ::zango::northwind::customer_demographics, id_pgsql >::
-  update_statement_name[] = "update_zango_northwind_customer_demographics";
+  update_statement_name[] = "UPDATE_ZANGO_NORTHWIND_CUSTOMER_DEMOGRAPHICS";
 
   const char access::object_traits_impl< ::zango::northwind::customer_demographics, id_pgsql >::
-  erase_statement_name[] = "erase_zango_northwind_customer_demographics";
+  erase_statement_name[] = "ERASE_ZANGO_NORTHWIND_CUSTOMER_DEMOGRAPHICS";
 
   const char access::object_traits_impl< ::zango::northwind::customer_demographics, id_pgsql >::
-  query_statement_name[] = "query_zango_northwind_customer_demographics";
+  query_statement_name[] = "QUERY_ZANGO_NORTHWIND_CUSTOMER_DEMOGRAPHICS";
 
   const char access::object_traits_impl< ::zango::northwind::customer_demographics, id_pgsql >::
-  erase_query_statement_name[] = "erase_query_zango_northwind_customer_demographics";
+  erase_query_statement_name[] = "ERASE_QUERY_ZANGO_NORTHWIND_CUSTOMER_DEMOGRAPHICS";
 
   const unsigned int access::object_traits_impl< ::zango::northwind::customer_demographics, id_pgsql >::
   persist_statement_types[] =
@@ -268,40 +268,40 @@ namespace odb
   }
 
   const char access::object_traits_impl< ::zango::northwind::customer_demographics, id_pgsql >::persist_statement[] =
-  "INSERT INTO \"northwind\".\"customer_demographics\" "
+  "INSERT INTO \"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\" "
   "(\"customer_type_id\", "
-  "\"customer_description\") "
+  "\"CUSTOMER_DESCRIPTION\") "
   "VALUES "
   "($1, $2)";
 
   const char access::object_traits_impl< ::zango::northwind::customer_demographics, id_pgsql >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"customer_demographics\".\"customer_type_id\", "
-  "\"northwind\".\"customer_demographics\".\"customer_description\" "
-  "FROM \"northwind\".\"customer_demographics\" "
-  "WHERE \"northwind\".\"customer_demographics\".\"customer_type_id\"=$1";
+  "\"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\".\"customer_type_id\", "
+  "\"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\".\"CUSTOMER_DESCRIPTION\" "
+  "FROM \"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\" "
+  "WHERE \"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\".\"customer_type_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::customer_demographics, id_pgsql >::update_statement[] =
-  "UPDATE \"northwind\".\"customer_demographics\" "
+  "UPDATE \"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\" "
   "SET "
-  "\"customer_description\"=$1 "
+  "\"CUSTOMER_DESCRIPTION\"=$1 "
   "WHERE \"customer_type_id\"=$2";
 
   const char access::object_traits_impl< ::zango::northwind::customer_demographics, id_pgsql >::erase_statement[] =
-  "DELETE FROM \"northwind\".\"customer_demographics\" "
+  "DELETE FROM \"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\" "
   "WHERE \"customer_type_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::customer_demographics, id_pgsql >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"customer_demographics\".\"customer_type_id\", "
-  "\"northwind\".\"customer_demographics\".\"customer_description\" "
-  "FROM \"northwind\".\"customer_demographics\"";
+  "\"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\".\"customer_type_id\", "
+  "\"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\".\"CUSTOMER_DESCRIPTION\" "
+  "FROM \"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\"";
 
   const char access::object_traits_impl< ::zango::northwind::customer_demographics, id_pgsql >::erase_query_statement[] =
-  "DELETE FROM \"northwind\".\"customer_demographics\"";
+  "DELETE FROM \"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\"";
 
   const char access::object_traits_impl< ::zango::northwind::customer_demographics, id_pgsql >::table_name[] =
-  "\"northwind\".\"customer_demographics\"";
+  "\"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\"";
 
   void access::object_traits_impl< ::zango::northwind::customer_demographics, id_pgsql >::
   persist (database& db, const object_type& obj)
@@ -704,7 +704,7 @@ namespace odb
         }
         case 2:
         {
-          db.execute ("DROP TABLE IF EXISTS \"northwind\".\"customer_demographics\" CASCADE");
+          db.execute ("DROP TABLE IF EXISTS \"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\" CASCADE");
           return false;
         }
       }
@@ -715,9 +715,9 @@ namespace odb
       {
         case 1:
         {
-          db.execute ("CREATE TABLE \"northwind\".\"customer_demographics\" (\n"
+          db.execute ("CREATE TABLE \"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\" (\n"
                       "  \"customer_type_id\" TEXT NOT NULL PRIMARY KEY,\n"
-                      "  \"customer_description\" TEXT NULL)");
+                      "  \"CUSTOMER_DESCRIPTION\" TEXT NULL)");
           return false;
         }
       }

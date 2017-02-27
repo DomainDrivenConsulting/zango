@@ -100,7 +100,7 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::customer_demographics, id_oracle, A >::customer_description_type_
   query_columns< ::zango::northwind::customer_demographics, id_oracle, A >::
-  customer_description (A::table_name, "\"customer_description\"", 0, 512);
+  customer_description (A::table_name, "\"CUSTOMER_DESCRIPTION\"", 0, 512);
 
   template <typename A>
   struct pointer_query_columns< ::zango::northwind::customer_demographics, id_oracle, A >:

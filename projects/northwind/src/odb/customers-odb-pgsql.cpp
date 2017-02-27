@@ -28,22 +28,22 @@ namespace odb
   //
 
   const char access::object_traits_impl< ::zango::northwind::customers, id_pgsql >::
-  persist_statement_name[] = "persist_zango_northwind_customers";
+  persist_statement_name[] = "PERSIST_ZANGO_NORTHWIND_CUSTOMERS";
 
   const char access::object_traits_impl< ::zango::northwind::customers, id_pgsql >::
-  find_statement_name[] = "find_zango_northwind_customers";
+  find_statement_name[] = "FIND_ZANGO_NORTHWIND_CUSTOMERS";
 
   const char access::object_traits_impl< ::zango::northwind::customers, id_pgsql >::
-  update_statement_name[] = "update_zango_northwind_customers";
+  update_statement_name[] = "UPDATE_ZANGO_NORTHWIND_CUSTOMERS";
 
   const char access::object_traits_impl< ::zango::northwind::customers, id_pgsql >::
-  erase_statement_name[] = "erase_zango_northwind_customers";
+  erase_statement_name[] = "ERASE_ZANGO_NORTHWIND_CUSTOMERS";
 
   const char access::object_traits_impl< ::zango::northwind::customers, id_pgsql >::
-  query_statement_name[] = "query_zango_northwind_customers";
+  query_statement_name[] = "QUERY_ZANGO_NORTHWIND_CUSTOMERS";
 
   const char access::object_traits_impl< ::zango::northwind::customers, id_pgsql >::
-  erase_query_statement_name[] = "erase_query_zango_northwind_customers";
+  erase_query_statement_name[] = "ERASE_QUERY_ZANGO_NORTHWIND_CUSTOMERS";
 
   const unsigned int access::object_traits_impl< ::zango::northwind::customers, id_pgsql >::
   persist_statement_types[] =
@@ -757,76 +757,76 @@ namespace odb
   }
 
   const char access::object_traits_impl< ::zango::northwind::customers, id_pgsql >::persist_statement[] =
-  "INSERT INTO \"northwind\".\"customers\" "
+  "INSERT INTO \"NORTHWIND\".\"CUSTOMERS\" "
   "(\"customer_id\", "
-  "\"company_name\", "
-  "\"contact_name\", "
-  "\"contact_title\", "
-  "\"address\", "
-  "\"city\", "
-  "\"region\", "
-  "\"postal_code\", "
-  "\"country\", "
-  "\"phone\", "
-  "\"fax\") "
+  "\"COMPANY_NAME\", "
+  "\"CONTACT_NAME\", "
+  "\"CONTACT_TITLE\", "
+  "\"ADDRESS\", "
+  "\"CITY\", "
+  "\"REGION\", "
+  "\"POSTAL_CODE\", "
+  "\"COUNTRY\", "
+  "\"PHONE\", "
+  "\"FAX\") "
   "VALUES "
   "($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)";
 
   const char access::object_traits_impl< ::zango::northwind::customers, id_pgsql >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"customers\".\"customer_id\", "
-  "\"northwind\".\"customers\".\"company_name\", "
-  "\"northwind\".\"customers\".\"contact_name\", "
-  "\"northwind\".\"customers\".\"contact_title\", "
-  "\"northwind\".\"customers\".\"address\", "
-  "\"northwind\".\"customers\".\"city\", "
-  "\"northwind\".\"customers\".\"region\", "
-  "\"northwind\".\"customers\".\"postal_code\", "
-  "\"northwind\".\"customers\".\"country\", "
-  "\"northwind\".\"customers\".\"phone\", "
-  "\"northwind\".\"customers\".\"fax\" "
-  "FROM \"northwind\".\"customers\" "
-  "WHERE \"northwind\".\"customers\".\"customer_id\"=$1";
+  "\"NORTHWIND\".\"CUSTOMERS\".\"customer_id\", "
+  "\"NORTHWIND\".\"CUSTOMERS\".\"COMPANY_NAME\", "
+  "\"NORTHWIND\".\"CUSTOMERS\".\"CONTACT_NAME\", "
+  "\"NORTHWIND\".\"CUSTOMERS\".\"CONTACT_TITLE\", "
+  "\"NORTHWIND\".\"CUSTOMERS\".\"ADDRESS\", "
+  "\"NORTHWIND\".\"CUSTOMERS\".\"CITY\", "
+  "\"NORTHWIND\".\"CUSTOMERS\".\"REGION\", "
+  "\"NORTHWIND\".\"CUSTOMERS\".\"POSTAL_CODE\", "
+  "\"NORTHWIND\".\"CUSTOMERS\".\"COUNTRY\", "
+  "\"NORTHWIND\".\"CUSTOMERS\".\"PHONE\", "
+  "\"NORTHWIND\".\"CUSTOMERS\".\"FAX\" "
+  "FROM \"NORTHWIND\".\"CUSTOMERS\" "
+  "WHERE \"NORTHWIND\".\"CUSTOMERS\".\"customer_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::customers, id_pgsql >::update_statement[] =
-  "UPDATE \"northwind\".\"customers\" "
+  "UPDATE \"NORTHWIND\".\"CUSTOMERS\" "
   "SET "
-  "\"company_name\"=$1, "
-  "\"contact_name\"=$2, "
-  "\"contact_title\"=$3, "
-  "\"address\"=$4, "
-  "\"city\"=$5, "
-  "\"region\"=$6, "
-  "\"postal_code\"=$7, "
-  "\"country\"=$8, "
-  "\"phone\"=$9, "
-  "\"fax\"=$10 "
+  "\"COMPANY_NAME\"=$1, "
+  "\"CONTACT_NAME\"=$2, "
+  "\"CONTACT_TITLE\"=$3, "
+  "\"ADDRESS\"=$4, "
+  "\"CITY\"=$5, "
+  "\"REGION\"=$6, "
+  "\"POSTAL_CODE\"=$7, "
+  "\"COUNTRY\"=$8, "
+  "\"PHONE\"=$9, "
+  "\"FAX\"=$10 "
   "WHERE \"customer_id\"=$11";
 
   const char access::object_traits_impl< ::zango::northwind::customers, id_pgsql >::erase_statement[] =
-  "DELETE FROM \"northwind\".\"customers\" "
+  "DELETE FROM \"NORTHWIND\".\"CUSTOMERS\" "
   "WHERE \"customer_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::customers, id_pgsql >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"customers\".\"customer_id\", "
-  "\"northwind\".\"customers\".\"company_name\", "
-  "\"northwind\".\"customers\".\"contact_name\", "
-  "\"northwind\".\"customers\".\"contact_title\", "
-  "\"northwind\".\"customers\".\"address\", "
-  "\"northwind\".\"customers\".\"city\", "
-  "\"northwind\".\"customers\".\"region\", "
-  "\"northwind\".\"customers\".\"postal_code\", "
-  "\"northwind\".\"customers\".\"country\", "
-  "\"northwind\".\"customers\".\"phone\", "
-  "\"northwind\".\"customers\".\"fax\" "
-  "FROM \"northwind\".\"customers\"";
+  "\"NORTHWIND\".\"CUSTOMERS\".\"customer_id\", "
+  "\"NORTHWIND\".\"CUSTOMERS\".\"COMPANY_NAME\", "
+  "\"NORTHWIND\".\"CUSTOMERS\".\"CONTACT_NAME\", "
+  "\"NORTHWIND\".\"CUSTOMERS\".\"CONTACT_TITLE\", "
+  "\"NORTHWIND\".\"CUSTOMERS\".\"ADDRESS\", "
+  "\"NORTHWIND\".\"CUSTOMERS\".\"CITY\", "
+  "\"NORTHWIND\".\"CUSTOMERS\".\"REGION\", "
+  "\"NORTHWIND\".\"CUSTOMERS\".\"POSTAL_CODE\", "
+  "\"NORTHWIND\".\"CUSTOMERS\".\"COUNTRY\", "
+  "\"NORTHWIND\".\"CUSTOMERS\".\"PHONE\", "
+  "\"NORTHWIND\".\"CUSTOMERS\".\"FAX\" "
+  "FROM \"NORTHWIND\".\"CUSTOMERS\"";
 
   const char access::object_traits_impl< ::zango::northwind::customers, id_pgsql >::erase_query_statement[] =
-  "DELETE FROM \"northwind\".\"customers\"";
+  "DELETE FROM \"NORTHWIND\".\"CUSTOMERS\"";
 
   const char access::object_traits_impl< ::zango::northwind::customers, id_pgsql >::table_name[] =
-  "\"northwind\".\"customers\"";
+  "\"NORTHWIND\".\"CUSTOMERS\"";
 
   void access::object_traits_impl< ::zango::northwind::customers, id_pgsql >::
   persist (database& db, const object_type& obj)
@@ -1229,7 +1229,7 @@ namespace odb
         }
         case 2:
         {
-          db.execute ("DROP TABLE IF EXISTS \"northwind\".\"customers\" CASCADE");
+          db.execute ("DROP TABLE IF EXISTS \"NORTHWIND\".\"CUSTOMERS\" CASCADE");
           return false;
         }
       }
@@ -1240,18 +1240,18 @@ namespace odb
       {
         case 1:
         {
-          db.execute ("CREATE TABLE \"northwind\".\"customers\" (\n"
+          db.execute ("CREATE TABLE \"NORTHWIND\".\"CUSTOMERS\" (\n"
                       "  \"customer_id\" INTEGER NOT NULL PRIMARY KEY,\n"
-                      "  \"company_name\" TEXT NOT NULL,\n"
-                      "  \"contact_name\" TEXT NULL,\n"
-                      "  \"contact_title\" TEXT NULL,\n"
-                      "  \"address\" TEXT NULL,\n"
-                      "  \"city\" TEXT NULL,\n"
-                      "  \"region\" TEXT NULL,\n"
-                      "  \"postal_code\" TEXT NULL,\n"
-                      "  \"country\" TEXT NULL,\n"
-                      "  \"phone\" TEXT NULL,\n"
-                      "  \"fax\" TEXT NULL)");
+                      "  \"COMPANY_NAME\" TEXT NOT NULL,\n"
+                      "  \"CONTACT_NAME\" TEXT NULL,\n"
+                      "  \"CONTACT_TITLE\" TEXT NULL,\n"
+                      "  \"ADDRESS\" TEXT NULL,\n"
+                      "  \"CITY\" TEXT NULL,\n"
+                      "  \"REGION\" TEXT NULL,\n"
+                      "  \"POSTAL_CODE\" TEXT NULL,\n"
+                      "  \"COUNTRY\" TEXT NULL,\n"
+                      "  \"PHONE\" TEXT NULL,\n"
+                      "  \"FAX\" TEXT NULL)");
           return false;
         }
       }

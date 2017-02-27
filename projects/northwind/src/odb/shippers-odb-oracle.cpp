@@ -238,44 +238,44 @@ namespace odb
   }
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_oracle >::persist_statement[] =
-  "INSERT INTO \"northwind\".\"shippers\" "
+  "INSERT INTO \"NORTHWIND\".\"SHIPPERS\" "
   "(\"shipper_id\", "
-  "\"company_name\", "
-  "\"phone\") "
+  "\"COMPANY_NAME\", "
+  "\"PHONE\") "
   "VALUES "
   "(:1, :2, :3)";
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_oracle >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"shippers\".\"shipper_id\", "
-  "\"northwind\".\"shippers\".\"company_name\", "
-  "\"northwind\".\"shippers\".\"phone\" "
-  "FROM \"northwind\".\"shippers\" "
-  "WHERE \"northwind\".\"shippers\".\"shipper_id\"=:1";
+  "\"NORTHWIND\".\"SHIPPERS\".\"shipper_id\", "
+  "\"NORTHWIND\".\"SHIPPERS\".\"COMPANY_NAME\", "
+  "\"NORTHWIND\".\"SHIPPERS\".\"PHONE\" "
+  "FROM \"NORTHWIND\".\"SHIPPERS\" "
+  "WHERE \"NORTHWIND\".\"SHIPPERS\".\"shipper_id\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_oracle >::update_statement[] =
-  "UPDATE \"northwind\".\"shippers\" "
+  "UPDATE \"NORTHWIND\".\"SHIPPERS\" "
   "SET "
-  "\"company_name\"=:1, "
-  "\"phone\"=:2 "
+  "\"COMPANY_NAME\"=:1, "
+  "\"PHONE\"=:2 "
   "WHERE \"shipper_id\"=:3";
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_oracle >::erase_statement[] =
-  "DELETE FROM \"northwind\".\"shippers\" "
+  "DELETE FROM \"NORTHWIND\".\"SHIPPERS\" "
   "WHERE \"shipper_id\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_oracle >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"shippers\".\"shipper_id\", "
-  "\"northwind\".\"shippers\".\"company_name\", "
-  "\"northwind\".\"shippers\".\"phone\" "
-  "FROM \"northwind\".\"shippers\"";
+  "\"NORTHWIND\".\"SHIPPERS\".\"shipper_id\", "
+  "\"NORTHWIND\".\"SHIPPERS\".\"COMPANY_NAME\", "
+  "\"NORTHWIND\".\"SHIPPERS\".\"PHONE\" "
+  "FROM \"NORTHWIND\".\"SHIPPERS\"";
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_oracle >::erase_query_statement[] =
-  "DELETE FROM \"northwind\".\"shippers\"";
+  "DELETE FROM \"NORTHWIND\".\"SHIPPERS\"";
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_oracle >::table_name[] =
-  "\"northwind\".\"shippers\"";
+  "\"NORTHWIND\".\"SHIPPERS\"";
 
   void access::object_traits_impl< ::zango::northwind::shippers, id_oracle >::
   persist (database& db, const object_type& obj)
@@ -660,7 +660,7 @@ namespace odb
         {
           db.execute ("BEGIN\n"
                       "  BEGIN\n"
-                      "    EXECUTE IMMEDIATE 'DROP TABLE \"northwind\".\"shippers\" CASCADE CONSTRAINTS';\n"
+                      "    EXECUTE IMMEDIATE 'DROP TABLE \"NORTHWIND\".\"SHIPPERS\" CASCADE CONSTRAINTS';\n"
                       "  EXCEPTION\n"
                       "    WHEN OTHERS THEN\n"
                       "      IF SQLCODE != -942 THEN RAISE; END IF;\n"
@@ -676,10 +676,10 @@ namespace odb
       {
         case 1:
         {
-          db.execute ("CREATE TABLE \"northwind\".\"shippers\" (\n"
+          db.execute ("CREATE TABLE \"NORTHWIND\".\"SHIPPERS\" (\n"
                       "  \"shipper_id\" NUMBER(10) NOT NULL PRIMARY KEY,\n"
-                      "  \"company_name\" VARCHAR2(512) NULL,\n"
-                      "  \"phone\" VARCHAR2(512) NULL)");
+                      "  \"COMPANY_NAME\" VARCHAR2(512) NULL,\n"
+                      "  \"PHONE\" VARCHAR2(512) NULL)");
           return false;
         }
       }

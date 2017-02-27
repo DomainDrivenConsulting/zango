@@ -28,19 +28,19 @@ namespace odb
   //
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_pgsql >::
-  persist_statement_name[] = "persist_zango_northwind_employee_territories";
+  persist_statement_name[] = "PERSIST_ZANGO_NORTHWIND_EMPLOYEE_TERRITORIES";
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_pgsql >::
-  find_statement_name[] = "find_zango_northwind_employee_territories";
+  find_statement_name[] = "FIND_ZANGO_NORTHWIND_EMPLOYEE_TERRITORIES";
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_pgsql >::
-  erase_statement_name[] = "erase_zango_northwind_employee_territories";
+  erase_statement_name[] = "ERASE_ZANGO_NORTHWIND_EMPLOYEE_TERRITORIES";
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_pgsql >::
-  query_statement_name[] = "query_zango_northwind_employee_territories";
+  query_statement_name[] = "QUERY_ZANGO_NORTHWIND_EMPLOYEE_TERRITORIES";
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_pgsql >::
-  erase_query_statement_name[] = "erase_query_zango_northwind_employee_territories";
+  erase_query_statement_name[] = "ERASE_QUERY_ZANGO_NORTHWIND_EMPLOYEE_TERRITORIES";
 
   const unsigned int access::object_traits_impl< ::zango::northwind::employee_territories, id_pgsql >::
   persist_statement_types[] =
@@ -206,7 +206,7 @@ namespace odb
   }
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_pgsql >::persist_statement[] =
-  "INSERT INTO \"northwind\".\"employee_territories\" "
+  "INSERT INTO \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\" "
   "(\"employee_id\", "
   "\"territory_id\") "
   "VALUES "
@@ -214,26 +214,26 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_pgsql >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"employee_territories\".\"employee_id\", "
-  "\"northwind\".\"employee_territories\".\"territory_id\" "
-  "FROM \"northwind\".\"employee_territories\" "
-  "WHERE \"northwind\".\"employee_territories\".\"employee_id\"=$1 AND \"northwind\".\"employee_territories\".\"territory_id\"=$2";
+  "\"NORTHWIND\".\"EMPLOYEE_TERRITORIES\".\"employee_id\", "
+  "\"NORTHWIND\".\"EMPLOYEE_TERRITORIES\".\"territory_id\" "
+  "FROM \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\" "
+  "WHERE \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\".\"employee_id\"=$1 AND \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\".\"territory_id\"=$2";
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_pgsql >::erase_statement[] =
-  "DELETE FROM \"northwind\".\"employee_territories\" "
+  "DELETE FROM \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\" "
   "WHERE \"employee_id\"=$1 AND \"territory_id\"=$2";
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_pgsql >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"employee_territories\".\"employee_id\", "
-  "\"northwind\".\"employee_territories\".\"territory_id\" "
-  "FROM \"northwind\".\"employee_territories\"";
+  "\"NORTHWIND\".\"EMPLOYEE_TERRITORIES\".\"employee_id\", "
+  "\"NORTHWIND\".\"EMPLOYEE_TERRITORIES\".\"territory_id\" "
+  "FROM \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\"";
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_pgsql >::erase_query_statement[] =
-  "DELETE FROM \"northwind\".\"employee_territories\"";
+  "DELETE FROM \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\"";
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_pgsql >::table_name[] =
-  "\"northwind\".\"employee_territories\"";
+  "\"NORTHWIND\".\"EMPLOYEE_TERRITORIES\"";
 
   void access::object_traits_impl< ::zango::northwind::employee_territories, id_pgsql >::
   persist (database& db, const object_type& obj)
@@ -589,7 +589,7 @@ namespace odb
         }
         case 2:
         {
-          db.execute ("DROP TABLE IF EXISTS \"northwind\".\"employee_territories\" CASCADE");
+          db.execute ("DROP TABLE IF EXISTS \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\" CASCADE");
           return false;
         }
       }
@@ -600,7 +600,7 @@ namespace odb
       {
         case 1:
         {
-          db.execute ("CREATE TABLE \"northwind\".\"employee_territories\" (\n"
+          db.execute ("CREATE TABLE \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\" (\n"
                       "  \"employee_id\" INTEGER NOT NULL,\n"
                       "  \"territory_id\" TEXT NOT NULL,\n"
                       "  PRIMARY KEY (\"employee_id\",\n"

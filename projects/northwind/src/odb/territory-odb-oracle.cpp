@@ -224,44 +224,44 @@ namespace odb
   }
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_oracle >::persist_statement[] =
-  "INSERT INTO \"northwind\".\"territory\" "
+  "INSERT INTO \"NORTHWIND\".\"TERRITORY\" "
   "(\"territory_id\", "
-  "\"territory_description\", "
+  "\"TERRITORY_DESCRIPTION\", "
   "\"region_id\") "
   "VALUES "
   "(:1, :2, :3)";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_oracle >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"territory\".\"territory_id\", "
-  "\"northwind\".\"territory\".\"territory_description\", "
-  "\"northwind\".\"territory\".\"region_id\" "
-  "FROM \"northwind\".\"territory\" "
-  "WHERE \"northwind\".\"territory\".\"territory_id\"=:1";
+  "\"NORTHWIND\".\"TERRITORY\".\"territory_id\", "
+  "\"NORTHWIND\".\"TERRITORY\".\"TERRITORY_DESCRIPTION\", "
+  "\"NORTHWIND\".\"TERRITORY\".\"region_id\" "
+  "FROM \"NORTHWIND\".\"TERRITORY\" "
+  "WHERE \"NORTHWIND\".\"TERRITORY\".\"territory_id\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_oracle >::update_statement[] =
-  "UPDATE \"northwind\".\"territory\" "
+  "UPDATE \"NORTHWIND\".\"TERRITORY\" "
   "SET "
-  "\"territory_description\"=:1, "
+  "\"TERRITORY_DESCRIPTION\"=:1, "
   "\"region_id\"=:2 "
   "WHERE \"territory_id\"=:3";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_oracle >::erase_statement[] =
-  "DELETE FROM \"northwind\".\"territory\" "
+  "DELETE FROM \"NORTHWIND\".\"TERRITORY\" "
   "WHERE \"territory_id\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_oracle >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"territory\".\"territory_id\", "
-  "\"northwind\".\"territory\".\"territory_description\", "
-  "\"northwind\".\"territory\".\"region_id\" "
-  "FROM \"northwind\".\"territory\"";
+  "\"NORTHWIND\".\"TERRITORY\".\"territory_id\", "
+  "\"NORTHWIND\".\"TERRITORY\".\"TERRITORY_DESCRIPTION\", "
+  "\"NORTHWIND\".\"TERRITORY\".\"region_id\" "
+  "FROM \"NORTHWIND\".\"TERRITORY\"";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_oracle >::erase_query_statement[] =
-  "DELETE FROM \"northwind\".\"territory\"";
+  "DELETE FROM \"NORTHWIND\".\"TERRITORY\"";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_oracle >::table_name[] =
-  "\"northwind\".\"territory\"";
+  "\"NORTHWIND\".\"TERRITORY\"";
 
   void access::object_traits_impl< ::zango::northwind::territory, id_oracle >::
   persist (database& db, const object_type& obj)
@@ -646,7 +646,7 @@ namespace odb
         {
           db.execute ("BEGIN\n"
                       "  BEGIN\n"
-                      "    EXECUTE IMMEDIATE 'DROP TABLE \"northwind\".\"territory\" CASCADE CONSTRAINTS';\n"
+                      "    EXECUTE IMMEDIATE 'DROP TABLE \"NORTHWIND\".\"TERRITORY\" CASCADE CONSTRAINTS';\n"
                       "  EXCEPTION\n"
                       "    WHEN OTHERS THEN\n"
                       "      IF SQLCODE != -942 THEN RAISE; END IF;\n"
@@ -662,9 +662,9 @@ namespace odb
       {
         case 1:
         {
-          db.execute ("CREATE TABLE \"northwind\".\"territory\" (\n"
+          db.execute ("CREATE TABLE \"NORTHWIND\".\"TERRITORY\" (\n"
                       "  \"territory_id\" VARCHAR2(512) NOT NULL PRIMARY KEY,\n"
-                      "  \"territory_description\" VARCHAR2(512) NOT NULL,\n"
+                      "  \"TERRITORY_DESCRIPTION\" VARCHAR2(512) NOT NULL,\n"
                       "  \"region_id\" NUMBER(10) NOT NULL)");
           return false;
         }

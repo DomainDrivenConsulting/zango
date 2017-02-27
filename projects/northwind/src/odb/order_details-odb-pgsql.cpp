@@ -28,22 +28,22 @@ namespace odb
   //
 
   const char access::object_traits_impl< ::zango::northwind::order_details, id_pgsql >::
-  persist_statement_name[] = "persist_zango_northwind_order_details";
+  persist_statement_name[] = "PERSIST_ZANGO_NORTHWIND_ORDER_DETAILS";
 
   const char access::object_traits_impl< ::zango::northwind::order_details, id_pgsql >::
-  find_statement_name[] = "find_zango_northwind_order_details";
+  find_statement_name[] = "FIND_ZANGO_NORTHWIND_ORDER_DETAILS";
 
   const char access::object_traits_impl< ::zango::northwind::order_details, id_pgsql >::
-  update_statement_name[] = "update_zango_northwind_order_details";
+  update_statement_name[] = "UPDATE_ZANGO_NORTHWIND_ORDER_DETAILS";
 
   const char access::object_traits_impl< ::zango::northwind::order_details, id_pgsql >::
-  erase_statement_name[] = "erase_zango_northwind_order_details";
+  erase_statement_name[] = "ERASE_ZANGO_NORTHWIND_ORDER_DETAILS";
 
   const char access::object_traits_impl< ::zango::northwind::order_details, id_pgsql >::
-  query_statement_name[] = "query_zango_northwind_order_details";
+  query_statement_name[] = "QUERY_ZANGO_NORTHWIND_ORDER_DETAILS";
 
   const char access::object_traits_impl< ::zango::northwind::order_details, id_pgsql >::
-  erase_query_statement_name[] = "erase_query_zango_northwind_order_details";
+  erase_query_statement_name[] = "ERASE_QUERY_ZANGO_NORTHWIND_ORDER_DETAILS";
 
   const unsigned int access::object_traits_impl< ::zango::northwind::order_details, id_pgsql >::
   persist_statement_types[] =
@@ -336,51 +336,51 @@ namespace odb
   }
 
   const char access::object_traits_impl< ::zango::northwind::order_details, id_pgsql >::persist_statement[] =
-  "INSERT INTO \"northwind\".\"order_details\" "
+  "INSERT INTO \"NORTHWIND\".\"ORDER_DETAILS\" "
   "(\"product_id\", "
   "\"order_id\", "
-  "\"unit_price\", "
-  "\"quantity\", "
-  "\"discount\") "
+  "\"UNIT_PRICE\", "
+  "\"QUANTITY\", "
+  "\"DISCOUNT\") "
   "VALUES "
   "($1, $2, $3, $4, $5)";
 
   const char access::object_traits_impl< ::zango::northwind::order_details, id_pgsql >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"order_details\".\"product_id\", "
-  "\"northwind\".\"order_details\".\"order_id\", "
-  "\"northwind\".\"order_details\".\"unit_price\", "
-  "\"northwind\".\"order_details\".\"quantity\", "
-  "\"northwind\".\"order_details\".\"discount\" "
-  "FROM \"northwind\".\"order_details\" "
-  "WHERE \"northwind\".\"order_details\".\"product_id\"=$1 AND \"northwind\".\"order_details\".\"order_id\"=$2";
+  "\"NORTHWIND\".\"ORDER_DETAILS\".\"product_id\", "
+  "\"NORTHWIND\".\"ORDER_DETAILS\".\"order_id\", "
+  "\"NORTHWIND\".\"ORDER_DETAILS\".\"UNIT_PRICE\", "
+  "\"NORTHWIND\".\"ORDER_DETAILS\".\"QUANTITY\", "
+  "\"NORTHWIND\".\"ORDER_DETAILS\".\"DISCOUNT\" "
+  "FROM \"NORTHWIND\".\"ORDER_DETAILS\" "
+  "WHERE \"NORTHWIND\".\"ORDER_DETAILS\".\"product_id\"=$1 AND \"NORTHWIND\".\"ORDER_DETAILS\".\"order_id\"=$2";
 
   const char access::object_traits_impl< ::zango::northwind::order_details, id_pgsql >::update_statement[] =
-  "UPDATE \"northwind\".\"order_details\" "
+  "UPDATE \"NORTHWIND\".\"ORDER_DETAILS\" "
   "SET "
-  "\"unit_price\"=$1, "
-  "\"quantity\"=$2, "
-  "\"discount\"=$3 "
+  "\"UNIT_PRICE\"=$1, "
+  "\"QUANTITY\"=$2, "
+  "\"DISCOUNT\"=$3 "
   "WHERE \"product_id\"=$4 AND \"order_id\"=$5";
 
   const char access::object_traits_impl< ::zango::northwind::order_details, id_pgsql >::erase_statement[] =
-  "DELETE FROM \"northwind\".\"order_details\" "
+  "DELETE FROM \"NORTHWIND\".\"ORDER_DETAILS\" "
   "WHERE \"product_id\"=$1 AND \"order_id\"=$2";
 
   const char access::object_traits_impl< ::zango::northwind::order_details, id_pgsql >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"order_details\".\"product_id\", "
-  "\"northwind\".\"order_details\".\"order_id\", "
-  "\"northwind\".\"order_details\".\"unit_price\", "
-  "\"northwind\".\"order_details\".\"quantity\", "
-  "\"northwind\".\"order_details\".\"discount\" "
-  "FROM \"northwind\".\"order_details\"";
+  "\"NORTHWIND\".\"ORDER_DETAILS\".\"product_id\", "
+  "\"NORTHWIND\".\"ORDER_DETAILS\".\"order_id\", "
+  "\"NORTHWIND\".\"ORDER_DETAILS\".\"UNIT_PRICE\", "
+  "\"NORTHWIND\".\"ORDER_DETAILS\".\"QUANTITY\", "
+  "\"NORTHWIND\".\"ORDER_DETAILS\".\"DISCOUNT\" "
+  "FROM \"NORTHWIND\".\"ORDER_DETAILS\"";
 
   const char access::object_traits_impl< ::zango::northwind::order_details, id_pgsql >::erase_query_statement[] =
-  "DELETE FROM \"northwind\".\"order_details\"";
+  "DELETE FROM \"NORTHWIND\".\"ORDER_DETAILS\"";
 
   const char access::object_traits_impl< ::zango::northwind::order_details, id_pgsql >::table_name[] =
-  "\"northwind\".\"order_details\"";
+  "\"NORTHWIND\".\"ORDER_DETAILS\"";
 
   void access::object_traits_impl< ::zango::northwind::order_details, id_pgsql >::
   persist (database& db, const object_type& obj)
@@ -769,7 +769,7 @@ namespace odb
         }
         case 2:
         {
-          db.execute ("DROP TABLE IF EXISTS \"northwind\".\"order_details\" CASCADE");
+          db.execute ("DROP TABLE IF EXISTS \"NORTHWIND\".\"ORDER_DETAILS\" CASCADE");
           return false;
         }
       }
@@ -780,12 +780,12 @@ namespace odb
       {
         case 1:
         {
-          db.execute ("CREATE TABLE \"northwind\".\"order_details\" (\n"
+          db.execute ("CREATE TABLE \"NORTHWIND\".\"ORDER_DETAILS\" (\n"
                       "  \"product_id\" INTEGER NOT NULL,\n"
                       "  \"order_id\" INTEGER NOT NULL,\n"
-                      "  \"unit_price\" DOUBLE PRECISION NOT NULL,\n"
-                      "  \"quantity\" INTEGER NOT NULL,\n"
-                      "  \"discount\" DOUBLE PRECISION NOT NULL,\n"
+                      "  \"UNIT_PRICE\" DOUBLE PRECISION NOT NULL,\n"
+                      "  \"QUANTITY\" INTEGER NOT NULL,\n"
+                      "  \"DISCOUNT\" DOUBLE PRECISION NOT NULL,\n"
                       "  PRIMARY KEY (\"product_id\",\n"
                       "               \"order_id\"))");
           return false;

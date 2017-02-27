@@ -150,7 +150,7 @@ namespace odb
   }
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_oracle >::persist_statement[] =
-  "INSERT INTO \"northwind\".\"customer_customer_demo\" "
+  "INSERT INTO \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\" "
   "(\"customer_id\", "
   "\"customer_type_id\") "
   "VALUES "
@@ -158,26 +158,26 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_oracle >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"customer_customer_demo\".\"customer_id\", "
-  "\"northwind\".\"customer_customer_demo\".\"customer_type_id\" "
-  "FROM \"northwind\".\"customer_customer_demo\" "
-  "WHERE \"northwind\".\"customer_customer_demo\".\"customer_id\"=:1 AND \"northwind\".\"customer_customer_demo\".\"customer_type_id\"=:2";
+  "\"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\".\"customer_id\", "
+  "\"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\".\"customer_type_id\" "
+  "FROM \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\" "
+  "WHERE \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\".\"customer_id\"=:1 AND \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\".\"customer_type_id\"=:2";
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_oracle >::erase_statement[] =
-  "DELETE FROM \"northwind\".\"customer_customer_demo\" "
+  "DELETE FROM \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\" "
   "WHERE \"customer_id\"=:1 AND \"customer_type_id\"=:2";
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_oracle >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"customer_customer_demo\".\"customer_id\", "
-  "\"northwind\".\"customer_customer_demo\".\"customer_type_id\" "
-  "FROM \"northwind\".\"customer_customer_demo\"";
+  "\"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\".\"customer_id\", "
+  "\"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\".\"customer_type_id\" "
+  "FROM \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\"";
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_oracle >::erase_query_statement[] =
-  "DELETE FROM \"northwind\".\"customer_customer_demo\"";
+  "DELETE FROM \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\"";
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_oracle >::table_name[] =
-  "\"northwind\".\"customer_customer_demo\"";
+  "\"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\"";
 
   void access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_oracle >::
   persist (database& db, const object_type& obj)
@@ -516,7 +516,7 @@ namespace odb
         {
           db.execute ("BEGIN\n"
                       "  BEGIN\n"
-                      "    EXECUTE IMMEDIATE 'DROP TABLE \"northwind\".\"customer_customer_demo\" CASCADE CONSTRAINTS';\n"
+                      "    EXECUTE IMMEDIATE 'DROP TABLE \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\" CASCADE CONSTRAINTS';\n"
                       "  EXCEPTION\n"
                       "    WHEN OTHERS THEN\n"
                       "      IF SQLCODE != -942 THEN RAISE; END IF;\n"
@@ -532,7 +532,7 @@ namespace odb
       {
         case 1:
         {
-          db.execute ("CREATE TABLE \"northwind\".\"customer_customer_demo\" (\n"
+          db.execute ("CREATE TABLE \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\" (\n"
                       "  \"customer_id\" NUMBER(10) NOT NULL,\n"
                       "  \"customer_type_id\" VARCHAR2(512) NOT NULL,\n"
                       "  PRIMARY KEY (\"customer_id\",\n"

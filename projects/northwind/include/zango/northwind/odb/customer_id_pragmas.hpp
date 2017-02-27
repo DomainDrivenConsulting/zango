@@ -32,7 +32,7 @@ namespace northwind {
 
 #ifdef ODB_COMPILER
 
-#pragma db value(customer_id) schema("northwind")
+#pragma db value(customer_id) schema("NORTHWIND")
 
 #pragma db member(customer_id::value_) column("customer_id")
 

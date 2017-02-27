@@ -33,7 +33,7 @@ namespace northwind {
 
 #ifdef ODB_COMPILER
 
-#pragma db object(employees) schema("northwind")
+#pragma db object(employees) schema("NORTHWIND")
 
 #pragma db member(employees::employee_id_) column("")
 #pragma db member(employees::employee_id_) id
@@ -53,7 +53,7 @@ namespace northwind {
 #pragma db member(employees::photo_) pgsql:type("BYTEA") oracle:type("BLOB")
 #pragma db member(employees::photo_) null
 #pragma db member(employees::notes_) null
-#pragma db member(employees::reports_to_) column("reports_to")
+#pragma db member(employees::reports_to_) column("REPORTS_TO")
 #pragma db member(employees::reports_to_) null
 #pragma db member(employees::photo_path_) null
 

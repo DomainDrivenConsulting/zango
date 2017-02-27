@@ -264,51 +264,51 @@ namespace odb
   }
 
   const char access::object_traits_impl< ::zango::northwind::order_details, id_oracle >::persist_statement[] =
-  "INSERT INTO \"northwind\".\"order_details\" "
+  "INSERT INTO \"NORTHWIND\".\"ORDER_DETAILS\" "
   "(\"product_id\", "
   "\"order_id\", "
-  "\"unit_price\", "
-  "\"quantity\", "
-  "\"discount\") "
+  "\"UNIT_PRICE\", "
+  "\"QUANTITY\", "
+  "\"DISCOUNT\") "
   "VALUES "
   "(:1, :2, :3, :4, :5)";
 
   const char access::object_traits_impl< ::zango::northwind::order_details, id_oracle >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"order_details\".\"product_id\", "
-  "\"northwind\".\"order_details\".\"order_id\", "
-  "\"northwind\".\"order_details\".\"unit_price\", "
-  "\"northwind\".\"order_details\".\"quantity\", "
-  "\"northwind\".\"order_details\".\"discount\" "
-  "FROM \"northwind\".\"order_details\" "
-  "WHERE \"northwind\".\"order_details\".\"product_id\"=:1 AND \"northwind\".\"order_details\".\"order_id\"=:2";
+  "\"NORTHWIND\".\"ORDER_DETAILS\".\"product_id\", "
+  "\"NORTHWIND\".\"ORDER_DETAILS\".\"order_id\", "
+  "\"NORTHWIND\".\"ORDER_DETAILS\".\"UNIT_PRICE\", "
+  "\"NORTHWIND\".\"ORDER_DETAILS\".\"QUANTITY\", "
+  "\"NORTHWIND\".\"ORDER_DETAILS\".\"DISCOUNT\" "
+  "FROM \"NORTHWIND\".\"ORDER_DETAILS\" "
+  "WHERE \"NORTHWIND\".\"ORDER_DETAILS\".\"product_id\"=:1 AND \"NORTHWIND\".\"ORDER_DETAILS\".\"order_id\"=:2";
 
   const char access::object_traits_impl< ::zango::northwind::order_details, id_oracle >::update_statement[] =
-  "UPDATE \"northwind\".\"order_details\" "
+  "UPDATE \"NORTHWIND\".\"ORDER_DETAILS\" "
   "SET "
-  "\"unit_price\"=:1, "
-  "\"quantity\"=:2, "
-  "\"discount\"=:3 "
+  "\"UNIT_PRICE\"=:1, "
+  "\"QUANTITY\"=:2, "
+  "\"DISCOUNT\"=:3 "
   "WHERE \"product_id\"=:4 AND \"order_id\"=:5";
 
   const char access::object_traits_impl< ::zango::northwind::order_details, id_oracle >::erase_statement[] =
-  "DELETE FROM \"northwind\".\"order_details\" "
+  "DELETE FROM \"NORTHWIND\".\"ORDER_DETAILS\" "
   "WHERE \"product_id\"=:1 AND \"order_id\"=:2";
 
   const char access::object_traits_impl< ::zango::northwind::order_details, id_oracle >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"order_details\".\"product_id\", "
-  "\"northwind\".\"order_details\".\"order_id\", "
-  "\"northwind\".\"order_details\".\"unit_price\", "
-  "\"northwind\".\"order_details\".\"quantity\", "
-  "\"northwind\".\"order_details\".\"discount\" "
-  "FROM \"northwind\".\"order_details\"";
+  "\"NORTHWIND\".\"ORDER_DETAILS\".\"product_id\", "
+  "\"NORTHWIND\".\"ORDER_DETAILS\".\"order_id\", "
+  "\"NORTHWIND\".\"ORDER_DETAILS\".\"UNIT_PRICE\", "
+  "\"NORTHWIND\".\"ORDER_DETAILS\".\"QUANTITY\", "
+  "\"NORTHWIND\".\"ORDER_DETAILS\".\"DISCOUNT\" "
+  "FROM \"NORTHWIND\".\"ORDER_DETAILS\"";
 
   const char access::object_traits_impl< ::zango::northwind::order_details, id_oracle >::erase_query_statement[] =
-  "DELETE FROM \"northwind\".\"order_details\"";
+  "DELETE FROM \"NORTHWIND\".\"ORDER_DETAILS\"";
 
   const char access::object_traits_impl< ::zango::northwind::order_details, id_oracle >::table_name[] =
-  "\"northwind\".\"order_details\"";
+  "\"NORTHWIND\".\"ORDER_DETAILS\"";
 
   void access::object_traits_impl< ::zango::northwind::order_details, id_oracle >::
   persist (database& db, const object_type& obj)
@@ -693,7 +693,7 @@ namespace odb
         {
           db.execute ("BEGIN\n"
                       "  BEGIN\n"
-                      "    EXECUTE IMMEDIATE 'DROP TABLE \"northwind\".\"order_details\" CASCADE CONSTRAINTS';\n"
+                      "    EXECUTE IMMEDIATE 'DROP TABLE \"NORTHWIND\".\"ORDER_DETAILS\" CASCADE CONSTRAINTS';\n"
                       "  EXCEPTION\n"
                       "    WHEN OTHERS THEN\n"
                       "      IF SQLCODE != -942 THEN RAISE; END IF;\n"
@@ -709,12 +709,12 @@ namespace odb
       {
         case 1:
         {
-          db.execute ("CREATE TABLE \"northwind\".\"order_details\" (\n"
+          db.execute ("CREATE TABLE \"NORTHWIND\".\"ORDER_DETAILS\" (\n"
                       "  \"product_id\" NUMBER(10) NOT NULL,\n"
                       "  \"order_id\" NUMBER(10) NOT NULL,\n"
-                      "  \"unit_price\" BINARY_DOUBLE NOT NULL,\n"
-                      "  \"quantity\" NUMBER(10) NOT NULL,\n"
-                      "  \"discount\" BINARY_DOUBLE NOT NULL,\n"
+                      "  \"UNIT_PRICE\" BINARY_DOUBLE NOT NULL,\n"
+                      "  \"QUANTITY\" NUMBER(10) NOT NULL,\n"
+                      "  \"DISCOUNT\" BINARY_DOUBLE NOT NULL,\n"
                       "  PRIMARY KEY (\"product_id\",\n"
                       "               \"order_id\"))");
           return false;

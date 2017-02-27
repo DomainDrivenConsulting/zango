@@ -28,22 +28,22 @@ namespace odb
   //
 
   const char access::object_traits_impl< ::zango::northwind::region, id_pgsql >::
-  persist_statement_name[] = "persist_zango_northwind_region";
+  persist_statement_name[] = "PERSIST_ZANGO_NORTHWIND_REGION";
 
   const char access::object_traits_impl< ::zango::northwind::region, id_pgsql >::
-  find_statement_name[] = "find_zango_northwind_region";
+  find_statement_name[] = "FIND_ZANGO_NORTHWIND_REGION";
 
   const char access::object_traits_impl< ::zango::northwind::region, id_pgsql >::
-  update_statement_name[] = "update_zango_northwind_region";
+  update_statement_name[] = "UPDATE_ZANGO_NORTHWIND_REGION";
 
   const char access::object_traits_impl< ::zango::northwind::region, id_pgsql >::
-  erase_statement_name[] = "erase_zango_northwind_region";
+  erase_statement_name[] = "ERASE_ZANGO_NORTHWIND_REGION";
 
   const char access::object_traits_impl< ::zango::northwind::region, id_pgsql >::
-  query_statement_name[] = "query_zango_northwind_region";
+  query_statement_name[] = "QUERY_ZANGO_NORTHWIND_REGION";
 
   const char access::object_traits_impl< ::zango::northwind::region, id_pgsql >::
-  erase_query_statement_name[] = "erase_query_zango_northwind_region";
+  erase_query_statement_name[] = "ERASE_QUERY_ZANGO_NORTHWIND_REGION";
 
   const unsigned int access::object_traits_impl< ::zango::northwind::region, id_pgsql >::
   persist_statement_types[] =
@@ -262,40 +262,40 @@ namespace odb
   }
 
   const char access::object_traits_impl< ::zango::northwind::region, id_pgsql >::persist_statement[] =
-  "INSERT INTO \"northwind\".\"region\" "
+  "INSERT INTO \"NORTHWIND\".\"REGION\" "
   "(\"region_id\", "
-  "\"region_description\") "
+  "\"REGION_DESCRIPTION\") "
   "VALUES "
   "($1, $2)";
 
   const char access::object_traits_impl< ::zango::northwind::region, id_pgsql >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"region\".\"region_id\", "
-  "\"northwind\".\"region\".\"region_description\" "
-  "FROM \"northwind\".\"region\" "
-  "WHERE \"northwind\".\"region\".\"region_id\"=$1";
+  "\"NORTHWIND\".\"REGION\".\"region_id\", "
+  "\"NORTHWIND\".\"REGION\".\"REGION_DESCRIPTION\" "
+  "FROM \"NORTHWIND\".\"REGION\" "
+  "WHERE \"NORTHWIND\".\"REGION\".\"region_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::region, id_pgsql >::update_statement[] =
-  "UPDATE \"northwind\".\"region\" "
+  "UPDATE \"NORTHWIND\".\"REGION\" "
   "SET "
-  "\"region_description\"=$1 "
+  "\"REGION_DESCRIPTION\"=$1 "
   "WHERE \"region_id\"=$2";
 
   const char access::object_traits_impl< ::zango::northwind::region, id_pgsql >::erase_statement[] =
-  "DELETE FROM \"northwind\".\"region\" "
+  "DELETE FROM \"NORTHWIND\".\"REGION\" "
   "WHERE \"region_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::region, id_pgsql >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"region\".\"region_id\", "
-  "\"northwind\".\"region\".\"region_description\" "
-  "FROM \"northwind\".\"region\"";
+  "\"NORTHWIND\".\"REGION\".\"region_id\", "
+  "\"NORTHWIND\".\"REGION\".\"REGION_DESCRIPTION\" "
+  "FROM \"NORTHWIND\".\"REGION\"";
 
   const char access::object_traits_impl< ::zango::northwind::region, id_pgsql >::erase_query_statement[] =
-  "DELETE FROM \"northwind\".\"region\"";
+  "DELETE FROM \"NORTHWIND\".\"REGION\"";
 
   const char access::object_traits_impl< ::zango::northwind::region, id_pgsql >::table_name[] =
-  "\"northwind\".\"region\"";
+  "\"NORTHWIND\".\"REGION\"";
 
   void access::object_traits_impl< ::zango::northwind::region, id_pgsql >::
   persist (database& db, const object_type& obj)
@@ -698,7 +698,7 @@ namespace odb
         }
         case 2:
         {
-          db.execute ("DROP TABLE IF EXISTS \"northwind\".\"region\" CASCADE");
+          db.execute ("DROP TABLE IF EXISTS \"NORTHWIND\".\"REGION\" CASCADE");
           return false;
         }
       }
@@ -709,9 +709,9 @@ namespace odb
       {
         case 1:
         {
-          db.execute ("CREATE TABLE \"northwind\".\"region\" (\n"
+          db.execute ("CREATE TABLE \"NORTHWIND\".\"REGION\" (\n"
                       "  \"region_id\" INTEGER NOT NULL PRIMARY KEY,\n"
-                      "  \"region_description\" TEXT NOT NULL)");
+                      "  \"REGION_DESCRIPTION\" TEXT NOT NULL)");
           return false;
         }
       }

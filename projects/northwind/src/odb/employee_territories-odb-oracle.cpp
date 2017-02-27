@@ -150,7 +150,7 @@ namespace odb
   }
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_oracle >::persist_statement[] =
-  "INSERT INTO \"northwind\".\"employee_territories\" "
+  "INSERT INTO \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\" "
   "(\"employee_id\", "
   "\"territory_id\") "
   "VALUES "
@@ -158,26 +158,26 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_oracle >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"employee_territories\".\"employee_id\", "
-  "\"northwind\".\"employee_territories\".\"territory_id\" "
-  "FROM \"northwind\".\"employee_territories\" "
-  "WHERE \"northwind\".\"employee_territories\".\"employee_id\"=:1 AND \"northwind\".\"employee_territories\".\"territory_id\"=:2";
+  "\"NORTHWIND\".\"EMPLOYEE_TERRITORIES\".\"employee_id\", "
+  "\"NORTHWIND\".\"EMPLOYEE_TERRITORIES\".\"territory_id\" "
+  "FROM \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\" "
+  "WHERE \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\".\"employee_id\"=:1 AND \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\".\"territory_id\"=:2";
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_oracle >::erase_statement[] =
-  "DELETE FROM \"northwind\".\"employee_territories\" "
+  "DELETE FROM \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\" "
   "WHERE \"employee_id\"=:1 AND \"territory_id\"=:2";
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_oracle >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"employee_territories\".\"employee_id\", "
-  "\"northwind\".\"employee_territories\".\"territory_id\" "
-  "FROM \"northwind\".\"employee_territories\"";
+  "\"NORTHWIND\".\"EMPLOYEE_TERRITORIES\".\"employee_id\", "
+  "\"NORTHWIND\".\"EMPLOYEE_TERRITORIES\".\"territory_id\" "
+  "FROM \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\"";
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_oracle >::erase_query_statement[] =
-  "DELETE FROM \"northwind\".\"employee_territories\"";
+  "DELETE FROM \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\"";
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_oracle >::table_name[] =
-  "\"northwind\".\"employee_territories\"";
+  "\"NORTHWIND\".\"EMPLOYEE_TERRITORIES\"";
 
   void access::object_traits_impl< ::zango::northwind::employee_territories, id_oracle >::
   persist (database& db, const object_type& obj)
@@ -516,7 +516,7 @@ namespace odb
         {
           db.execute ("BEGIN\n"
                       "  BEGIN\n"
-                      "    EXECUTE IMMEDIATE 'DROP TABLE \"northwind\".\"employee_territories\" CASCADE CONSTRAINTS';\n"
+                      "    EXECUTE IMMEDIATE 'DROP TABLE \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\" CASCADE CONSTRAINTS';\n"
                       "  EXCEPTION\n"
                       "    WHEN OTHERS THEN\n"
                       "      IF SQLCODE != -942 THEN RAISE; END IF;\n"
@@ -532,7 +532,7 @@ namespace odb
       {
         case 1:
         {
-          db.execute ("CREATE TABLE \"northwind\".\"employee_territories\" (\n"
+          db.execute ("CREATE TABLE \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\" (\n"
                       "  \"employee_id\" NUMBER(10) NOT NULL,\n"
                       "  \"territory_id\" VARCHAR2(512) NOT NULL,\n"
                       "  PRIMARY KEY (\"employee_id\",\n"

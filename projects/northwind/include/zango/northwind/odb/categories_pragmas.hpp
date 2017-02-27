@@ -33,7 +33,7 @@ namespace northwind {
 
 #ifdef ODB_COMPILER
 
-#pragma db object(categories) schema("Mnorthwind")
+#pragma db object(categories) schema("NORTHWIND")
 
 #pragma db member(categories::category_id_) column("")
 #pragma db member(categories::category_id_) id

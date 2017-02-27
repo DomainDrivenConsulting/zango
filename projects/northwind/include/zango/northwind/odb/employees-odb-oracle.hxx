@@ -303,82 +303,82 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_oracle, A >::last_name_type_
   query_columns< ::zango::northwind::employees, id_oracle, A >::
-  last_name (A::table_name, "\"last_name\"", 0, 512);
+  last_name (A::table_name, "\"LAST_NAME\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_oracle, A >::first_name_type_
   query_columns< ::zango::northwind::employees, id_oracle, A >::
-  first_name (A::table_name, "\"first_name\"", 0, 512);
+  first_name (A::table_name, "\"FIRST_NAME\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_oracle, A >::title_type_
   query_columns< ::zango::northwind::employees, id_oracle, A >::
-  title (A::table_name, "\"title\"", 0, 512);
+  title (A::table_name, "\"TITLE\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_oracle, A >::title_of_courtesy_type_
   query_columns< ::zango::northwind::employees, id_oracle, A >::
-  title_of_courtesy (A::table_name, "\"title_of_courtesy\"", 0, 512);
+  title_of_courtesy (A::table_name, "\"TITLE_OF_COURTESY\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_oracle, A >::birth_date_type_
   query_columns< ::zango::northwind::employees, id_oracle, A >::
-  birth_date (A::table_name, "\"birth_date\"", 0);
+  birth_date (A::table_name, "\"BIRTH_DATE\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_oracle, A >::hire_date_type_
   query_columns< ::zango::northwind::employees, id_oracle, A >::
-  hire_date (A::table_name, "\"hire_date\"", 0);
+  hire_date (A::table_name, "\"HIRE_DATE\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_oracle, A >::address_type_
   query_columns< ::zango::northwind::employees, id_oracle, A >::
-  address (A::table_name, "\"address\"", 0, 512);
+  address (A::table_name, "\"ADDRESS\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_oracle, A >::city_type_
   query_columns< ::zango::northwind::employees, id_oracle, A >::
-  city (A::table_name, "\"city\"", 0, 512);
+  city (A::table_name, "\"CITY\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_oracle, A >::region_type_
   query_columns< ::zango::northwind::employees, id_oracle, A >::
-  region (A::table_name, "\"region\"", 0, 512);
+  region (A::table_name, "\"REGION\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_oracle, A >::postal_code_type_
   query_columns< ::zango::northwind::employees, id_oracle, A >::
-  postal_code (A::table_name, "\"postal_code\"", 0, 512);
+  postal_code (A::table_name, "\"POSTAL_CODE\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_oracle, A >::country_type_
   query_columns< ::zango::northwind::employees, id_oracle, A >::
-  country (A::table_name, "\"country\"", 0, 512);
+  country (A::table_name, "\"COUNTRY\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_oracle, A >::home_phone_type_
   query_columns< ::zango::northwind::employees, id_oracle, A >::
-  home_phone (A::table_name, "\"home_phone\"", 0, 512);
+  home_phone (A::table_name, "\"HOME_PHONE\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_oracle, A >::extension_type_
   query_columns< ::zango::northwind::employees, id_oracle, A >::
-  extension (A::table_name, "\"extension\"", 0, 512);
+  extension (A::table_name, "\"EXTENSION\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_oracle, A >::photo_type_
   query_columns< ::zango::northwind::employees, id_oracle, A >::
-  photo (A::table_name, "\"photo\"", 0);
+  photo (A::table_name, "\"PHOTO\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_oracle, A >::notes_type_
   query_columns< ::zango::northwind::employees, id_oracle, A >::
-  notes (A::table_name, "\"notes\"", 0, 512);
+  notes (A::table_name, "\"NOTES\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_oracle, A >::reports_to_class_::value_type_
   query_columns< ::zango::northwind::employees, id_oracle, A >::reports_to_class_::
-  value (A::table_name, "\"reports_to_employee_id\"", 0, 10);
+  value (A::table_name, "\"REPORTS_TO_employee_id\"", 0, 10);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_oracle, A >::reports_to_class_
@@ -387,7 +387,7 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_oracle, A >::photo_path_type_
   query_columns< ::zango::northwind::employees, id_oracle, A >::
-  photo_path (A::table_name, "\"photo_path\"", 0, 512);
+  photo_path (A::table_name, "\"PHOTO_PATH\"", 0, 512);
 
   template <typename A>
   struct pointer_query_columns< ::zango::northwind::employees, id_oracle, A >:
