@@ -98,6 +98,18 @@ namespace odb
     description_type_;
 
     static const description_type_ description;
+
+    // picutre
+    //
+    typedef
+    oracle::query_column<
+      oracle::value_traits<
+        ::std::vector< char >,
+        oracle::id_blob >::query_type,
+      oracle::id_blob >
+    picutre_type_;
+
+    static const picutre_type_ picutre;
   };
 
   template <typename A>
@@ -118,6 +130,11 @@ namespace odb
   const typename query_columns< ::zango::northwind::categories, id_oracle, A >::description_type_
   query_columns< ::zango::northwind::categories, id_oracle, A >::
   description (A::table_name, "\"description\"", 0, 512);
+
+  template <typename A>
+  const typename query_columns< ::zango::northwind::categories, id_oracle, A >::picutre_type_
+  query_columns< ::zango::northwind::categories, id_oracle, A >::
+  picutre (A::table_name, "\"picutre\"", 0);
 
   template <typename A>
   struct pointer_query_columns< ::zango::northwind::categories, id_oracle, A >:
@@ -157,6 +174,12 @@ namespace odb
       ub2 description_size;
       sb2 description_indicator;
 
+      // picutre_
+      //
+      mutable oracle::lob_callback picutre_callback;
+      sb2 picutre_indicator;
+      oracle::lob picutre_lob;
+
       std::size_t version;
 
       oracle::change_callback change_callback_;
@@ -169,88 +192,6 @@ namespace odb
     };
 
     struct extra_statement_cache_type;
-
-    // picutre_
-    //
-    struct picutre_traits
-    {
-      static const std::size_t id_column_count = 1UL;
-      static const std::size_t data_column_count = 3UL;
-
-      static const bool versioned = false;
-
-      static const char insert_statement[];
-      static const char select_statement[];
-      static const char delete_statement[];
-
-      typedef ::std::vector< char > container_type;
-      typedef
-      odb::access::container_traits<container_type>
-      container_traits_type;
-      typedef container_traits_type::index_type index_type;
-      typedef container_traits_type::value_type value_type;
-
-      typedef ordered_functions<index_type, value_type> functions_type;
-      typedef oracle::container_statements< picutre_traits > statements_type;
-
-      struct data_image_type
-      {
-        // index
-        //
-        char index_value[12];
-        ub2 index_size;
-        sb2 index_indicator;
-
-        // value
-        //
-        char value_value[1];
-        ub2 value_size;
-        sb2 value_indicator;
-
-        std::size_t version;
-      };
-
-      static void
-      bind (oracle::bind*,
-            const oracle::bind* id,
-            std::size_t id_size,
-            data_image_type&);
-
-      static void
-      init (data_image_type&,
-            index_type*,
-            const value_type&);
-
-      static void
-      init (index_type&,
-            value_type&,
-            const data_image_type&,
-            database*);
-
-      static void
-      insert (index_type, const value_type&, void*);
-
-      static bool
-      select (index_type&, value_type&, void*);
-
-      static void
-      delete_ (void*);
-
-      static void
-      persist (const container_type&,
-               statements_type&);
-
-      static void
-      load (container_type&,
-            statements_type&);
-
-      static void
-      update (const container_type&,
-              statements_type&);
-
-      static void
-      erase (statements_type&);
-    };
 
     using object_traits<object_type>::id;
 
@@ -282,7 +223,7 @@ namespace odb
 
     typedef oracle::query_base query_base_type;
 
-    static const std::size_t column_count = 3UL;
+    static const std::size_t column_count = 4UL;
     static const std::size_t id_column_count = 1UL;
     static const std::size_t inverse_column_count = 0UL;
     static const std::size_t readonly_column_count = 0UL;

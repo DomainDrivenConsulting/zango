@@ -231,6 +231,18 @@ namespace odb
 
     static const extension_type_ extension;
 
+    // photo
+    //
+    typedef
+    oracle::query_column<
+      oracle::value_traits<
+        ::std::vector< char >,
+        oracle::id_blob >::query_type,
+      oracle::id_blob >
+    photo_type_;
+
+    static const photo_type_ photo;
+
     // notes
     //
     typedef
@@ -354,6 +366,11 @@ namespace odb
   extension (A::table_name, "\"extension\"", 0, 512);
 
   template <typename A>
+  const typename query_columns< ::zango::northwind::employees, id_oracle, A >::photo_type_
+  query_columns< ::zango::northwind::employees, id_oracle, A >::
+  photo (A::table_name, "\"photo\"", 0);
+
+  template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_oracle, A >::notes_type_
   query_columns< ::zango::northwind::employees, id_oracle, A >::
   notes (A::table_name, "\"notes\"", 0, 512);
@@ -474,6 +491,12 @@ namespace odb
       ub2 extension_size;
       sb2 extension_indicator;
 
+      // photo_
+      //
+      mutable oracle::lob_callback photo_callback;
+      sb2 photo_indicator;
+      oracle::lob photo_lob;
+
       // notes_
       //
       char notes_value[512];
@@ -502,88 +525,6 @@ namespace odb
     };
 
     struct extra_statement_cache_type;
-
-    // photo_
-    //
-    struct photo_traits
-    {
-      static const std::size_t id_column_count = 1UL;
-      static const std::size_t data_column_count = 3UL;
-
-      static const bool versioned = false;
-
-      static const char insert_statement[];
-      static const char select_statement[];
-      static const char delete_statement[];
-
-      typedef ::std::vector< char > container_type;
-      typedef
-      odb::access::container_traits<container_type>
-      container_traits_type;
-      typedef container_traits_type::index_type index_type;
-      typedef container_traits_type::value_type value_type;
-
-      typedef ordered_functions<index_type, value_type> functions_type;
-      typedef oracle::container_statements< photo_traits > statements_type;
-
-      struct data_image_type
-      {
-        // index
-        //
-        char index_value[12];
-        ub2 index_size;
-        sb2 index_indicator;
-
-        // value
-        //
-        char value_value[1];
-        ub2 value_size;
-        sb2 value_indicator;
-
-        std::size_t version;
-      };
-
-      static void
-      bind (oracle::bind*,
-            const oracle::bind* id,
-            std::size_t id_size,
-            data_image_type&);
-
-      static void
-      init (data_image_type&,
-            index_type*,
-            const value_type&);
-
-      static void
-      init (index_type&,
-            value_type&,
-            const data_image_type&,
-            database*);
-
-      static void
-      insert (index_type, const value_type&, void*);
-
-      static bool
-      select (index_type&, value_type&, void*);
-
-      static void
-      delete_ (void*);
-
-      static void
-      persist (const container_type&,
-               statements_type&);
-
-      static void
-      load (container_type&,
-            statements_type&);
-
-      static void
-      update (const container_type&,
-              statements_type&);
-
-      static void
-      erase (statements_type&);
-    };
 
     using object_traits<object_type>::id;
 
@@ -615,7 +556,7 @@ namespace odb
 
     typedef oracle::query_base query_base_type;
 
-    static const std::size_t column_count = 17UL;
+    static const std::size_t column_count = 18UL;
     static const std::size_t id_column_count = 1UL;
     static const std::size_t inverse_column_count = 0UL;
     static const std::size_t readonly_column_count = 0UL;

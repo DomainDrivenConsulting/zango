@@ -231,6 +231,18 @@ namespace odb
 
     static const extension_type_ extension;
 
+    // photo
+    //
+    typedef
+    pgsql::query_column<
+      pgsql::value_traits<
+        ::std::vector< char >,
+        pgsql::id_bytea >::query_type,
+      pgsql::id_bytea >
+    photo_type_;
+
+    static const photo_type_ photo;
+
     // notes
     //
     typedef
@@ -354,6 +366,11 @@ namespace odb
   extension (A::table_name, "\"extension\"", 0);
 
   template <typename A>
+  const typename query_columns< ::zango::northwind::employees, id_pgsql, A >::photo_type_
+  query_columns< ::zango::northwind::employees, id_pgsql, A >::
+  photo (A::table_name, "\"photo\"", 0);
+
+  template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_pgsql, A >::notes_type_
   query_columns< ::zango::northwind::employees, id_pgsql, A >::
   notes (A::table_name, "\"notes\"", 0);
@@ -472,6 +489,12 @@ namespace odb
       std::size_t extension_size;
       bool extension_null;
 
+      // photo_
+      //
+      details::buffer photo_value;
+      std::size_t photo_size;
+      bool photo_null;
+
       // notes_
       //
       details::buffer notes_value;
@@ -492,97 +515,6 @@ namespace odb
     };
 
     struct extra_statement_cache_type;
-
-    // photo_
-    //
-    struct photo_traits
-    {
-      static const char select_name[];
-      static const char insert_name[];
-      static const char delete_name[];
-
-      static const unsigned int insert_types[];
-
-      static const std::size_t id_column_count = 1UL;
-      static const std::size_t data_column_count = 3UL;
-
-      static const bool versioned = false;
-
-      static const char insert_statement[];
-      static const char select_statement[];
-      static const char delete_statement[];
-
-      typedef ::std::vector< char > container_type;
-      typedef
-      odb::access::container_traits<container_type>
-      container_traits_type;
-      typedef container_traits_type::index_type index_type;
-      typedef container_traits_type::value_type value_type;
-
-      typedef ordered_functions<index_type, value_type> functions_type;
-      typedef pgsql::container_statements< photo_traits > statements_type;
-
-      struct data_image_type
-      {
-        // index
-        //
-        long long index_value;
-        bool index_null;
-
-        // value
-        //
-        details::buffer value_value;
-        std::size_t value_size;
-        bool value_null;
-
-        std::size_t version;
-      };
-
-      static void
-      bind (pgsql::bind*,
-            const pgsql::bind* id,
-            std::size_t id_size,
-            data_image_type&);
-
-      static void
-      grow (data_image_type&,
-            bool*);
-
-      static void
-      init (data_image_type&,
-            index_type*,
-            const value_type&);
-
-      static void
-      init (index_type&,
-            value_type&,
-            const data_image_type&,
-            database*);
-
-      static void
-      insert (index_type, const value_type&, void*);
-
-      static bool
-      select (index_type&, value_type&, void*);
-
-      static void
-      delete_ (void*);
-
-      static void
-      persist (const container_type&,
-               statements_type&);
-
-      static void
-      load (container_type&,
-            statements_type&);
-
-      static void
-      update (const container_type&,
-              statements_type&);
-
-      static void
-      erase (statements_type&);
-    };
 
     using object_traits<object_type>::id;
 
@@ -618,7 +550,7 @@ namespace odb
 
     typedef pgsql::query_base query_base_type;
 
-    static const std::size_t column_count = 17UL;
+    static const std::size_t column_count = 18UL;
     static const std::size_t id_column_count = 1UL;
     static const std::size_t inverse_column_count = 0UL;
     static const std::size_t readonly_column_count = 0UL;

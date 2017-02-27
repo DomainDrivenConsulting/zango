@@ -62,6 +62,7 @@ namespace odb
     pgsql::text_oid,
     pgsql::text_oid,
     pgsql::text_oid,
+    pgsql::bytea_oid,
     pgsql::text_oid,
     pgsql::int4_oid,
     pgsql::text_oid
@@ -89,6 +90,7 @@ namespace odb
     pgsql::text_oid,
     pgsql::text_oid,
     pgsql::text_oid,
+    pgsql::bytea_oid,
     pgsql::text_oid,
     pgsql::int4_oid,
     pgsql::text_oid,
@@ -97,328 +99,17 @@ namespace odb
 
   struct access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::extra_statement_cache_type
   {
-    pgsql::container_statements_impl< photo_traits > photo_;
-
     extra_statement_cache_type (
-      pgsql::connection& c,
+      pgsql::connection&,
       image_type&,
       id_image_type&,
-      pgsql::binding& id,
       pgsql::binding&,
-      pgsql::native_binding& idn,
-      const unsigned int* idt)
-    : photo_ (c, id, idn, idt)
+      pgsql::binding&,
+      pgsql::native_binding&,
+      const unsigned int*)
     {
     }
   };
-
-  // photo_
-  //
-
-  const char access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::photo_traits::
-  select_name[] = "select_zango_northwind_employees_photo";
-
-  const char access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::photo_traits::
-  insert_name[] = "insert_zango_northwind_employees_photo";
-
-  const char access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::photo_traits::
-  delete_name[] = "delete_zango_northwind_employees_photo";
-
-  const unsigned int access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::photo_traits::
-  insert_types[] =
-  {
-    pgsql::int4_oid,
-    pgsql::int8_oid,
-    pgsql::text_oid
-  };
-
-  const char access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::photo_traits::
-  select_statement[] =
-  "SELECT "
-  "\"northwind\".\"employees_photo\".\"index\", "
-  "\"northwind\".\"employees_photo\".\"value\" "
-  "FROM \"northwind\".\"employees_photo\" "
-  "WHERE \"northwind\".\"employees_photo\".\"object_id_employee_id\"=$1 ORDER BY \"northwind\".\"employees_photo\".\"index\"";
-
-  const char access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::photo_traits::
-  insert_statement[] =
-  "INSERT INTO \"northwind\".\"employees_photo\" "
-  "(\"object_id_employee_id\", "
-  "\"index\", "
-  "\"value\") "
-  "VALUES "
-  "($1, $2, $3)";
-
-  const char access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::photo_traits::
-  delete_statement[] =
-  "DELETE FROM \"northwind\".\"employees_photo\" "
-  "WHERE \"object_id_employee_id\"=$1";
-
-  void access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::photo_traits::
-  bind (pgsql::bind* b,
-        const pgsql::bind* id,
-        std::size_t id_size,
-        data_image_type& d)
-  {
-    using namespace pgsql;
-
-    statement_kind sk (statement_select);
-    ODB_POTENTIALLY_UNUSED (sk);
-
-    size_t n (0);
-
-    // object_id
-    //
-    if (id != 0)
-      std::memcpy (&b[n], id, id_size * sizeof (id[0]));
-    n += id_size;
-
-    // index
-    //
-    b[n].type = pgsql::bind::bigint;
-    b[n].buffer = &d.index_value;
-    b[n].is_null = &d.index_null;
-    n++;
-
-    // value
-    //
-    b[n].type = pgsql::bind::text;
-    b[n].buffer = d.value_value.data ();
-    b[n].capacity = d.value_value.capacity ();
-    b[n].size = &d.value_size;
-    b[n].is_null = &d.value_null;
-  }
-
-  void access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::photo_traits::
-  grow (data_image_type& i,
-        bool* t)
-  {
-    bool grew (false);
-
-    // index
-    //
-    t[0UL] = 0;
-
-    // value
-    //
-    if (t[1UL])
-    {
-      i.value_value.capacity (i.value_size);
-      grew = true;
-    }
-
-    if (grew)
-      i.version++;
-  }
-
-  void access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::photo_traits::
-  init (data_image_type& i,
-        index_type* j,
-        const value_type& v)
-  {
-    using namespace pgsql;
-
-    statement_kind sk (statement_insert);
-    ODB_POTENTIALLY_UNUSED (sk);
-
-    bool grew (false);
-
-    // index
-    //
-    if (j != 0)
-    {
-      bool is_null (false);
-      pgsql::value_traits<
-          index_type,
-          pgsql::id_bigint >::set_image (
-        i.index_value, is_null, *j);
-      i.index_null = is_null;
-    }
-
-    // value
-    //
-    {
-      bool is_null (false);
-      std::size_t size (0);
-      std::size_t cap (i.value_value.capacity ());
-      pgsql::value_traits<
-          value_type,
-          pgsql::id_string >::set_image (
-        i.value_value,
-        size,
-        is_null,
-        v);
-      i.value_null = is_null;
-      i.value_size = size;
-      grew = grew || (cap != i.value_value.capacity ());
-    }
-
-    if (grew)
-      i.version++;
-  }
-
-  void access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::photo_traits::
-  init (index_type& j,
-        value_type& v,
-        const data_image_type& i,
-        database* db)
-  {
-    ODB_POTENTIALLY_UNUSED (db);
-
-    // index
-    //
-    {
-      pgsql::value_traits<
-          index_type,
-          pgsql::id_bigint >::set_value (
-        j,
-        i.index_value,
-        i.index_null);
-    }
-
-    // value
-    //
-    {
-      pgsql::value_traits<
-          value_type,
-          pgsql::id_string >::set_value (
-        v,
-        i.value_value,
-        i.value_size,
-        i.value_null);
-    }
-  }
-
-  void access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::photo_traits::
-  insert (index_type i, const value_type& v, void* d)
-  {
-    using namespace pgsql;
-
-    statements_type& sts (*static_cast< statements_type* > (d));
-    data_image_type& di (sts.data_image ());
-
-    init (di, &i, v);
-
-    if (sts.data_binding_test_version ())
-    {
-      const binding& id (sts.id_binding ());
-      bind (sts.data_bind (), id.bind, id.count, di);
-      sts.data_binding_update_version ();
-    }
-
-    if (!sts.insert_statement ().execute ())
-      throw object_already_persistent ();
-  }
-
-  bool access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::photo_traits::
-  select (index_type& i, value_type& v, void* d)
-  {
-    using namespace pgsql;
-    using pgsql::select_statement;
-
-    statements_type& sts (*static_cast< statements_type* > (d));
-    data_image_type& di (sts.data_image ());
-
-    init (i, v, di, &sts.connection ().database ());
-
-    select_statement& st (sts.select_statement ());
-    select_statement::result r (st.fetch ());
-
-    if (r == select_statement::truncated)
-    {
-      grow (di, sts.select_image_truncated ());
-
-      if (sts.data_binding_test_version ())
-      {
-        bind (sts.data_bind (), 0, sts.id_binding ().count, di);
-        sts.data_binding_update_version ();
-        st.refetch ();
-      }
-    }
-
-    return r != select_statement::no_data;
-  }
-
-  void access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::photo_traits::
-  delete_ (void* d)
-  {
-    using namespace pgsql;
-
-    statements_type& sts (*static_cast< statements_type* > (d));
-    sts.delete_statement ().execute ();
-  }
-
-  void access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::photo_traits::
-  persist (const container_type& c,
-           statements_type& sts)
-  {
-    using namespace pgsql;
-
-    functions_type& fs (sts.functions ());
-    fs.ordered_ = true;
-    container_traits_type::persist (c, fs);
-  }
-
-  void access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::photo_traits::
-  load (container_type& c,
-        statements_type& sts)
-  {
-    using namespace pgsql;
-    using pgsql::select_statement;
-
-    const binding& id (sts.id_binding ());
-
-    if (sts.data_binding_test_version ())
-    {
-      bind (sts.data_bind (), id.bind, id.count, sts.data_image ());
-      sts.data_binding_update_version ();
-    }
-
-    select_statement& st (sts.select_statement ());
-    st.execute ();
-    auto_result ar (st);
-    select_statement::result r (st.fetch ());
-
-    if (r == select_statement::truncated)
-    {
-      data_image_type& di (sts.data_image ());
-      grow (di, sts.select_image_truncated ());
-
-      if (sts.data_binding_test_version ())
-      {
-        bind (sts.data_bind (), 0, id.count, di);
-        sts.data_binding_update_version ();
-        st.refetch ();
-      }
-    }
-
-    bool more (r != select_statement::no_data);
-
-    functions_type& fs (sts.functions ());
-    fs.ordered_ = true;
-    container_traits_type::load (c, more, fs);
-  }
-
-  void access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::photo_traits::
-  update (const container_type& c,
-          statements_type& sts)
-  {
-    using namespace pgsql;
-
-    functions_type& fs (sts.functions ());
-    fs.ordered_ = true;
-    container_traits_type::update (c, fs);
-  }
-
-  void access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::photo_traits::
-  erase (statements_type& sts)
-  {
-    using namespace pgsql;
-
-    functions_type& fs (sts.functions ());
-    fs.ordered_ = true;
-    container_traits_type::erase (fs);
-  }
 
   access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::id_type
   access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::
@@ -549,9 +240,17 @@ namespace odb
       grew = true;
     }
 
-    // notes_
+    // photo_
     //
     if (t[14UL])
+    {
+      i.photo_value.capacity (i.photo_size);
+      grew = true;
+    }
+
+    // notes_
+    //
+    if (t[15UL])
     {
       i.notes_value.capacity (i.notes_size);
       grew = true;
@@ -560,12 +259,12 @@ namespace odb
     // reports_to_
     //
     if (composite_value_traits< ::zango::northwind::employee_id, id_pgsql >::grow (
-          i.reports_to_value, t + 15UL))
+          i.reports_to_value, t + 16UL))
       grew = true;
 
     // photo_path_
     //
-    if (t[16UL])
+    if (t[17UL])
     {
       i.photo_path_value.capacity (i.photo_path_size);
       grew = true;
@@ -705,6 +404,15 @@ namespace odb
     b[n].capacity = i.extension_value.capacity ();
     b[n].size = &i.extension_size;
     b[n].is_null = &i.extension_null;
+    n++;
+
+    // photo_
+    //
+    b[n].type = pgsql::bind::bytea;
+    b[n].buffer = i.photo_value.data ();
+    b[n].capacity = i.photo_value.capacity ();
+    b[n].size = &i.photo_size;
+    b[n].is_null = &i.photo_null;
     n++;
 
     // notes_
@@ -1026,6 +734,27 @@ namespace odb
       grew = grew || (cap != i.extension_value.capacity ());
     }
 
+    // photo_
+    //
+    {
+      ::std::vector< char > const& v =
+        o.photo ();
+
+      bool is_null (true);
+      std::size_t size (0);
+      std::size_t cap (i.photo_value.capacity ());
+      pgsql::value_traits<
+          ::std::vector< char >,
+          pgsql::id_bytea >::set_image (
+        i.photo_value,
+        size,
+        is_null,
+        v);
+      i.photo_null = is_null;
+      i.photo_size = size;
+      grew = grew || (cap != i.photo_value.capacity ());
+    }
+
     // notes_
     //
     {
@@ -1297,6 +1026,21 @@ namespace odb
         i.extension_null);
     }
 
+    // photo_
+    //
+    {
+      ::std::vector< char >& v =
+        o.photo ();
+
+      pgsql::value_traits<
+          ::std::vector< char >,
+          pgsql::id_bytea >::set_value (
+        v,
+        i.photo_value,
+        i.photo_size,
+        i.photo_null);
+    }
+
     // notes_
     //
     {
@@ -1368,11 +1112,12 @@ namespace odb
   "\"country\", "
   "\"home_phone\", "
   "\"extension\", "
+  "\"photo\", "
   "\"notes\", "
   "\"reports_to_employee_id\", "
   "\"photo_path\") "
   "VALUES "
-  "($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17)";
+  "($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)";
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::find_statement[] =
   "SELECT "
@@ -1390,6 +1135,7 @@ namespace odb
   "\"northwind\".\"employees\".\"country\", "
   "\"northwind\".\"employees\".\"home_phone\", "
   "\"northwind\".\"employees\".\"extension\", "
+  "\"northwind\".\"employees\".\"photo\", "
   "\"northwind\".\"employees\".\"notes\", "
   "\"northwind\".\"employees\".\"reports_to_employee_id\", "
   "\"northwind\".\"employees\".\"photo_path\" "
@@ -1412,10 +1158,11 @@ namespace odb
   "\"country\"=$11, "
   "\"home_phone\"=$12, "
   "\"extension\"=$13, "
-  "\"notes\"=$14, "
-  "\"reports_to_employee_id\"=$15, "
-  "\"photo_path\"=$16 "
-  "WHERE \"employee_id_employee_id\"=$17";
+  "\"photo\"=$14, "
+  "\"notes\"=$15, "
+  "\"reports_to_employee_id\"=$16, "
+  "\"photo_path\"=$17 "
+  "WHERE \"employee_id_employee_id\"=$18";
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::erase_statement[] =
   "DELETE FROM \"northwind\".\"employees\" "
@@ -1437,6 +1184,7 @@ namespace odb
   "\"northwind\".\"employees\".\"country\", "
   "\"northwind\".\"employees\".\"home_phone\", "
   "\"northwind\".\"employees\".\"extension\", "
+  "\"northwind\".\"employees\".\"photo\", "
   "\"northwind\".\"employees\".\"notes\", "
   "\"northwind\".\"employees\".\"reports_to_employee_id\", "
   "\"northwind\".\"employees\".\"photo_path\" "
@@ -1481,30 +1229,6 @@ namespace odb
     insert_statement& st (sts.persist_statement ());
     if (!st.execute ())
       throw object_already_persistent ();
-
-    id_image_type& i (sts.id_image ());
-    init (i, obj.employee_id ());
-
-    binding& idb (sts.id_image_binding ());
-    if (i.version != sts.id_image_version () || idb.version == 0)
-    {
-      bind (idb.bind, i);
-      sts.id_image_version (i.version);
-      idb.version++;
-    }
-
-    extra_statement_cache_type& esc (sts.extra_statement_cache ());
-
-    // photo_
-    //
-    {
-      ::std::vector< char > const& v =
-        obj.photo ();
-
-      photo_traits::persist (
-        v,
-        esc.photo_);
-    }
 
     callback (db,
               obj,
@@ -1568,19 +1292,6 @@ namespace odb
     if (st.execute () == 0)
       throw object_not_persistent ();
 
-    extra_statement_cache_type& esc (sts.extra_statement_cache ());
-
-    // photo_
-    //
-    {
-      ::std::vector< char > const& v =
-        obj.photo ();
-
-      photo_traits::update (
-        v,
-        esc.photo_);
-    }
-
     callback (db, obj, callback_event::post_update);
     pointer_cache_traits::update (db, obj);
   }
@@ -1607,13 +1318,6 @@ namespace odb
       sts.id_image_version (i.version);
       idb.version++;
     }
-
-    extra_statement_cache_type& esc (sts.extra_statement_cache ());
-
-    // photo_
-    //
-    photo_traits::erase (
-      esc.photo_);
 
     if (sts.erase_statement ().execute () != 1)
       throw object_not_persistent ();
@@ -1791,27 +1495,6 @@ namespace odb
     return r != select_statement::no_data;
   }
 
-  void access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::
-  load_ (statements_type& sts,
-         object_type& obj,
-         bool reload)
-  {
-    ODB_POTENTIALLY_UNUSED (reload);
-
-    extra_statement_cache_type& esc (sts.extra_statement_cache ());
-
-    // photo_
-    //
-    {
-      ::std::vector< char >& v =
-        obj.photo ();
-
-      photo_traits::load (
-        v,
-        esc.photo_);
-    }
-  }
-
   result< access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::object_type >
   access::object_traits_impl< ::zango::northwind::employees, id_pgsql >::
   query (database&, const query_base_type& q)
@@ -1914,7 +1597,6 @@ namespace odb
         }
         case 2:
         {
-          db.execute ("DROP TABLE IF EXISTS \"northwind\".\"employees_photo\" CASCADE");
           db.execute ("DROP TABLE IF EXISTS \"northwind\".\"employees\" CASCADE");
           return false;
         }
@@ -1941,21 +1623,10 @@ namespace odb
                       "  \"country\" TEXT NULL,\n"
                       "  \"home_phone\" TEXT NULL,\n"
                       "  \"extension\" TEXT NULL,\n"
+                      "  \"photo\" BYTEA NULL,\n"
                       "  \"notes\" TEXT NULL,\n"
                       "  \"reports_to_employee_id\" INTEGER NULL,\n"
                       "  \"photo_path\" TEXT NULL)");
-          db.execute ("CREATE TABLE \"northwind\".\"employees_photo\" (\n"
-                      "  \"object_id_employee_id\" INTEGER NOT NULL,\n"
-                      "  \"index\" BIGINT NOT NULL,\n"
-                      "  \"value\" CHAR(1) NOT NULL,\n"
-                      "  CONSTRAINT \"object_id_fk\"\n"
-                      "    FOREIGN KEY (\"object_id_employee_id\")\n"
-                      "    REFERENCES \"northwind\".\"employees\" (\"employee_id_employee_id\")\n"
-                      "    ON DELETE CASCADE)");
-          db.execute ("CREATE INDEX \"employees_photo_object_id_i\"\n"
-                      "  ON \"northwind\".\"employees_photo\" (\"object_id_employee_id\")");
-          db.execute ("CREATE INDEX \"employees_photo_index_i\"\n"
-                      "  ON \"northwind\".\"employees_photo\" (\"index\")");
           return false;
         }
       }

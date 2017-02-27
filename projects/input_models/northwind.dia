@@ -2658,7 +2658,8 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN odb_pragma=null
+#DOGEN odb_pragma=pgsql:type("BYTEA") oracle:type("BLOB")#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -3114,7 +3115,8 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN odb_pragma=null
+#DOGEN odb_pragma=pgsql:type("BYTEA") oracle:type("BLOB")#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>

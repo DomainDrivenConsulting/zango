@@ -29,264 +29,15 @@ namespace odb
 
   struct access::object_traits_impl< ::zango::northwind::employees, id_oracle >::extra_statement_cache_type
   {
-    oracle::container_statements_impl< photo_traits > photo_;
-
     extra_statement_cache_type (
-      oracle::connection& c,
+      oracle::connection&,
       image_type&,
       id_image_type&,
-      oracle::binding& id,
+      oracle::binding&,
       oracle::binding&)
-    : photo_ (c, id)
     {
     }
   };
-
-  // photo_
-  //
-
-  const char access::object_traits_impl< ::zango::northwind::employees, id_oracle >::photo_traits::
-  select_statement[] =
-  "SELECT "
-  "\"northwind\".\"employees_photo\".\"index\", "
-  "\"northwind\".\"employees_photo\".\"value\" "
-  "FROM \"northwind\".\"employees_photo\" "
-  "WHERE \"northwind\".\"employees_photo\".\"object_id_employee_id\"=:1 ORDER BY \"northwind\".\"employees_photo\".\"index\"";
-
-  const char access::object_traits_impl< ::zango::northwind::employees, id_oracle >::photo_traits::
-  insert_statement[] =
-  "INSERT INTO \"northwind\".\"employees_photo\" "
-  "(\"object_id_employee_id\", "
-  "\"index\", "
-  "\"value\") "
-  "VALUES "
-  "(:1, :2, :3)";
-
-  const char access::object_traits_impl< ::zango::northwind::employees, id_oracle >::photo_traits::
-  delete_statement[] =
-  "DELETE FROM \"northwind\".\"employees_photo\" "
-  "WHERE \"object_id_employee_id\"=:1";
-
-  void access::object_traits_impl< ::zango::northwind::employees, id_oracle >::photo_traits::
-  bind (oracle::bind* b,
-        const oracle::bind* id,
-        std::size_t id_size,
-        data_image_type& d)
-  {
-    using namespace oracle;
-
-    statement_kind sk (statement_select);
-    ODB_POTENTIALLY_UNUSED (sk);
-
-    size_t n (0);
-
-    // object_id
-    //
-    if (id != 0)
-      std::memcpy (&b[n], id, id_size * sizeof (id[0]));
-    n += id_size;
-
-    // index
-    //
-    b[n].type = oracle::bind::number;
-    b[n].buffer = d.index_value;
-    b[n].capacity = static_cast<ub4> (sizeof (d.index_value));
-    b[n].size = &d.index_size;
-    b[n].indicator = &d.index_indicator;
-    n++;
-
-    // value
-    //
-    b[n].type = oracle::bind::string;
-    b[n].buffer = d.value_value;
-    b[n].capacity = static_cast<ub4> (sizeof (d.value_value));
-    b[n].size = &d.value_size;
-    b[n].indicator = &d.value_indicator;
-  }
-
-  void access::object_traits_impl< ::zango::northwind::employees, id_oracle >::photo_traits::
-  init (data_image_type& i,
-        index_type* j,
-        const value_type& v)
-  {
-    using namespace oracle;
-
-    statement_kind sk (statement_insert);
-    ODB_POTENTIALLY_UNUSED (sk);
-
-    // index
-    //
-    if (j != 0)
-    {
-      bool is_null (false);
-      std::size_t size (0);
-      oracle::value_traits<
-          index_type,
-          oracle::id_big_int >::set_image (
-        i.index_value,
-        size,
-        is_null,
-        *j);
-      i.index_indicator = is_null ? -1 : 0;
-      i.index_size = static_cast<ub2> (size);
-    }
-
-    // value
-    //
-    {
-      bool is_null (false);
-      std::size_t size (0);
-      oracle::value_traits<
-          value_type,
-          oracle::id_string >::set_image (
-        i.value_value,
-        sizeof (i.value_value),
-        size,
-        is_null,
-        v);
-      i.value_indicator = is_null ? -1 : 0;
-      i.value_size = static_cast<ub2> (size);
-    }
-  }
-
-  void access::object_traits_impl< ::zango::northwind::employees, id_oracle >::photo_traits::
-  init (index_type& j,
-        value_type& v,
-        const data_image_type& i,
-        database* db)
-  {
-    ODB_POTENTIALLY_UNUSED (db);
-
-    // index
-    //
-    {
-      oracle::value_traits<
-          index_type,
-          oracle::id_big_int >::set_value (
-        j,
-        i.index_value,
-        i.index_size,
-        i.index_indicator == -1);
-    }
-
-    // value
-    //
-    {
-      oracle::value_traits<
-          value_type,
-          oracle::id_string >::set_value (
-        v,
-        i.value_value,
-        i.value_size,
-        i.value_indicator == -1);
-    }
-  }
-
-  void access::object_traits_impl< ::zango::northwind::employees, id_oracle >::photo_traits::
-  insert (index_type i, const value_type& v, void* d)
-  {
-    using namespace oracle;
-
-    statements_type& sts (*static_cast< statements_type* > (d));
-    data_image_type& di (sts.data_image ());
-
-    init (di, &i, v);
-
-    if (sts.data_binding_test_version ())
-    {
-      const binding& id (sts.id_binding ());
-      bind (sts.data_bind (), id.bind, id.count, di);
-      sts.data_binding_update_version ();
-    }
-
-    if (!sts.insert_statement ().execute ())
-      throw object_already_persistent ();
-  }
-
-  bool access::object_traits_impl< ::zango::northwind::employees, id_oracle >::photo_traits::
-  select (index_type& i, value_type& v, void* d)
-  {
-    using namespace oracle;
-    using oracle::select_statement;
-
-    statements_type& sts (*static_cast< statements_type* > (d));
-    data_image_type& di (sts.data_image ());
-
-    init (i, v, di, &sts.connection ().database ());
-
-    sts.select_statement ().stream_result ();
-
-    select_statement& st (sts.select_statement ());
-    select_statement::result r (st.fetch ());
-    return r != select_statement::no_data;
-  }
-
-  void access::object_traits_impl< ::zango::northwind::employees, id_oracle >::photo_traits::
-  delete_ (void* d)
-  {
-    using namespace oracle;
-
-    statements_type& sts (*static_cast< statements_type* > (d));
-    sts.delete_statement ().execute ();
-  }
-
-  void access::object_traits_impl< ::zango::northwind::employees, id_oracle >::photo_traits::
-  persist (const container_type& c,
-           statements_type& sts)
-  {
-    using namespace oracle;
-
-    functions_type& fs (sts.functions ());
-    fs.ordered_ = true;
-    container_traits_type::persist (c, fs);
-  }
-
-  void access::object_traits_impl< ::zango::northwind::employees, id_oracle >::photo_traits::
-  load (container_type& c,
-        statements_type& sts)
-  {
-    using namespace oracle;
-    using oracle::select_statement;
-
-    const binding& id (sts.id_binding ());
-
-    if (sts.data_binding_test_version ())
-    {
-      bind (sts.data_bind (), id.bind, id.count, sts.data_image ());
-      sts.data_binding_update_version ();
-    }
-
-    select_statement& st (sts.select_statement ());
-    st.execute ();
-    auto_result ar (st);
-    select_statement::result r (st.fetch ());
-    bool more (r != select_statement::no_data);
-
-    functions_type& fs (sts.functions ());
-    fs.ordered_ = true;
-    container_traits_type::load (c, more, fs);
-  }
-
-  void access::object_traits_impl< ::zango::northwind::employees, id_oracle >::photo_traits::
-  update (const container_type& c,
-          statements_type& sts)
-  {
-    using namespace oracle;
-
-    functions_type& fs (sts.functions ());
-    fs.ordered_ = true;
-    container_traits_type::update (c, fs);
-  }
-
-  void access::object_traits_impl< ::zango::northwind::employees, id_oracle >::photo_traits::
-  erase (statements_type& sts)
-  {
-    using namespace oracle;
-
-    functions_type& fs (sts.functions ());
-    fs.ordered_ = true;
-    container_traits_type::erase (fs);
-  }
 
   access::object_traits_impl< ::zango::northwind::employees, id_oracle >::id_type
   access::object_traits_impl< ::zango::northwind::employees, id_oracle >::
@@ -441,6 +192,15 @@ namespace odb
     b[n].capacity = static_cast<ub4> (sizeof (i.extension_value));
     b[n].size = &i.extension_size;
     b[n].indicator = &i.extension_indicator;
+    n++;
+
+    // photo_
+    //
+    b[n].type = oracle::bind::blob;
+    b[n].buffer = &i.photo_lob;
+    b[n].indicator = &i.photo_indicator;
+    b[n].callback = &i.photo_callback;
+
     n++;
 
     // notes_
@@ -752,6 +512,24 @@ namespace odb
       i.extension_size = static_cast<ub2> (size);
     }
 
+    // photo_
+    //
+    {
+      ::std::vector< char > const& v =
+        o.photo ();
+
+      bool is_null (true);
+      i.photo_lob.position = 0;
+      oracle::value_traits<
+          ::std::vector< char >,
+          oracle::id_blob >::set_image (
+        i.photo_callback.callback.param,
+        i.photo_callback.context.param,
+        is_null,
+        v);
+      i.photo_indicator = is_null ? -1 : 0;
+    }
+
     // notes_
     //
     {
@@ -1019,6 +797,21 @@ namespace odb
         i.extension_indicator == -1);
     }
 
+    // photo_
+    //
+    {
+      ::std::vector< char >& v =
+        o.photo ();
+
+      oracle::value_traits<
+          ::std::vector< char >,
+          oracle::id_blob >::set_value (
+        v,
+        i.photo_callback.callback.result,
+        i.photo_callback.context.result,
+        i.photo_indicator == -1);
+    }
+
     // notes_
     //
     {
@@ -1090,11 +883,12 @@ namespace odb
   "\"country\", "
   "\"home_phone\", "
   "\"extension\", "
+  "\"photo\", "
   "\"notes\", "
   "\"reports_to_employee_id\", "
   "\"photo_path\") "
   "VALUES "
-  "(:1, :2, :3, :4, :5, :6, :7, :8, :9, :10, :11, :12, :13, :14, :15, :16, :17)";
+  "(:1, :2, :3, :4, :5, :6, :7, :8, :9, :10, :11, :12, :13, :14, :15, :16, :17, :18)";
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_oracle >::find_statement[] =
   "SELECT "
@@ -1112,6 +906,7 @@ namespace odb
   "\"northwind\".\"employees\".\"country\", "
   "\"northwind\".\"employees\".\"home_phone\", "
   "\"northwind\".\"employees\".\"extension\", "
+  "\"northwind\".\"employees\".\"photo\", "
   "\"northwind\".\"employees\".\"notes\", "
   "\"northwind\".\"employees\".\"reports_to_employee_id\", "
   "\"northwind\".\"employees\".\"photo_path\" "
@@ -1134,10 +929,11 @@ namespace odb
   "\"country\"=:11, "
   "\"home_phone\"=:12, "
   "\"extension\"=:13, "
-  "\"notes\"=:14, "
-  "\"reports_to_employee_id\"=:15, "
-  "\"photo_path\"=:16 "
-  "WHERE \"employee_id_employee_id\"=:17";
+  "\"photo\"=:14, "
+  "\"notes\"=:15, "
+  "\"reports_to_employee_id\"=:16, "
+  "\"photo_path\"=:17 "
+  "WHERE \"employee_id_employee_id\"=:18";
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_oracle >::erase_statement[] =
   "DELETE FROM \"northwind\".\"employees\" "
@@ -1159,6 +955,7 @@ namespace odb
   "\"northwind\".\"employees\".\"country\", "
   "\"northwind\".\"employees\".\"home_phone\", "
   "\"northwind\".\"employees\".\"extension\", "
+  "\"northwind\".\"employees\".\"photo\", "
   "\"northwind\".\"employees\".\"notes\", "
   "\"northwind\".\"employees\".\"reports_to_employee_id\", "
   "\"northwind\".\"employees\".\"photo_path\" "
@@ -1202,30 +999,6 @@ namespace odb
     insert_statement& st (sts.persist_statement ());
     if (!st.execute ())
       throw object_already_persistent ();
-
-    id_image_type& i (sts.id_image ());
-    init (i, obj.employee_id ());
-
-    binding& idb (sts.id_image_binding ());
-    if (i.version != sts.id_image_version () || idb.version == 0)
-    {
-      bind (idb.bind, i);
-      sts.id_image_version (i.version);
-      idb.version++;
-    }
-
-    extra_statement_cache_type& esc (sts.extra_statement_cache ());
-
-    // photo_
-    //
-    {
-      ::std::vector< char > const& v =
-        obj.photo ();
-
-      photo_traits::persist (
-        v,
-        esc.photo_);
-    }
 
     callback (db,
               obj,
@@ -1288,19 +1061,6 @@ namespace odb
     if (st.execute () == 0)
       throw object_not_persistent ();
 
-    extra_statement_cache_type& esc (sts.extra_statement_cache ());
-
-    // photo_
-    //
-    {
-      ::std::vector< char > const& v =
-        obj.photo ();
-
-      photo_traits::update (
-        v,
-        esc.photo_);
-    }
-
     callback (db, obj, callback_event::post_update);
     pointer_cache_traits::update (db, obj);
   }
@@ -1327,13 +1087,6 @@ namespace odb
       sts.id_image_version (i.version);
       idb.version++;
     }
-
-    extra_statement_cache_type& esc (sts.extra_statement_cache ());
-
-    // photo_
-    //
-    photo_traits::erase (
-      esc.photo_);
 
     if (sts.erase_statement ().execute () != 1)
       throw object_not_persistent ();
@@ -1500,27 +1253,6 @@ namespace odb
     return r != select_statement::no_data;
   }
 
-  void access::object_traits_impl< ::zango::northwind::employees, id_oracle >::
-  load_ (statements_type& sts,
-         object_type& obj,
-         bool reload)
-  {
-    ODB_POTENTIALLY_UNUSED (reload);
-
-    extra_statement_cache_type& esc (sts.extra_statement_cache ());
-
-    // photo_
-    //
-    {
-      ::std::vector< char >& v =
-        obj.photo ();
-
-      photo_traits::load (
-        v,
-        esc.photo_);
-    }
-  }
-
   result< access::object_traits_impl< ::zango::northwind::employees, id_oracle >::object_type >
   access::object_traits_impl< ::zango::northwind::employees, id_oracle >::
   query (database&, const query_base_type& q)
@@ -1618,14 +1350,6 @@ namespace odb
         {
           db.execute ("BEGIN\n"
                       "  BEGIN\n"
-                      "    EXECUTE IMMEDIATE 'DROP TABLE \"northwind\".\"employees_photo\" CASCADE CONSTRAINTS';\n"
-                      "  EXCEPTION\n"
-                      "    WHEN OTHERS THEN\n"
-                      "      IF SQLCODE != -942 THEN RAISE; END IF;\n"
-                      "  END;\n"
-                      "END;");
-          db.execute ("BEGIN\n"
-                      "  BEGIN\n"
                       "    EXECUTE IMMEDIATE 'DROP TABLE \"northwind\".\"employees\" CASCADE CONSTRAINTS';\n"
                       "  EXCEPTION\n"
                       "    WHEN OTHERS THEN\n"
@@ -1657,21 +1381,10 @@ namespace odb
                       "  \"country\" VARCHAR2(512) NULL,\n"
                       "  \"home_phone\" VARCHAR2(512) NULL,\n"
                       "  \"extension\" VARCHAR2(512) NULL,\n"
+                      "  \"photo\" BLOB NULL,\n"
                       "  \"notes\" VARCHAR2(512) NULL,\n"
                       "  \"reports_to_employee_id\" NUMBER(10) NULL,\n"
                       "  \"photo_path\" VARCHAR2(512) NULL)");
-          db.execute ("CREATE TABLE \"northwind\".\"employees_photo\" (\n"
-                      "  \"object_id_employee_id\" NUMBER(10) NOT NULL,\n"
-                      "  \"index\" NUMBER(20) NOT NULL,\n"
-                      "  \"value\" CHAR(1) NOT NULL,\n"
-                      "  CONSTRAINT \"employees_photo_object_id_fk\"\n"
-                      "    FOREIGN KEY (\"object_id_employee_id\")\n"
-                      "    REFERENCES \"northwind\".\"employees\" (\"employee_id_employee_id\")\n"
-                      "    ON DELETE CASCADE)");
-          db.execute ("CREATE INDEX \"northwind\".\"employees_photo_object_id_i\"\n"
-                      "  ON \"northwind\".\"employees_photo\" (\"object_id_employee_id\")");
-          db.execute ("CREATE INDEX \"northwind\".\"employees_photo_index_i\"\n"
-                      "  ON \"northwind\".\"employees_photo\" (\"index\")");
           return false;
         }
       }
