@@ -151,7 +151,7 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::order_details, id_pgsql, A >::order_details_key_class_::product_id_class_1_::value_type_
   query_columns< ::zango::northwind::order_details, id_pgsql, A >::order_details_key_class_::product_id_class_1_::
-  value (A::table_name, "\"product_id_product_id\"", 0);
+  value (A::table_name, "\"product_id\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::order_details, id_pgsql, A >::order_details_key_class_::product_id_class_1_
@@ -160,7 +160,7 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::order_details, id_pgsql, A >::order_details_key_class_::order_id_class_1_::value_type_
   query_columns< ::zango::northwind::order_details, id_pgsql, A >::order_details_key_class_::order_id_class_1_::
-  value (A::table_name, "\"order_id_order_id\"", 0);
+  value (A::table_name, "\"order_id\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::order_details, id_pgsql, A >::order_details_key_class_::order_id_class_1_

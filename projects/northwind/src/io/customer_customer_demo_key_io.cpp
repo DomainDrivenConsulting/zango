@@ -30,7 +30,7 @@ std::ostream& operator<<(std::ostream& s, const customer_customer_demo_key& v) {
     s << " { "
       << "\"__type__\": " << "\"zango::northwind::customer_customer_demo_key\"" << ", "
       << "\"customer_id\": " << v.customer_id() << ", "
-      << "\"customer_type\": " << v.customer_type()
+      << "\"customer_type_id\": " << v.customer_type_id()
       << " }";
     return(s);
 }

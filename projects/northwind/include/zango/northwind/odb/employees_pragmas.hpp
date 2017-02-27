@@ -35,6 +35,7 @@ namespace northwind {
 
 #pragma db object(employees) schema("northwind")
 
+#pragma db member(employees::employee_id_) column("")
 #pragma db member(employees::employee_id_) id
 #pragma db member(employees::last_name_) not_null
 #pragma db member(employees::first_name_) not_null
@@ -52,6 +53,7 @@ namespace northwind {
 #pragma db member(employees::photo_) pgsql:type("BYTEA") oracle:type("BLOB")
 #pragma db member(employees::photo_) null
 #pragma db member(employees::notes_) null
+#pragma db member(employees::reports_to_) column("reports_to")
 #pragma db member(employees::reports_to_) null
 #pragma db member(employees::photo_path_) null
 

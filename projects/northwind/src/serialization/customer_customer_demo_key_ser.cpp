@@ -39,7 +39,7 @@ void save(Archive& ar,
     const zango::northwind::customer_customer_demo_key& v,
     const unsigned int /*version*/) {
     ar << make_nvp("customer_id", v.customer_id_);
-    ar << make_nvp("customer_type", v.customer_type_);
+    ar << make_nvp("customer_type_id", v.customer_type_id_);
 }
 
 template<typename Archive>
@@ -47,7 +47,7 @@ void load(Archive& ar,
     zango::northwind::customer_customer_demo_key& v,
     const unsigned int /*version*/) {
     ar >> make_nvp("customer_id", v.customer_id_);
-    ar >> make_nvp("customer_type", v.customer_type_);
+    ar >> make_nvp("customer_type_id", v.customer_type_id_);
 }
 
 } }

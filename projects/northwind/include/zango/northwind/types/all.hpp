@@ -27,6 +27,7 @@
 
 #include "zango/northwind/types/orders.hpp"
 #include "zango/northwind/types/region.hpp"
+#include "zango/northwind/types/hydrator.hpp"
 #include "zango/northwind/types/order_id.hpp"
 #include "zango/northwind/types/products.hpp"
 #include "zango/northwind/types/shippers.hpp"
@@ -38,6 +39,7 @@
 #include "zango/northwind/types/territory.hpp"
 #include "zango/northwind/types/categories.hpp"
 #include "zango/northwind/types/product_id.hpp"
+#include "zango/northwind/types/repository.hpp"
 #include "zango/northwind/types/shipper_id.hpp"
 #include "zango/northwind/types/category_id.hpp"
 #include "zango/northwind/types/customer_id.hpp"

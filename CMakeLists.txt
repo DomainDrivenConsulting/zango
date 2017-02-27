@@ -71,7 +71,7 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/projects/northwind)
 #
 add_executable(application projects/application/main.cpp)
 target_link_libraries(application
-    northwind
+    -Wl,--whole-archive northwind -Wl,--no-whole-archive
     ${ORACLE_LIBRARY} ${ODB_LIBRARIES} ${Boost_LIBRARIES})
 
 add_custom_target(knit_northwind

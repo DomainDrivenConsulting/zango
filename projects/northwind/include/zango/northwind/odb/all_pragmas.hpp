@@ -37,6 +37,7 @@
 #include "zango/northwind/odb/territory_pragmas.hpp"
 #include "zango/northwind/odb/categories_pragmas.hpp"
 #include "zango/northwind/odb/product_id_pragmas.hpp"
+#include "zango/northwind/odb/repository_pragmas.hpp"
 #include "zango/northwind/odb/shipper_id_pragmas.hpp"
 #include "zango/northwind/odb/category_id_pragmas.hpp"
 #include "zango/northwind/odb/customer_id_pragmas.hpp"

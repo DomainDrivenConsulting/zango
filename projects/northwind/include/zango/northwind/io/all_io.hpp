@@ -37,6 +37,7 @@
 #include "zango/northwind/io/territory_io.hpp"
 #include "zango/northwind/io/categories_io.hpp"
 #include "zango/northwind/io/product_id_io.hpp"
+#include "zango/northwind/io/repository_io.hpp"
 #include "zango/northwind/io/shipper_id_io.hpp"
 #include "zango/northwind/io/category_id_io.hpp"
 #include "zango/northwind/io/customer_id_io.hpp"

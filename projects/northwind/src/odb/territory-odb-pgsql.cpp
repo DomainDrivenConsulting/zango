@@ -307,36 +307,36 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_pgsql >::persist_statement[] =
   "INSERT INTO \"northwind\".\"territory\" "
-  "(\"territory_id_territory_id\", "
+  "(\"territory_id\", "
   "\"territory_description\", "
-  "\"region_id_region_id\") "
+  "\"region_id\") "
   "VALUES "
   "($1, $2, $3)";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_pgsql >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"territory\".\"territory_id_territory_id\", "
+  "\"northwind\".\"territory\".\"territory_id\", "
   "\"northwind\".\"territory\".\"territory_description\", "
-  "\"northwind\".\"territory\".\"region_id_region_id\" "
+  "\"northwind\".\"territory\".\"region_id\" "
   "FROM \"northwind\".\"territory\" "
-  "WHERE \"northwind\".\"territory\".\"territory_id_territory_id\"=$1";
+  "WHERE \"northwind\".\"territory\".\"territory_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_pgsql >::update_statement[] =
   "UPDATE \"northwind\".\"territory\" "
   "SET "
   "\"territory_description\"=$1, "
-  "\"region_id_region_id\"=$2 "
-  "WHERE \"territory_id_territory_id\"=$3";
+  "\"region_id\"=$2 "
+  "WHERE \"territory_id\"=$3";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_pgsql >::erase_statement[] =
   "DELETE FROM \"northwind\".\"territory\" "
-  "WHERE \"territory_id_territory_id\"=$1";
+  "WHERE \"territory_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_pgsql >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"territory\".\"territory_id_territory_id\", "
+  "\"northwind\".\"territory\".\"territory_id\", "
   "\"northwind\".\"territory\".\"territory_description\", "
-  "\"northwind\".\"territory\".\"region_id_region_id\" "
+  "\"northwind\".\"territory\".\"region_id\" "
   "FROM \"northwind\".\"territory\"";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_pgsql >::erase_query_statement[] =
@@ -758,9 +758,9 @@ namespace odb
         case 1:
         {
           db.execute ("CREATE TABLE \"northwind\".\"territory\" (\n"
-                      "  \"territory_id_territory_id\" TEXT NOT NULL PRIMARY KEY,\n"
+                      "  \"territory_id\" TEXT NOT NULL PRIMARY KEY,\n"
                       "  \"territory_description\" TEXT NOT NULL,\n"
-                      "  \"region_id_region_id\" INTEGER NOT NULL)");
+                      "  \"region_id\" INTEGER NOT NULL)");
           return false;
         }
       }

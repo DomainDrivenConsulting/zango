@@ -62,9 +62,9 @@ namespace odb
       //
       composite_value_traits< ::zango::northwind::customer_id, id_pgsql >::image_type customer_id_value;
 
-      // customer_type_
+      // customer_type_id_
       //
-      composite_value_traits< ::zango::northwind::customer_type_id, id_pgsql >::image_type customer_type_value;
+      composite_value_traits< ::zango::northwind::customer_type_id, id_pgsql >::image_type customer_type_id_value;
     };
 
     static bool

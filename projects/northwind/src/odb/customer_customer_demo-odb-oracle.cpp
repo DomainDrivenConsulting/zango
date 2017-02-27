@@ -151,26 +151,26 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_oracle >::persist_statement[] =
   "INSERT INTO \"northwind\".\"customer_customer_demo\" "
-  "(\"customer_id_customer_id\", "
-  "\"customer_type_customer_type_id\") "
+  "(\"customer_id\", "
+  "\"customer_type_id\") "
   "VALUES "
   "(:1, :2)";
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_oracle >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"customer_customer_demo\".\"customer_id_customer_id\", "
-  "\"northwind\".\"customer_customer_demo\".\"customer_type_customer_type_id\" "
+  "\"northwind\".\"customer_customer_demo\".\"customer_id\", "
+  "\"northwind\".\"customer_customer_demo\".\"customer_type_id\" "
   "FROM \"northwind\".\"customer_customer_demo\" "
-  "WHERE \"northwind\".\"customer_customer_demo\".\"customer_id_customer_id\"=:1 AND \"northwind\".\"customer_customer_demo\".\"customer_type_customer_type_id\"=:2";
+  "WHERE \"northwind\".\"customer_customer_demo\".\"customer_id\"=:1 AND \"northwind\".\"customer_customer_demo\".\"customer_type_id\"=:2";
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_oracle >::erase_statement[] =
   "DELETE FROM \"northwind\".\"customer_customer_demo\" "
-  "WHERE \"customer_id_customer_id\"=:1 AND \"customer_type_customer_type_id\"=:2";
+  "WHERE \"customer_id\"=:1 AND \"customer_type_id\"=:2";
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_oracle >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"customer_customer_demo\".\"customer_id_customer_id\", "
-  "\"northwind\".\"customer_customer_demo\".\"customer_type_customer_type_id\" "
+  "\"northwind\".\"customer_customer_demo\".\"customer_id\", "
+  "\"northwind\".\"customer_customer_demo\".\"customer_type_id\" "
   "FROM \"northwind\".\"customer_customer_demo\"";
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_oracle >::erase_query_statement[] =
@@ -533,10 +533,10 @@ namespace odb
         case 1:
         {
           db.execute ("CREATE TABLE \"northwind\".\"customer_customer_demo\" (\n"
-                      "  \"customer_id_customer_id\" NUMBER(10) NOT NULL,\n"
-                      "  \"customer_type_customer_type_id\" VARCHAR2(512) NOT NULL,\n"
-                      "  PRIMARY KEY (\"customer_id_customer_id\",\n"
-                      "               \"customer_type_customer_type_id\"))");
+                      "  \"customer_id\" NUMBER(10) NOT NULL,\n"
+                      "  \"customer_type_id\" VARCHAR2(512) NOT NULL,\n"
+                      "  PRIMARY KEY (\"customer_id\",\n"
+                      "               \"customer_type_id\"))");
           return false;
         }
       }

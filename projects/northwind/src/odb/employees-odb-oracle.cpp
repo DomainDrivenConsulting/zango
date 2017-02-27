@@ -869,7 +869,7 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_oracle >::persist_statement[] =
   "INSERT INTO \"northwind\".\"employees\" "
-  "(\"employee_id_employee_id\", "
+  "(\"employee_id\", "
   "\"last_name\", "
   "\"first_name\", "
   "\"title\", "
@@ -892,7 +892,7 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_oracle >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"employees\".\"employee_id_employee_id\", "
+  "\"northwind\".\"employees\".\"employee_id\", "
   "\"northwind\".\"employees\".\"last_name\", "
   "\"northwind\".\"employees\".\"first_name\", "
   "\"northwind\".\"employees\".\"title\", "
@@ -911,7 +911,7 @@ namespace odb
   "\"northwind\".\"employees\".\"reports_to_employee_id\", "
   "\"northwind\".\"employees\".\"photo_path\" "
   "FROM \"northwind\".\"employees\" "
-  "WHERE \"northwind\".\"employees\".\"employee_id_employee_id\"=:1";
+  "WHERE \"northwind\".\"employees\".\"employee_id\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_oracle >::update_statement[] =
   "UPDATE \"northwind\".\"employees\" "
@@ -933,15 +933,15 @@ namespace odb
   "\"notes\"=:15, "
   "\"reports_to_employee_id\"=:16, "
   "\"photo_path\"=:17 "
-  "WHERE \"employee_id_employee_id\"=:18";
+  "WHERE \"employee_id\"=:18";
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_oracle >::erase_statement[] =
   "DELETE FROM \"northwind\".\"employees\" "
-  "WHERE \"employee_id_employee_id\"=:1";
+  "WHERE \"employee_id\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_oracle >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"employees\".\"employee_id_employee_id\", "
+  "\"northwind\".\"employees\".\"employee_id\", "
   "\"northwind\".\"employees\".\"last_name\", "
   "\"northwind\".\"employees\".\"first_name\", "
   "\"northwind\".\"employees\".\"title\", "
@@ -1367,7 +1367,7 @@ namespace odb
         case 1:
         {
           db.execute ("CREATE TABLE \"northwind\".\"employees\" (\n"
-                      "  \"employee_id_employee_id\" NUMBER(10) NOT NULL PRIMARY KEY,\n"
+                      "  \"employee_id\" NUMBER(10) NOT NULL PRIMARY KEY,\n"
                       "  \"last_name\" VARCHAR2(512) NOT NULL,\n"
                       "  \"first_name\" VARCHAR2(512) NOT NULL,\n"
                       "  \"title\" VARCHAR2(512) NULL,\n"

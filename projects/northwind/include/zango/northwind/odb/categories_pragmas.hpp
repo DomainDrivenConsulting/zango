@@ -33,8 +33,9 @@ namespace northwind {
 
 #ifdef ODB_COMPILER
 
-#pragma db object(categories) schema("northwind")
+#pragma db object(categories) schema("Mnorthwind")
 
+#pragma db member(categories::category_id_) column("")
 #pragma db member(categories::category_id_) id
 #pragma db member(categories::description_) null
 #pragma db member(categories::picutre_) pgsql:type("BYTEA") oracle:type("BLOB")

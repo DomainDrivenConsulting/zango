@@ -195,31 +195,31 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::region, id_oracle >::persist_statement[] =
   "INSERT INTO \"northwind\".\"region\" "
-  "(\"region_id_region_id\", "
+  "(\"region_id\", "
   "\"region_description\") "
   "VALUES "
   "(:1, :2)";
 
   const char access::object_traits_impl< ::zango::northwind::region, id_oracle >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"region\".\"region_id_region_id\", "
+  "\"northwind\".\"region\".\"region_id\", "
   "\"northwind\".\"region\".\"region_description\" "
   "FROM \"northwind\".\"region\" "
-  "WHERE \"northwind\".\"region\".\"region_id_region_id\"=:1";
+  "WHERE \"northwind\".\"region\".\"region_id\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::region, id_oracle >::update_statement[] =
   "UPDATE \"northwind\".\"region\" "
   "SET "
   "\"region_description\"=:1 "
-  "WHERE \"region_id_region_id\"=:2";
+  "WHERE \"region_id\"=:2";
 
   const char access::object_traits_impl< ::zango::northwind::region, id_oracle >::erase_statement[] =
   "DELETE FROM \"northwind\".\"region\" "
-  "WHERE \"region_id_region_id\"=:1";
+  "WHERE \"region_id\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::region, id_oracle >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"region\".\"region_id_region_id\", "
+  "\"northwind\".\"region\".\"region_id\", "
   "\"northwind\".\"region\".\"region_description\" "
   "FROM \"northwind\".\"region\"";
 
@@ -629,7 +629,7 @@ namespace odb
         case 1:
         {
           db.execute ("CREATE TABLE \"northwind\".\"region\" (\n"
-                      "  \"region_id_region_id\" NUMBER(10) NOT NULL PRIMARY KEY,\n"
+                      "  \"region_id\" NUMBER(10) NOT NULL PRIMARY KEY,\n"
                       "  \"region_description\" VARCHAR2(512) NOT NULL)");
           return false;
         }

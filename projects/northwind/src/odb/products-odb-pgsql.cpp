@@ -604,10 +604,10 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::products, id_pgsql >::persist_statement[] =
   "INSERT INTO \"northwind\".\"products\" "
-  "(\"product_id_product_id\", "
+  "(\"product_id\", "
   "\"product_name\", "
-  "\"supplier_id_supplier_id\", "
-  "\"category_id_category_id\", "
+  "\"supplier_id\", "
+  "\"category_id\", "
   "\"quantity_per_unit\", "
   "\"unit_price\", "
   "\"units_in_stock\", "
@@ -619,10 +619,10 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::products, id_pgsql >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"products\".\"product_id_product_id\", "
+  "\"northwind\".\"products\".\"product_id\", "
   "\"northwind\".\"products\".\"product_name\", "
-  "\"northwind\".\"products\".\"supplier_id_supplier_id\", "
-  "\"northwind\".\"products\".\"category_id_category_id\", "
+  "\"northwind\".\"products\".\"supplier_id\", "
+  "\"northwind\".\"products\".\"category_id\", "
   "\"northwind\".\"products\".\"quantity_per_unit\", "
   "\"northwind\".\"products\".\"unit_price\", "
   "\"northwind\".\"products\".\"units_in_stock\", "
@@ -630,32 +630,32 @@ namespace odb
   "\"northwind\".\"products\".\"reorder_level\", "
   "\"northwind\".\"products\".\"discontinued\" "
   "FROM \"northwind\".\"products\" "
-  "WHERE \"northwind\".\"products\".\"product_id_product_id\"=$1";
+  "WHERE \"northwind\".\"products\".\"product_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::products, id_pgsql >::update_statement[] =
   "UPDATE \"northwind\".\"products\" "
   "SET "
   "\"product_name\"=$1, "
-  "\"supplier_id_supplier_id\"=$2, "
-  "\"category_id_category_id\"=$3, "
+  "\"supplier_id\"=$2, "
+  "\"category_id\"=$3, "
   "\"quantity_per_unit\"=$4, "
   "\"unit_price\"=$5, "
   "\"units_in_stock\"=$6, "
   "\"units_in_order\"=$7, "
   "\"reorder_level\"=$8, "
   "\"discontinued\"=$9 "
-  "WHERE \"product_id_product_id\"=$10";
+  "WHERE \"product_id\"=$10";
 
   const char access::object_traits_impl< ::zango::northwind::products, id_pgsql >::erase_statement[] =
   "DELETE FROM \"northwind\".\"products\" "
-  "WHERE \"product_id_product_id\"=$1";
+  "WHERE \"product_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::products, id_pgsql >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"products\".\"product_id_product_id\", "
+  "\"northwind\".\"products\".\"product_id\", "
   "\"northwind\".\"products\".\"product_name\", "
-  "\"northwind\".\"products\".\"supplier_id_supplier_id\", "
-  "\"northwind\".\"products\".\"category_id_category_id\", "
+  "\"northwind\".\"products\".\"supplier_id\", "
+  "\"northwind\".\"products\".\"category_id\", "
   "\"northwind\".\"products\".\"quantity_per_unit\", "
   "\"northwind\".\"products\".\"unit_price\", "
   "\"northwind\".\"products\".\"units_in_stock\", "
@@ -1083,10 +1083,10 @@ namespace odb
         case 1:
         {
           db.execute ("CREATE TABLE \"northwind\".\"products\" (\n"
-                      "  \"product_id_product_id\" INTEGER NOT NULL PRIMARY KEY,\n"
+                      "  \"product_id\" INTEGER NOT NULL PRIMARY KEY,\n"
                       "  \"product_name\" TEXT NOT NULL,\n"
-                      "  \"supplier_id_supplier_id\" INTEGER NULL,\n"
-                      "  \"category_id_category_id\" INTEGER NULL,\n"
+                      "  \"supplier_id\" INTEGER NULL,\n"
+                      "  \"category_id\" INTEGER NULL,\n"
                       "  \"quantity_per_unit\" TEXT NOT NULL,\n"
                       "  \"unit_price\" DOUBLE PRECISION NOT NULL,\n"
                       "  \"units_in_stock\" INTEGER NOT NULL,\n"

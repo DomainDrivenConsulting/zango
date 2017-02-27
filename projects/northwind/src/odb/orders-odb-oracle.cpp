@@ -662,9 +662,9 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::orders, id_oracle >::persist_statement[] =
   "INSERT INTO \"northwind\".\"orders\" "
-  "(\"order_id_order_id\", "
-  "\"customer_id_customer_id\", "
-  "\"employee_id_employee_id\", "
+  "(\"order_id\", "
+  "\"customer_id\", "
+  "\"employee_id\", "
   "\"order_date\", "
   "\"required_date\", "
   "\"shipped_date\", "
@@ -681,9 +681,9 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::orders, id_oracle >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"orders\".\"order_id_order_id\", "
-  "\"northwind\".\"orders\".\"customer_id_customer_id\", "
-  "\"northwind\".\"orders\".\"employee_id_employee_id\", "
+  "\"northwind\".\"orders\".\"order_id\", "
+  "\"northwind\".\"orders\".\"customer_id\", "
+  "\"northwind\".\"orders\".\"employee_id\", "
   "\"northwind\".\"orders\".\"order_date\", "
   "\"northwind\".\"orders\".\"required_date\", "
   "\"northwind\".\"orders\".\"shipped_date\", "
@@ -696,13 +696,13 @@ namespace odb
   "\"northwind\".\"orders\".\"ship_postal_code\", "
   "\"northwind\".\"orders\".\"ship_country\" "
   "FROM \"northwind\".\"orders\" "
-  "WHERE \"northwind\".\"orders\".\"order_id_order_id\"=:1";
+  "WHERE \"northwind\".\"orders\".\"order_id\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::orders, id_oracle >::update_statement[] =
   "UPDATE \"northwind\".\"orders\" "
   "SET "
-  "\"customer_id_customer_id\"=:1, "
-  "\"employee_id_employee_id\"=:2, "
+  "\"customer_id\"=:1, "
+  "\"employee_id\"=:2, "
   "\"order_date\"=:3, "
   "\"required_date\"=:4, "
   "\"shipped_date\"=:5, "
@@ -714,17 +714,17 @@ namespace odb
   "\"ship_region\"=:11, "
   "\"ship_postal_code\"=:12, "
   "\"ship_country\"=:13 "
-  "WHERE \"order_id_order_id\"=:14";
+  "WHERE \"order_id\"=:14";
 
   const char access::object_traits_impl< ::zango::northwind::orders, id_oracle >::erase_statement[] =
   "DELETE FROM \"northwind\".\"orders\" "
-  "WHERE \"order_id_order_id\"=:1";
+  "WHERE \"order_id\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::orders, id_oracle >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"orders\".\"order_id_order_id\", "
-  "\"northwind\".\"orders\".\"customer_id_customer_id\", "
-  "\"northwind\".\"orders\".\"employee_id_employee_id\", "
+  "\"northwind\".\"orders\".\"order_id\", "
+  "\"northwind\".\"orders\".\"customer_id\", "
+  "\"northwind\".\"orders\".\"employee_id\", "
   "\"northwind\".\"orders\".\"order_date\", "
   "\"northwind\".\"orders\".\"required_date\", "
   "\"northwind\".\"orders\".\"shipped_date\", "
@@ -1144,9 +1144,9 @@ namespace odb
         case 1:
         {
           db.execute ("CREATE TABLE \"northwind\".\"orders\" (\n"
-                      "  \"order_id_order_id\" NUMBER(10) NOT NULL PRIMARY KEY,\n"
-                      "  \"customer_id_customer_id\" NUMBER(10) NULL,\n"
-                      "  \"employee_id_employee_id\" NUMBER(10) NULL,\n"
+                      "  \"order_id\" NUMBER(10) NOT NULL PRIMARY KEY,\n"
+                      "  \"customer_id\" NUMBER(10) NULL,\n"
+                      "  \"employee_id\" NUMBER(10) NULL,\n"
                       "  \"order_date\" DATE NULL,\n"
                       "  \"required_date\" DATE NULL,\n"
                       "  \"shipped_date\" DATE NULL,\n"

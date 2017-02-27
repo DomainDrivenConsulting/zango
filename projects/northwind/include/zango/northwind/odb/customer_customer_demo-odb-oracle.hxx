@@ -85,11 +85,11 @@ namespace odb
 
       static const customer_id_class_1_ customer_id;
 
-      // customer_type
+      // customer_type_id
       //
-      struct customer_type_class_1_
+      struct customer_type_id_class_1_
       {
-        customer_type_class_1_ ()
+        customer_type_id_class_1_ ()
         {
         }
 
@@ -106,7 +106,7 @@ namespace odb
         static const value_type_ value;
       };
 
-      static const customer_type_class_1_ customer_type;
+      static const customer_type_id_class_1_ customer_type_id;
     };
 
     static const customer_customer_demo_key_class_ customer_customer_demo_key;
@@ -115,20 +115,20 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::customer_customer_demo, id_oracle, A >::customer_customer_demo_key_class_::customer_id_class_1_::value_type_
   query_columns< ::zango::northwind::customer_customer_demo, id_oracle, A >::customer_customer_demo_key_class_::customer_id_class_1_::
-  value (A::table_name, "\"customer_id_customer_id\"", 0, 10);
+  value (A::table_name, "\"customer_id\"", 0, 10);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::customer_customer_demo, id_oracle, A >::customer_customer_demo_key_class_::customer_id_class_1_
   query_columns< ::zango::northwind::customer_customer_demo, id_oracle, A >::customer_customer_demo_key_class_::customer_id;
 
   template <typename A>
-  const typename query_columns< ::zango::northwind::customer_customer_demo, id_oracle, A >::customer_customer_demo_key_class_::customer_type_class_1_::value_type_
-  query_columns< ::zango::northwind::customer_customer_demo, id_oracle, A >::customer_customer_demo_key_class_::customer_type_class_1_::
-  value (A::table_name, "\"customer_type_customer_type_id\"", 0, 512);
+  const typename query_columns< ::zango::northwind::customer_customer_demo, id_oracle, A >::customer_customer_demo_key_class_::customer_type_id_class_1_::value_type_
+  query_columns< ::zango::northwind::customer_customer_demo, id_oracle, A >::customer_customer_demo_key_class_::customer_type_id_class_1_::
+  value (A::table_name, "\"customer_type_id\"", 0, 512);
 
   template <typename A>
-  const typename query_columns< ::zango::northwind::customer_customer_demo, id_oracle, A >::customer_customer_demo_key_class_::customer_type_class_1_
-  query_columns< ::zango::northwind::customer_customer_demo, id_oracle, A >::customer_customer_demo_key_class_::customer_type;
+  const typename query_columns< ::zango::northwind::customer_customer_demo, id_oracle, A >::customer_customer_demo_key_class_::customer_type_id_class_1_
+  query_columns< ::zango::northwind::customer_customer_demo, id_oracle, A >::customer_customer_demo_key_class_::customer_type_id;
 
   template <typename A>
   const typename query_columns< ::zango::northwind::customer_customer_demo, id_oracle, A >::customer_customer_demo_key_class_

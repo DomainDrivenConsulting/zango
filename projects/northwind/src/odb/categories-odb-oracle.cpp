@@ -280,8 +280,8 @@ namespace odb
   }
 
   const char access::object_traits_impl< ::zango::northwind::categories, id_oracle >::persist_statement[] =
-  "INSERT INTO \"northwind\".\"categories\" "
-  "(\"category_id_category_id\", "
+  "INSERT INTO \"Mnorthwind\".\"categories\" "
+  "(\"category_id\", "
   "\"category_name\", "
   "\"description\", "
   "\"picutre\") "
@@ -290,38 +290,38 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::categories, id_oracle >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"categories\".\"category_id_category_id\", "
-  "\"northwind\".\"categories\".\"category_name\", "
-  "\"northwind\".\"categories\".\"description\", "
-  "\"northwind\".\"categories\".\"picutre\" "
-  "FROM \"northwind\".\"categories\" "
-  "WHERE \"northwind\".\"categories\".\"category_id_category_id\"=:1";
+  "\"Mnorthwind\".\"categories\".\"category_id\", "
+  "\"Mnorthwind\".\"categories\".\"category_name\", "
+  "\"Mnorthwind\".\"categories\".\"description\", "
+  "\"Mnorthwind\".\"categories\".\"picutre\" "
+  "FROM \"Mnorthwind\".\"categories\" "
+  "WHERE \"Mnorthwind\".\"categories\".\"category_id\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::categories, id_oracle >::update_statement[] =
-  "UPDATE \"northwind\".\"categories\" "
+  "UPDATE \"Mnorthwind\".\"categories\" "
   "SET "
   "\"category_name\"=:1, "
   "\"description\"=:2, "
   "\"picutre\"=:3 "
-  "WHERE \"category_id_category_id\"=:4";
+  "WHERE \"category_id\"=:4";
 
   const char access::object_traits_impl< ::zango::northwind::categories, id_oracle >::erase_statement[] =
-  "DELETE FROM \"northwind\".\"categories\" "
-  "WHERE \"category_id_category_id\"=:1";
+  "DELETE FROM \"Mnorthwind\".\"categories\" "
+  "WHERE \"category_id\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::categories, id_oracle >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"categories\".\"category_id_category_id\", "
-  "\"northwind\".\"categories\".\"category_name\", "
-  "\"northwind\".\"categories\".\"description\", "
-  "\"northwind\".\"categories\".\"picutre\" "
-  "FROM \"northwind\".\"categories\"";
+  "\"Mnorthwind\".\"categories\".\"category_id\", "
+  "\"Mnorthwind\".\"categories\".\"category_name\", "
+  "\"Mnorthwind\".\"categories\".\"description\", "
+  "\"Mnorthwind\".\"categories\".\"picutre\" "
+  "FROM \"Mnorthwind\".\"categories\"";
 
   const char access::object_traits_impl< ::zango::northwind::categories, id_oracle >::erase_query_statement[] =
-  "DELETE FROM \"northwind\".\"categories\"";
+  "DELETE FROM \"Mnorthwind\".\"categories\"";
 
   const char access::object_traits_impl< ::zango::northwind::categories, id_oracle >::table_name[] =
-  "\"northwind\".\"categories\"";
+  "\"Mnorthwind\".\"categories\"";
 
   void access::object_traits_impl< ::zango::northwind::categories, id_oracle >::
   persist (database& db, const object_type& obj)
@@ -706,7 +706,7 @@ namespace odb
         {
           db.execute ("BEGIN\n"
                       "  BEGIN\n"
-                      "    EXECUTE IMMEDIATE 'DROP TABLE \"northwind\".\"categories\" CASCADE CONSTRAINTS';\n"
+                      "    EXECUTE IMMEDIATE 'DROP TABLE \"Mnorthwind\".\"categories\" CASCADE CONSTRAINTS';\n"
                       "  EXCEPTION\n"
                       "    WHEN OTHERS THEN\n"
                       "      IF SQLCODE != -942 THEN RAISE; END IF;\n"
@@ -722,8 +722,8 @@ namespace odb
       {
         case 1:
         {
-          db.execute ("CREATE TABLE \"northwind\".\"categories\" (\n"
-                      "  \"category_id_category_id\" NUMBER(10) NOT NULL PRIMARY KEY,\n"
+          db.execute ("CREATE TABLE \"Mnorthwind\".\"categories\" (\n"
+                      "  \"category_id\" NUMBER(10) NOT NULL PRIMARY KEY,\n"
                       "  \"category_name\" VARCHAR2(512) NULL,\n"
                       "  \"description\" VARCHAR2(512) NULL,\n"
                       "  \"picutre\" BLOB NULL)");

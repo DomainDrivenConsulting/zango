@@ -37,6 +37,7 @@
 #include "zango/northwind/serialization/territory_ser.hpp"
 #include "zango/northwind/serialization/categories_ser.hpp"
 #include "zango/northwind/serialization/product_id_ser.hpp"
+#include "zango/northwind/serialization/repository_ser.hpp"
 #include "zango/northwind/serialization/shipper_id_ser.hpp"
 #include "zango/northwind/serialization/category_id_ser.hpp"
 #include "zango/northwind/serialization/customer_id_ser.hpp"

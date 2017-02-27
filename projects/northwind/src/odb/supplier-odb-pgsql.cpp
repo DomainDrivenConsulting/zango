@@ -813,7 +813,7 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_pgsql >::persist_statement[] =
   "INSERT INTO \"northwind\".\"supplier\" "
-  "(\"supplier_id_supplier_id\", "
+  "(\"supplier_id\", "
   "\"company_name\", "
   "\"contact_name\", "
   "\"contact_title\", "
@@ -830,7 +830,7 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_pgsql >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"supplier\".\"supplier_id_supplier_id\", "
+  "\"northwind\".\"supplier\".\"supplier_id\", "
   "\"northwind\".\"supplier\".\"company_name\", "
   "\"northwind\".\"supplier\".\"contact_name\", "
   "\"northwind\".\"supplier\".\"contact_title\", "
@@ -843,7 +843,7 @@ namespace odb
   "\"northwind\".\"supplier\".\"fax\", "
   "\"northwind\".\"supplier\".\"home_page\" "
   "FROM \"northwind\".\"supplier\" "
-  "WHERE \"northwind\".\"supplier\".\"supplier_id_supplier_id\"=$1";
+  "WHERE \"northwind\".\"supplier\".\"supplier_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_pgsql >::update_statement[] =
   "UPDATE \"northwind\".\"supplier\" "
@@ -859,15 +859,15 @@ namespace odb
   "\"phone\"=$9, "
   "\"fax\"=$10, "
   "\"home_page\"=$11 "
-  "WHERE \"supplier_id_supplier_id\"=$12";
+  "WHERE \"supplier_id\"=$12";
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_pgsql >::erase_statement[] =
   "DELETE FROM \"northwind\".\"supplier\" "
-  "WHERE \"supplier_id_supplier_id\"=$1";
+  "WHERE \"supplier_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::supplier, id_pgsql >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"supplier\".\"supplier_id_supplier_id\", "
+  "\"northwind\".\"supplier\".\"supplier_id\", "
   "\"northwind\".\"supplier\".\"company_name\", "
   "\"northwind\".\"supplier\".\"contact_name\", "
   "\"northwind\".\"supplier\".\"contact_title\", "
@@ -1300,7 +1300,7 @@ namespace odb
         case 1:
         {
           db.execute ("CREATE TABLE \"northwind\".\"supplier\" (\n"
-                      "  \"supplier_id_supplier_id\" INTEGER NOT NULL PRIMARY KEY,\n"
+                      "  \"supplier_id\" INTEGER NOT NULL PRIMARY KEY,\n"
                       "  \"company_name\" TEXT NOT NULL,\n"
                       "  \"contact_name\" TEXT NULL,\n"
                       "  \"contact_title\" TEXT NULL,\n"

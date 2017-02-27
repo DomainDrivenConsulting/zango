@@ -35,6 +35,7 @@ namespace northwind {
 
 #pragma db object(shippers) schema("northwind")
 
+#pragma db member(shippers::shipper_id_) column("")
 #pragma db member(shippers::shipper_id_) id
 
 #endif

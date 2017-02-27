@@ -239,7 +239,7 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_oracle >::persist_statement[] =
   "INSERT INTO \"northwind\".\"shippers\" "
-  "(\"shipper_id_shipper_id\", "
+  "(\"shipper_id\", "
   "\"company_name\", "
   "\"phone\") "
   "VALUES "
@@ -247,26 +247,26 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_oracle >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"shippers\".\"shipper_id_shipper_id\", "
+  "\"northwind\".\"shippers\".\"shipper_id\", "
   "\"northwind\".\"shippers\".\"company_name\", "
   "\"northwind\".\"shippers\".\"phone\" "
   "FROM \"northwind\".\"shippers\" "
-  "WHERE \"northwind\".\"shippers\".\"shipper_id_shipper_id\"=:1";
+  "WHERE \"northwind\".\"shippers\".\"shipper_id\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_oracle >::update_statement[] =
   "UPDATE \"northwind\".\"shippers\" "
   "SET "
   "\"company_name\"=:1, "
   "\"phone\"=:2 "
-  "WHERE \"shipper_id_shipper_id\"=:3";
+  "WHERE \"shipper_id\"=:3";
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_oracle >::erase_statement[] =
   "DELETE FROM \"northwind\".\"shippers\" "
-  "WHERE \"shipper_id_shipper_id\"=:1";
+  "WHERE \"shipper_id\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_oracle >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"shippers\".\"shipper_id_shipper_id\", "
+  "\"northwind\".\"shippers\".\"shipper_id\", "
   "\"northwind\".\"shippers\".\"company_name\", "
   "\"northwind\".\"shippers\".\"phone\" "
   "FROM \"northwind\".\"shippers\"";
@@ -677,7 +677,7 @@ namespace odb
         case 1:
         {
           db.execute ("CREATE TABLE \"northwind\".\"shippers\" (\n"
-                      "  \"shipper_id_shipper_id\" NUMBER(10) NOT NULL PRIMARY KEY,\n"
+                      "  \"shipper_id\" NUMBER(10) NOT NULL PRIMARY KEY,\n"
                       "  \"company_name\" VARCHAR2(512) NULL,\n"
                       "  \"phone\" VARCHAR2(512) NULL)");
           return false;

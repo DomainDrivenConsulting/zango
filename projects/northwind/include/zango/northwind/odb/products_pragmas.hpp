@@ -37,9 +37,12 @@ namespace northwind {
 
 #pragma db object(products) schema("northwind")
 
+#pragma db member(products::product_id_) column("")
 #pragma db member(products::product_id_) id
 #pragma db member(products::product_name_) not_null
+#pragma db member(products::supplier_id_) column("")
 #pragma db member(products::supplier_id_) null
+#pragma db member(products::category_id_) column("")
 #pragma db member(products::category_id_) null
 
 #endif

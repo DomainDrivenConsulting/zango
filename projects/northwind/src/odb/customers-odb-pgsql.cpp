@@ -758,7 +758,7 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::customers, id_pgsql >::persist_statement[] =
   "INSERT INTO \"northwind\".\"customers\" "
-  "(\"customer_id_customer_id\", "
+  "(\"customer_id\", "
   "\"company_name\", "
   "\"contact_name\", "
   "\"contact_title\", "
@@ -774,7 +774,7 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::customers, id_pgsql >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"customers\".\"customer_id_customer_id\", "
+  "\"northwind\".\"customers\".\"customer_id\", "
   "\"northwind\".\"customers\".\"company_name\", "
   "\"northwind\".\"customers\".\"contact_name\", "
   "\"northwind\".\"customers\".\"contact_title\", "
@@ -786,7 +786,7 @@ namespace odb
   "\"northwind\".\"customers\".\"phone\", "
   "\"northwind\".\"customers\".\"fax\" "
   "FROM \"northwind\".\"customers\" "
-  "WHERE \"northwind\".\"customers\".\"customer_id_customer_id\"=$1";
+  "WHERE \"northwind\".\"customers\".\"customer_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::customers, id_pgsql >::update_statement[] =
   "UPDATE \"northwind\".\"customers\" "
@@ -801,15 +801,15 @@ namespace odb
   "\"country\"=$8, "
   "\"phone\"=$9, "
   "\"fax\"=$10 "
-  "WHERE \"customer_id_customer_id\"=$11";
+  "WHERE \"customer_id\"=$11";
 
   const char access::object_traits_impl< ::zango::northwind::customers, id_pgsql >::erase_statement[] =
   "DELETE FROM \"northwind\".\"customers\" "
-  "WHERE \"customer_id_customer_id\"=$1";
+  "WHERE \"customer_id\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::customers, id_pgsql >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"customers\".\"customer_id_customer_id\", "
+  "\"northwind\".\"customers\".\"customer_id\", "
   "\"northwind\".\"customers\".\"company_name\", "
   "\"northwind\".\"customers\".\"contact_name\", "
   "\"northwind\".\"customers\".\"contact_title\", "
@@ -1241,7 +1241,7 @@ namespace odb
         case 1:
         {
           db.execute ("CREATE TABLE \"northwind\".\"customers\" (\n"
-                      "  \"customer_id_customer_id\" INTEGER NOT NULL PRIMARY KEY,\n"
+                      "  \"customer_id\" INTEGER NOT NULL PRIMARY KEY,\n"
                       "  \"company_name\" TEXT NOT NULL,\n"
                       "  \"contact_name\" TEXT NULL,\n"
                       "  \"contact_title\" TEXT NULL,\n"

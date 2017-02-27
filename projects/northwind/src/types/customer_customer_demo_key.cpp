@@ -25,19 +25,19 @@ namespace northwind {
 
 customer_customer_demo_key::customer_customer_demo_key(
     const zango::northwind::customer_id& customer_id,
-    const zango::northwind::customer_type_id& customer_type)
+    const zango::northwind::customer_type_id& customer_type_id)
     : customer_id_(customer_id),
-      customer_type_(customer_type) { }
+      customer_type_id_(customer_type_id) { }
 
 void customer_customer_demo_key::swap(customer_customer_demo_key& other) noexcept {
     using std::swap;
     swap(customer_id_, other.customer_id_);
-    swap(customer_type_, other.customer_type_);
+    swap(customer_type_id_, other.customer_type_id_);
 }
 
 bool customer_customer_demo_key::operator==(const customer_customer_demo_key& rhs) const {
     return customer_id_ == rhs.customer_id_ &&
-        customer_type_ == rhs.customer_type_;
+        customer_type_id_ == rhs.customer_type_id_;
 }
 
 customer_customer_demo_key& customer_customer_demo_key::operator=(customer_customer_demo_key other) {
@@ -62,20 +62,20 @@ void customer_customer_demo_key::customer_id(const zango::northwind::customer_id
     customer_id_ = std::move(v);
 }
 
-const zango::northwind::customer_type_id& customer_customer_demo_key::customer_type() const {
-    return customer_type_;
+const zango::northwind::customer_type_id& customer_customer_demo_key::customer_type_id() const {
+    return customer_type_id_;
 }
 
-zango::northwind::customer_type_id& customer_customer_demo_key::customer_type() {
-    return customer_type_;
+zango::northwind::customer_type_id& customer_customer_demo_key::customer_type_id() {
+    return customer_type_id_;
 }
 
-void customer_customer_demo_key::customer_type(const zango::northwind::customer_type_id& v) {
-    customer_type_ = v;
+void customer_customer_demo_key::customer_type_id(const zango::northwind::customer_type_id& v) {
+    customer_type_id_ = v;
 }
 
-void customer_customer_demo_key::customer_type(const zango::northwind::customer_type_id&& v) {
-    customer_type_ = std::move(v);
+void customer_customer_demo_key::customer_type_id(const zango::northwind::customer_type_id&& v) {
+    customer_type_id_ = std::move(v);
 }
 
 } }

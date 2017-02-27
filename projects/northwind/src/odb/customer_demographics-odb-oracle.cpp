@@ -195,31 +195,31 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::customer_demographics, id_oracle >::persist_statement[] =
   "INSERT INTO \"northwind\".\"customer_demographics\" "
-  "(\"customer_type_id_customer_type\", "
+  "(\"customer_type_id\", "
   "\"customer_description\") "
   "VALUES "
   "(:1, :2)";
 
   const char access::object_traits_impl< ::zango::northwind::customer_demographics, id_oracle >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"customer_demographics\".\"customer_type_id_customer_type\", "
+  "\"northwind\".\"customer_demographics\".\"customer_type_id\", "
   "\"northwind\".\"customer_demographics\".\"customer_description\" "
   "FROM \"northwind\".\"customer_demographics\" "
-  "WHERE \"northwind\".\"customer_demographics\".\"customer_type_id_customer_type\"=:1";
+  "WHERE \"northwind\".\"customer_demographics\".\"customer_type_id\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::customer_demographics, id_oracle >::update_statement[] =
   "UPDATE \"northwind\".\"customer_demographics\" "
   "SET "
   "\"customer_description\"=:1 "
-  "WHERE \"customer_type_id_customer_type\"=:2";
+  "WHERE \"customer_type_id\"=:2";
 
   const char access::object_traits_impl< ::zango::northwind::customer_demographics, id_oracle >::erase_statement[] =
   "DELETE FROM \"northwind\".\"customer_demographics\" "
-  "WHERE \"customer_type_id_customer_type\"=:1";
+  "WHERE \"customer_type_id\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::customer_demographics, id_oracle >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"customer_demographics\".\"customer_type_id_customer_type\", "
+  "\"northwind\".\"customer_demographics\".\"customer_type_id\", "
   "\"northwind\".\"customer_demographics\".\"customer_description\" "
   "FROM \"northwind\".\"customer_demographics\"";
 
@@ -629,7 +629,7 @@ namespace odb
         case 1:
         {
           db.execute ("CREATE TABLE \"northwind\".\"customer_demographics\" (\n"
-                      "  \"customer_type_id_customer_type\" VARCHAR2(512) NOT NULL PRIMARY KEY,\n"
+                      "  \"customer_type_id\" VARCHAR2(512) NOT NULL PRIMARY KEY,\n"
                       "  \"customer_description\" VARCHAR2(512) NULL)");
           return false;
         }

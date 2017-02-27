@@ -115,7 +115,7 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::categories, id_oracle, A >::category_id_class_::value_type_
   query_columns< ::zango::northwind::categories, id_oracle, A >::category_id_class_::
-  value (A::table_name, "\"category_id_category_id\"", 0, 10);
+  value (A::table_name, "\"category_id\"", 0, 10);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::categories, id_oracle, A >::category_id_class_

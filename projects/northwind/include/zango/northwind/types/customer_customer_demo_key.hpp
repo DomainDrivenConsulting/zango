@@ -43,7 +43,7 @@ public:
 public:
     customer_customer_demo_key(
         const zango::northwind::customer_id& customer_id,
-        const zango::northwind::customer_type_id& customer_type);
+        const zango::northwind::customer_type_id& customer_type_id);
 
 private:
     template<typename Archive>
@@ -58,10 +58,10 @@ public:
     void customer_id(const zango::northwind::customer_id& v);
     void customer_id(const zango::northwind::customer_id&& v);
 
-    const zango::northwind::customer_type_id& customer_type() const;
-    zango::northwind::customer_type_id& customer_type();
-    void customer_type(const zango::northwind::customer_type_id& v);
-    void customer_type(const zango::northwind::customer_type_id&& v);
+    const zango::northwind::customer_type_id& customer_type_id() const;
+    zango::northwind::customer_type_id& customer_type_id();
+    void customer_type_id(const zango::northwind::customer_type_id& v);
+    void customer_type_id(const zango::northwind::customer_type_id&& v);
 
 public:
     bool operator==(const customer_customer_demo_key& rhs) const;
@@ -75,7 +75,7 @@ public:
 
 private:
     zango::northwind::customer_id customer_id_;
-    zango::northwind::customer_type_id customer_type_;
+    zango::northwind::customer_type_id customer_type_id_;
 };
 
 } }

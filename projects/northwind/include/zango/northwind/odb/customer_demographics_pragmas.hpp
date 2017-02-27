@@ -35,6 +35,7 @@ namespace northwind {
 
 #pragma db object(customer_demographics) schema("northwind")
 
+#pragma db member(customer_demographics::customer_type_id_) column("")
 #pragma db member(customer_demographics::customer_type_id_) id
 #pragma db member(customer_demographics::customer_description_) null
 

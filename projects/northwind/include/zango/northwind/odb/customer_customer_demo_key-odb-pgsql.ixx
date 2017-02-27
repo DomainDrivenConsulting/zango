@@ -13,7 +13,7 @@ namespace odb
   {
     bool r (true);
     r = r && composite_value_traits< ::zango::northwind::customer_id, id_pgsql >::get_null (i.customer_id_value);
-    r = r && composite_value_traits< ::zango::northwind::customer_type_id, id_pgsql >::get_null (i.customer_type_value);
+    r = r && composite_value_traits< ::zango::northwind::customer_type_id, id_pgsql >::get_null (i.customer_type_id_value);
     return r;
   }
 
@@ -27,7 +27,7 @@ namespace odb
     using namespace pgsql;
 
     composite_value_traits< ::zango::northwind::customer_id, id_pgsql >::set_null (i.customer_id_value, sk);
-    composite_value_traits< ::zango::northwind::customer_type_id, id_pgsql >::set_null (i.customer_type_value, sk);
+    composite_value_traits< ::zango::northwind::customer_type_id, id_pgsql >::set_null (i.customer_type_id_value, sk);
   }
 }
 

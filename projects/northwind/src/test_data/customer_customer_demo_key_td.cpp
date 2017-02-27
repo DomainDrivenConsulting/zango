@@ -44,7 +44,7 @@ customer_customer_demo_key_generator::customer_customer_demo_key_generator() : p
 void customer_customer_demo_key_generator::
 populate(const unsigned int position, result_type& v) {
     v.customer_id(create_zango_northwind_customer_id(position + 0));
-    v.customer_type(create_zango_northwind_customer_type_id(position + 1));
+    v.customer_type_id(create_zango_northwind_customer_type_id(position + 1));
 }
 
 customer_customer_demo_key_generator::result_type

@@ -45,10 +45,10 @@ namespace odb
       b + n, i.customer_id_value, sk);
     n += 1UL;
 
-    // customer_type_
+    // customer_type_id_
     //
     composite_value_traits< ::zango::northwind::customer_type_id, id_oracle >::bind (
-      b + n, i.customer_type_value, sk);
+      b + n, i.customer_type_id_value, sk);
     n += 1UL;
   }
 
@@ -75,14 +75,14 @@ namespace odb
         sk);
     }
 
-    // customer_type_
+    // customer_type_id_
     //
     {
       ::zango::northwind::customer_type_id const& v =
-        o.customer_type ();
+        o.customer_type_id ();
 
       composite_value_traits< ::zango::northwind::customer_type_id, id_oracle >::init (
-        i.customer_type_value,
+        i.customer_type_id_value,
         v,
         sk);
     }
@@ -109,15 +109,15 @@ namespace odb
         db);
     }
 
-    // customer_type_
+    // customer_type_id_
     //
     {
       ::zango::northwind::customer_type_id& v =
-        o.customer_type ();
+        o.customer_type_id ();
 
       composite_value_traits< ::zango::northwind::customer_type_id, id_oracle >::init (
         v,
-        i.customer_type_value,
+        i.customer_type_id_value,
         db);
     }
   }

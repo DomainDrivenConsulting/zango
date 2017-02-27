@@ -40,10 +40,10 @@ namespace odb
           i.customer_id_value, t + 0UL))
       grew = true;
 
-    // customer_type_
+    // customer_type_id_
     //
     if (composite_value_traits< ::zango::northwind::customer_type_id, id_pgsql >::grow (
-          i.customer_type_value, t + 1UL))
+          i.customer_type_id_value, t + 1UL))
       grew = true;
 
     return grew;
@@ -69,10 +69,10 @@ namespace odb
       b + n, i.customer_id_value, sk);
     n += 1UL;
 
-    // customer_type_
+    // customer_type_id_
     //
     composite_value_traits< ::zango::northwind::customer_type_id, id_pgsql >::bind (
-      b + n, i.customer_type_value, sk);
+      b + n, i.customer_type_id_value, sk);
     n += 1UL;
   }
 
@@ -101,14 +101,14 @@ namespace odb
         sk);
     }
 
-    // customer_type_
+    // customer_type_id_
     //
     {
       ::zango::northwind::customer_type_id const& v =
-        o.customer_type ();
+        o.customer_type_id ();
 
       if (composite_value_traits< ::zango::northwind::customer_type_id, id_pgsql >::init (
-            i.customer_type_value,
+            i.customer_type_id_value,
             v,
             sk))
         grew = true;
@@ -138,15 +138,15 @@ namespace odb
         db);
     }
 
-    // customer_type_
+    // customer_type_id_
     //
     {
       ::zango::northwind::customer_type_id& v =
-        o.customer_type ();
+        o.customer_type_id ();
 
       composite_value_traits< ::zango::northwind::customer_type_id, id_pgsql >::init (
         v,
-        i.customer_type_value,
+        i.customer_type_id_value,
         db);
     }
   }

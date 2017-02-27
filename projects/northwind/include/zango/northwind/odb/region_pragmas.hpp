@@ -35,6 +35,7 @@ namespace northwind {
 
 #pragma db object(region) schema("northwind")
 
+#pragma db member(region::region_id_) column("")
 #pragma db member(region::region_id_) id
 #pragma db member(region::region_description_) not_null
 

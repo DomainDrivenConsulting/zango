@@ -115,7 +115,7 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::employee_territories, id_pgsql, A >::employee_territories_key_class_::employee_id_class_1_::value_type_
   query_columns< ::zango::northwind::employee_territories, id_pgsql, A >::employee_territories_key_class_::employee_id_class_1_::
-  value (A::table_name, "\"employee_id_employee_id\"", 0);
+  value (A::table_name, "\"employee_id\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::employee_territories, id_pgsql, A >::employee_territories_key_class_::employee_id_class_1_
@@ -124,7 +124,7 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::employee_territories, id_pgsql, A >::employee_territories_key_class_::territory_id_class_1_::value_type_
   query_columns< ::zango::northwind::employee_territories, id_pgsql, A >::employee_territories_key_class_::territory_id_class_1_::
-  value (A::table_name, "\"territory_id_territory_id\"", 0);
+  value (A::table_name, "\"territory_id\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::employee_territories, id_pgsql, A >::employee_territories_key_class_::territory_id_class_1_

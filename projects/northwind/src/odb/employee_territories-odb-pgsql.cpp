@@ -207,26 +207,26 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_pgsql >::persist_statement[] =
   "INSERT INTO \"northwind\".\"employee_territories\" "
-  "(\"employee_id_employee_id\", "
-  "\"territory_id_territory_id\") "
+  "(\"employee_id\", "
+  "\"territory_id\") "
   "VALUES "
   "($1, $2)";
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_pgsql >::find_statement[] =
   "SELECT "
-  "\"northwind\".\"employee_territories\".\"employee_id_employee_id\", "
-  "\"northwind\".\"employee_territories\".\"territory_id_territory_id\" "
+  "\"northwind\".\"employee_territories\".\"employee_id\", "
+  "\"northwind\".\"employee_territories\".\"territory_id\" "
   "FROM \"northwind\".\"employee_territories\" "
-  "WHERE \"northwind\".\"employee_territories\".\"employee_id_employee_id\"=$1 AND \"northwind\".\"employee_territories\".\"territory_id_territory_id\"=$2";
+  "WHERE \"northwind\".\"employee_territories\".\"employee_id\"=$1 AND \"northwind\".\"employee_territories\".\"territory_id\"=$2";
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_pgsql >::erase_statement[] =
   "DELETE FROM \"northwind\".\"employee_territories\" "
-  "WHERE \"employee_id_employee_id\"=$1 AND \"territory_id_territory_id\"=$2";
+  "WHERE \"employee_id\"=$1 AND \"territory_id\"=$2";
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_pgsql >::query_statement[] =
   "SELECT "
-  "\"northwind\".\"employee_territories\".\"employee_id_employee_id\", "
-  "\"northwind\".\"employee_territories\".\"territory_id_territory_id\" "
+  "\"northwind\".\"employee_territories\".\"employee_id\", "
+  "\"northwind\".\"employee_territories\".\"territory_id\" "
   "FROM \"northwind\".\"employee_territories\"";
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_pgsql >::erase_query_statement[] =
@@ -601,10 +601,10 @@ namespace odb
         case 1:
         {
           db.execute ("CREATE TABLE \"northwind\".\"employee_territories\" (\n"
-                      "  \"employee_id_employee_id\" INTEGER NOT NULL,\n"
-                      "  \"territory_id_territory_id\" TEXT NOT NULL,\n"
-                      "  PRIMARY KEY (\"employee_id_employee_id\",\n"
-                      "               \"territory_id_territory_id\"))");
+                      "  \"employee_id\" INTEGER NOT NULL,\n"
+                      "  \"territory_id\" TEXT NOT NULL,\n"
+                      "  PRIMARY KEY (\"employee_id\",\n"
+                      "               \"territory_id\"))");
           return false;
         }
       }
