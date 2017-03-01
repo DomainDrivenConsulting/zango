@@ -378,7 +378,7 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_pgsql, A >::reports_to_class_::value_type_
   query_columns< ::zango::northwind::employees, id_pgsql, A >::reports_to_class_::
-  value (A::table_name, "\"REPORTS_TO_employee_id\"", 0);
+  value (A::table_name, "\"REPORTS_TO\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_pgsql, A >::reports_to_class_

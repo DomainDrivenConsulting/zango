@@ -34,7 +34,7 @@ namespace northwind {
 
 #pragma db value(employee_id) schema("NORTHWIND")
 
-#pragma db member(employee_id::value_) column("employee_id")
+#pragma db member(employee_id::value_) column("")
 
 #endif
 

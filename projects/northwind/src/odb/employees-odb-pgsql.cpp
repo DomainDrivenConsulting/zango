@@ -1114,7 +1114,7 @@ namespace odb
   "\"EXTENSION\", "
   "\"PHOTO\", "
   "\"NOTES\", "
-  "\"REPORTS_TO_employee_id\", "
+  "\"REPORTS_TO\", "
   "\"PHOTO_PATH\") "
   "VALUES "
   "($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)";
@@ -1137,7 +1137,7 @@ namespace odb
   "\"NORTHWIND\".\"EMPLOYEES\".\"EXTENSION\", "
   "\"NORTHWIND\".\"EMPLOYEES\".\"PHOTO\", "
   "\"NORTHWIND\".\"EMPLOYEES\".\"NOTES\", "
-  "\"NORTHWIND\".\"EMPLOYEES\".\"REPORTS_TO_employee_id\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"REPORTS_TO\", "
   "\"NORTHWIND\".\"EMPLOYEES\".\"PHOTO_PATH\" "
   "FROM \"NORTHWIND\".\"EMPLOYEES\" "
   "WHERE \"NORTHWIND\".\"EMPLOYEES\".\"employee_id\"=$1";
@@ -1160,7 +1160,7 @@ namespace odb
   "\"EXTENSION\"=$13, "
   "\"PHOTO\"=$14, "
   "\"NOTES\"=$15, "
-  "\"REPORTS_TO_employee_id\"=$16, "
+  "\"REPORTS_TO\"=$16, "
   "\"PHOTO_PATH\"=$17 "
   "WHERE \"employee_id\"=$18";
 
@@ -1186,7 +1186,7 @@ namespace odb
   "\"NORTHWIND\".\"EMPLOYEES\".\"EXTENSION\", "
   "\"NORTHWIND\".\"EMPLOYEES\".\"PHOTO\", "
   "\"NORTHWIND\".\"EMPLOYEES\".\"NOTES\", "
-  "\"NORTHWIND\".\"EMPLOYEES\".\"REPORTS_TO_employee_id\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"REPORTS_TO\", "
   "\"NORTHWIND\".\"EMPLOYEES\".\"PHOTO_PATH\" "
   "FROM \"NORTHWIND\".\"EMPLOYEES\"";
 
@@ -1625,7 +1625,7 @@ namespace odb
                       "  \"EXTENSION\" TEXT NULL,\n"
                       "  \"PHOTO\" BYTEA NULL,\n"
                       "  \"NOTES\" TEXT NULL,\n"
-                      "  \"REPORTS_TO_employee_id\" INTEGER NULL,\n"
+                      "  \"REPORTS_TO\" INTEGER NULL,\n"
                       "  \"PHOTO_PATH\" TEXT NULL)");
           return false;
         }
