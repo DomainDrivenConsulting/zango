@@ -62,14 +62,14 @@ set(LIBS ${LIBS} ${ORACLE_LIBRARY} ${ODB_LIBRARIES} ${Boost_LIBRARIES})
 message(STATUS "${ODB_INCLUDE_DIRS}")
 
 #
-# Add the Dogen model for northwind.
-#
-add_subdirectory(${CMAKE_SOURCE_DIR}/projects/northwind)
-
-#
 # Use C++-14
 #
 set(CMAKE_CXX_STANDARD 14)
+
+#
+# Add the Dogen model for northwind.
+#
+add_subdirectory(${CMAKE_SOURCE_DIR}/projects/northwind)
 
 #
 # Target for the application.
