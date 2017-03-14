@@ -591,7 +591,7 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::customers, id_oracle >::persist_statement[] =
   "INSERT INTO \"NORTHWIND\".\"CUSTOMERS\" "
-  "(\"customer_id\", "
+  "(\"CUSTOMER_ID\", "
   "\"COMPANY_NAME\", "
   "\"CONTACT_NAME\", "
   "\"CONTACT_TITLE\", "
@@ -607,7 +607,7 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::customers, id_oracle >::find_statement[] =
   "SELECT "
-  "\"NORTHWIND\".\"CUSTOMERS\".\"customer_id\", "
+  "\"NORTHWIND\".\"CUSTOMERS\".\"CUSTOMER_ID\", "
   "\"NORTHWIND\".\"CUSTOMERS\".\"COMPANY_NAME\", "
   "\"NORTHWIND\".\"CUSTOMERS\".\"CONTACT_NAME\", "
   "\"NORTHWIND\".\"CUSTOMERS\".\"CONTACT_TITLE\", "
@@ -619,7 +619,7 @@ namespace odb
   "\"NORTHWIND\".\"CUSTOMERS\".\"PHONE\", "
   "\"NORTHWIND\".\"CUSTOMERS\".\"FAX\" "
   "FROM \"NORTHWIND\".\"CUSTOMERS\" "
-  "WHERE \"NORTHWIND\".\"CUSTOMERS\".\"customer_id\"=:1";
+  "WHERE \"NORTHWIND\".\"CUSTOMERS\".\"CUSTOMER_ID\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::customers, id_oracle >::update_statement[] =
   "UPDATE \"NORTHWIND\".\"CUSTOMERS\" "
@@ -634,15 +634,15 @@ namespace odb
   "\"COUNTRY\"=:8, "
   "\"PHONE\"=:9, "
   "\"FAX\"=:10 "
-  "WHERE \"customer_id\"=:11";
+  "WHERE \"CUSTOMER_ID\"=:11";
 
   const char access::object_traits_impl< ::zango::northwind::customers, id_oracle >::erase_statement[] =
   "DELETE FROM \"NORTHWIND\".\"CUSTOMERS\" "
-  "WHERE \"customer_id\"=:1";
+  "WHERE \"CUSTOMER_ID\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::customers, id_oracle >::query_statement[] =
   "SELECT "
-  "\"NORTHWIND\".\"CUSTOMERS\".\"customer_id\", "
+  "\"NORTHWIND\".\"CUSTOMERS\".\"CUSTOMER_ID\", "
   "\"NORTHWIND\".\"CUSTOMERS\".\"COMPANY_NAME\", "
   "\"NORTHWIND\".\"CUSTOMERS\".\"CONTACT_NAME\", "
   "\"NORTHWIND\".\"CUSTOMERS\".\"CONTACT_TITLE\", "
@@ -1061,7 +1061,7 @@ namespace odb
         case 1:
         {
           db.execute ("CREATE TABLE \"NORTHWIND\".\"CUSTOMERS\" (\n"
-                      "  \"customer_id\" NUMBER(10) NOT NULL PRIMARY KEY,\n"
+                      "  \"CUSTOMER_ID\" NUMBER(10) NOT NULL PRIMARY KEY,\n"
                       "  \"COMPANY_NAME\" VARCHAR2(512) NULL,\n"
                       "  \"CONTACT_NAME\" VARCHAR2(512) NULL,\n"
                       "  \"CONTACT_TITLE\" VARCHAR2(512) NULL,\n"

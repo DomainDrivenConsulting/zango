@@ -211,7 +211,7 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::supplier, id_pgsql, A >::supplier_id_class_::value_type_
   query_columns< ::zango::northwind::supplier, id_pgsql, A >::supplier_id_class_::
-  value (A::table_name, "\"supplier_id\"", 0);
+  value (A::table_name, "\"SUPPLIER_ID\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::supplier, id_pgsql, A >::supplier_id_class_

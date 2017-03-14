@@ -259,7 +259,7 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::orders, id_oracle, A >::order_id_class_::value_type_
   query_columns< ::zango::northwind::orders, id_oracle, A >::order_id_class_::
-  value (A::table_name, "\"order_id\"", 0, 10);
+  value (A::table_name, "\"ORDER_ID\"", 0, 10);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::orders, id_oracle, A >::order_id_class_
@@ -268,7 +268,7 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::orders, id_oracle, A >::customer_id_class_::value_type_
   query_columns< ::zango::northwind::orders, id_oracle, A >::customer_id_class_::
-  value (A::table_name, "\"customer_id\"", 0, 10);
+  value (A::table_name, "\"CUSTOMER_ID\"", 0, 10);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::orders, id_oracle, A >::customer_id_class_
@@ -277,7 +277,7 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::orders, id_oracle, A >::employee_id_class_::value_type_
   query_columns< ::zango::northwind::orders, id_oracle, A >::employee_id_class_::
-  value (A::table_name, "\"employee_id\"", 0, 10);
+  value (A::table_name, "\"EMPLOYEE_ID\"", 0, 10);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::orders, id_oracle, A >::employee_id_class_

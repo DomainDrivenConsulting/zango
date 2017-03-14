@@ -225,36 +225,36 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_oracle >::persist_statement[] =
   "INSERT INTO \"NORTHWIND\".\"TERRITORY\" "
-  "(\"territory_id\", "
+  "(\"TERRITORY_ID\", "
   "\"TERRITORY_DESCRIPTION\", "
-  "\"region_id\") "
+  "\"REGION_ID\") "
   "VALUES "
   "(:1, :2, :3)";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_oracle >::find_statement[] =
   "SELECT "
-  "\"NORTHWIND\".\"TERRITORY\".\"territory_id\", "
+  "\"NORTHWIND\".\"TERRITORY\".\"TERRITORY_ID\", "
   "\"NORTHWIND\".\"TERRITORY\".\"TERRITORY_DESCRIPTION\", "
-  "\"NORTHWIND\".\"TERRITORY\".\"region_id\" "
+  "\"NORTHWIND\".\"TERRITORY\".\"REGION_ID\" "
   "FROM \"NORTHWIND\".\"TERRITORY\" "
-  "WHERE \"NORTHWIND\".\"TERRITORY\".\"territory_id\"=:1";
+  "WHERE \"NORTHWIND\".\"TERRITORY\".\"TERRITORY_ID\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_oracle >::update_statement[] =
   "UPDATE \"NORTHWIND\".\"TERRITORY\" "
   "SET "
   "\"TERRITORY_DESCRIPTION\"=:1, "
-  "\"region_id\"=:2 "
-  "WHERE \"territory_id\"=:3";
+  "\"REGION_ID\"=:2 "
+  "WHERE \"TERRITORY_ID\"=:3";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_oracle >::erase_statement[] =
   "DELETE FROM \"NORTHWIND\".\"TERRITORY\" "
-  "WHERE \"territory_id\"=:1";
+  "WHERE \"TERRITORY_ID\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_oracle >::query_statement[] =
   "SELECT "
-  "\"NORTHWIND\".\"TERRITORY\".\"territory_id\", "
+  "\"NORTHWIND\".\"TERRITORY\".\"TERRITORY_ID\", "
   "\"NORTHWIND\".\"TERRITORY\".\"TERRITORY_DESCRIPTION\", "
-  "\"NORTHWIND\".\"TERRITORY\".\"region_id\" "
+  "\"NORTHWIND\".\"TERRITORY\".\"REGION_ID\" "
   "FROM \"NORTHWIND\".\"TERRITORY\"";
 
   const char access::object_traits_impl< ::zango::northwind::territory, id_oracle >::erase_query_statement[] =
@@ -663,9 +663,9 @@ namespace odb
         case 1:
         {
           db.execute ("CREATE TABLE \"NORTHWIND\".\"TERRITORY\" (\n"
-                      "  \"territory_id\" VARCHAR2(512) NOT NULL PRIMARY KEY,\n"
+                      "  \"TERRITORY_ID\" VARCHAR2(512) NOT NULL PRIMARY KEY,\n"
                       "  \"TERRITORY_DESCRIPTION\" VARCHAR2(512) NOT NULL,\n"
-                      "  \"region_id\" NUMBER(10) NOT NULL)");
+                      "  \"REGION_ID\" NUMBER(10) NOT NULL)");
           return false;
         }
       }

@@ -489,10 +489,10 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::products, id_oracle >::persist_statement[] =
   "INSERT INTO \"NORTHWIND\".\"PRODUCTS\" "
-  "(\"product_id\", "
+  "(\"PRODUCT_ID\", "
   "\"PRODUCT_NAME\", "
-  "\"supplier_id\", "
-  "\"category_id\", "
+  "\"SUPPLIER_ID\", "
+  "\"CATEGORY_ID\", "
   "\"QUANTITY_PER_UNIT\", "
   "\"UNIT_PRICE\", "
   "\"UNITS_IN_STOCK\", "
@@ -504,10 +504,10 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::products, id_oracle >::find_statement[] =
   "SELECT "
-  "\"NORTHWIND\".\"PRODUCTS\".\"product_id\", "
+  "\"NORTHWIND\".\"PRODUCTS\".\"PRODUCT_ID\", "
   "\"NORTHWIND\".\"PRODUCTS\".\"PRODUCT_NAME\", "
-  "\"NORTHWIND\".\"PRODUCTS\".\"supplier_id\", "
-  "\"NORTHWIND\".\"PRODUCTS\".\"category_id\", "
+  "\"NORTHWIND\".\"PRODUCTS\".\"SUPPLIER_ID\", "
+  "\"NORTHWIND\".\"PRODUCTS\".\"CATEGORY_ID\", "
   "\"NORTHWIND\".\"PRODUCTS\".\"QUANTITY_PER_UNIT\", "
   "\"NORTHWIND\".\"PRODUCTS\".\"UNIT_PRICE\", "
   "\"NORTHWIND\".\"PRODUCTS\".\"UNITS_IN_STOCK\", "
@@ -515,32 +515,32 @@ namespace odb
   "\"NORTHWIND\".\"PRODUCTS\".\"REORDER_LEVEL\", "
   "\"NORTHWIND\".\"PRODUCTS\".\"DISCONTINUED\" "
   "FROM \"NORTHWIND\".\"PRODUCTS\" "
-  "WHERE \"NORTHWIND\".\"PRODUCTS\".\"product_id\"=:1";
+  "WHERE \"NORTHWIND\".\"PRODUCTS\".\"PRODUCT_ID\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::products, id_oracle >::update_statement[] =
   "UPDATE \"NORTHWIND\".\"PRODUCTS\" "
   "SET "
   "\"PRODUCT_NAME\"=:1, "
-  "\"supplier_id\"=:2, "
-  "\"category_id\"=:3, "
+  "\"SUPPLIER_ID\"=:2, "
+  "\"CATEGORY_ID\"=:3, "
   "\"QUANTITY_PER_UNIT\"=:4, "
   "\"UNIT_PRICE\"=:5, "
   "\"UNITS_IN_STOCK\"=:6, "
   "\"UNITS_IN_ORDER\"=:7, "
   "\"REORDER_LEVEL\"=:8, "
   "\"DISCONTINUED\"=:9 "
-  "WHERE \"product_id\"=:10";
+  "WHERE \"PRODUCT_ID\"=:10";
 
   const char access::object_traits_impl< ::zango::northwind::products, id_oracle >::erase_statement[] =
   "DELETE FROM \"NORTHWIND\".\"PRODUCTS\" "
-  "WHERE \"product_id\"=:1";
+  "WHERE \"PRODUCT_ID\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::products, id_oracle >::query_statement[] =
   "SELECT "
-  "\"NORTHWIND\".\"PRODUCTS\".\"product_id\", "
+  "\"NORTHWIND\".\"PRODUCTS\".\"PRODUCT_ID\", "
   "\"NORTHWIND\".\"PRODUCTS\".\"PRODUCT_NAME\", "
-  "\"NORTHWIND\".\"PRODUCTS\".\"supplier_id\", "
-  "\"NORTHWIND\".\"PRODUCTS\".\"category_id\", "
+  "\"NORTHWIND\".\"PRODUCTS\".\"SUPPLIER_ID\", "
+  "\"NORTHWIND\".\"PRODUCTS\".\"CATEGORY_ID\", "
   "\"NORTHWIND\".\"PRODUCTS\".\"QUANTITY_PER_UNIT\", "
   "\"NORTHWIND\".\"PRODUCTS\".\"UNIT_PRICE\", "
   "\"NORTHWIND\".\"PRODUCTS\".\"UNITS_IN_STOCK\", "
@@ -955,10 +955,10 @@ namespace odb
         case 1:
         {
           db.execute ("CREATE TABLE \"NORTHWIND\".\"PRODUCTS\" (\n"
-                      "  \"product_id\" NUMBER(10) NOT NULL PRIMARY KEY,\n"
+                      "  \"PRODUCT_ID\" NUMBER(10) NOT NULL PRIMARY KEY,\n"
                       "  \"PRODUCT_NAME\" VARCHAR2(512) NOT NULL,\n"
-                      "  \"supplier_id\" NUMBER(10) NULL,\n"
-                      "  \"category_id\" NUMBER(10) NULL,\n"
+                      "  \"SUPPLIER_ID\" NUMBER(10) NULL,\n"
+                      "  \"CATEGORY_ID\" NUMBER(10) NULL,\n"
                       "  \"QUANTITY_PER_UNIT\" VARCHAR2(512) NULL,\n"
                       "  \"UNIT_PRICE\" BINARY_DOUBLE NOT NULL,\n"
                       "  \"UNITS_IN_STOCK\" NUMBER(10) NOT NULL,\n"

@@ -869,7 +869,7 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_oracle >::persist_statement[] =
   "INSERT INTO \"NORTHWIND\".\"EMPLOYEES\" "
-  "(\"employee_id\", "
+  "(\"EMPLOYEE_ID\", "
   "\"LAST_NAME\", "
   "\"FIRST_NAME\", "
   "\"TITLE\", "
@@ -892,7 +892,7 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_oracle >::find_statement[] =
   "SELECT "
-  "\"NORTHWIND\".\"EMPLOYEES\".\"employee_id\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"EMPLOYEE_ID\", "
   "\"NORTHWIND\".\"EMPLOYEES\".\"LAST_NAME\", "
   "\"NORTHWIND\".\"EMPLOYEES\".\"FIRST_NAME\", "
   "\"NORTHWIND\".\"EMPLOYEES\".\"TITLE\", "
@@ -911,7 +911,7 @@ namespace odb
   "\"NORTHWIND\".\"EMPLOYEES\".\"REPORTS_TO\", "
   "\"NORTHWIND\".\"EMPLOYEES\".\"PHOTO_PATH\" "
   "FROM \"NORTHWIND\".\"EMPLOYEES\" "
-  "WHERE \"NORTHWIND\".\"EMPLOYEES\".\"employee_id\"=:1";
+  "WHERE \"NORTHWIND\".\"EMPLOYEES\".\"EMPLOYEE_ID\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_oracle >::update_statement[] =
   "UPDATE \"NORTHWIND\".\"EMPLOYEES\" "
@@ -933,15 +933,15 @@ namespace odb
   "\"NOTES\"=:15, "
   "\"REPORTS_TO\"=:16, "
   "\"PHOTO_PATH\"=:17 "
-  "WHERE \"employee_id\"=:18";
+  "WHERE \"EMPLOYEE_ID\"=:18";
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_oracle >::erase_statement[] =
   "DELETE FROM \"NORTHWIND\".\"EMPLOYEES\" "
-  "WHERE \"employee_id\"=:1";
+  "WHERE \"EMPLOYEE_ID\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::employees, id_oracle >::query_statement[] =
   "SELECT "
-  "\"NORTHWIND\".\"EMPLOYEES\".\"employee_id\", "
+  "\"NORTHWIND\".\"EMPLOYEES\".\"EMPLOYEE_ID\", "
   "\"NORTHWIND\".\"EMPLOYEES\".\"LAST_NAME\", "
   "\"NORTHWIND\".\"EMPLOYEES\".\"FIRST_NAME\", "
   "\"NORTHWIND\".\"EMPLOYEES\".\"TITLE\", "
@@ -1367,7 +1367,7 @@ namespace odb
         case 1:
         {
           db.execute ("CREATE TABLE \"NORTHWIND\".\"EMPLOYEES\" (\n"
-                      "  \"employee_id\" NUMBER(10) NOT NULL PRIMARY KEY,\n"
+                      "  \"EMPLOYEE_ID\" NUMBER(10) NOT NULL PRIMARY KEY,\n"
                       "  \"LAST_NAME\" VARCHAR2(512) NOT NULL,\n"
                       "  \"FIRST_NAME\" VARCHAR2(512) NOT NULL,\n"
                       "  \"TITLE\" VARCHAR2(512) NULL,\n"

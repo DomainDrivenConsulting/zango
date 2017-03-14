@@ -269,31 +269,31 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::customer_demographics, id_pgsql >::persist_statement[] =
   "INSERT INTO \"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\" "
-  "(\"customer_type_id\", "
+  "(\"CUSTOMER_TYPE_ID\", "
   "\"CUSTOMER_DESCRIPTION\") "
   "VALUES "
   "($1, $2)";
 
   const char access::object_traits_impl< ::zango::northwind::customer_demographics, id_pgsql >::find_statement[] =
   "SELECT "
-  "\"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\".\"customer_type_id\", "
+  "\"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\".\"CUSTOMER_TYPE_ID\", "
   "\"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\".\"CUSTOMER_DESCRIPTION\" "
   "FROM \"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\" "
-  "WHERE \"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\".\"customer_type_id\"=$1";
+  "WHERE \"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\".\"CUSTOMER_TYPE_ID\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::customer_demographics, id_pgsql >::update_statement[] =
   "UPDATE \"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\" "
   "SET "
   "\"CUSTOMER_DESCRIPTION\"=$1 "
-  "WHERE \"customer_type_id\"=$2";
+  "WHERE \"CUSTOMER_TYPE_ID\"=$2";
 
   const char access::object_traits_impl< ::zango::northwind::customer_demographics, id_pgsql >::erase_statement[] =
   "DELETE FROM \"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\" "
-  "WHERE \"customer_type_id\"=$1";
+  "WHERE \"CUSTOMER_TYPE_ID\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::customer_demographics, id_pgsql >::query_statement[] =
   "SELECT "
-  "\"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\".\"customer_type_id\", "
+  "\"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\".\"CUSTOMER_TYPE_ID\", "
   "\"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\".\"CUSTOMER_DESCRIPTION\" "
   "FROM \"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\"";
 
@@ -716,7 +716,7 @@ namespace odb
         case 1:
         {
           db.execute ("CREATE TABLE \"NORTHWIND\".\"CUSTOMER_DEMOGRAPHICS\" (\n"
-                      "  \"customer_type_id\" TEXT NOT NULL PRIMARY KEY,\n"
+                      "  \"CUSTOMER_TYPE_ID\" TEXT NOT NULL PRIMARY KEY,\n"
                       "  \"CUSTOMER_DESCRIPTION\" TEXT NULL)");
           return false;
         }

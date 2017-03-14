@@ -373,7 +373,7 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::categories, id_pgsql >::persist_statement[] =
   "INSERT INTO \"NORTHWIND\".\"CATEGORIES\" "
-  "(\"category_id\", "
+  "(\"CATEGORY_ID\", "
   "\"CATEGORY_NAME\", "
   "\"DESCRIPTION\", "
   "\"PICUTRE\") "
@@ -382,12 +382,12 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::categories, id_pgsql >::find_statement[] =
   "SELECT "
-  "\"NORTHWIND\".\"CATEGORIES\".\"category_id\", "
+  "\"NORTHWIND\".\"CATEGORIES\".\"CATEGORY_ID\", "
   "\"NORTHWIND\".\"CATEGORIES\".\"CATEGORY_NAME\", "
   "\"NORTHWIND\".\"CATEGORIES\".\"DESCRIPTION\", "
   "\"NORTHWIND\".\"CATEGORIES\".\"PICUTRE\" "
   "FROM \"NORTHWIND\".\"CATEGORIES\" "
-  "WHERE \"NORTHWIND\".\"CATEGORIES\".\"category_id\"=$1";
+  "WHERE \"NORTHWIND\".\"CATEGORIES\".\"CATEGORY_ID\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::categories, id_pgsql >::update_statement[] =
   "UPDATE \"NORTHWIND\".\"CATEGORIES\" "
@@ -395,15 +395,15 @@ namespace odb
   "\"CATEGORY_NAME\"=$1, "
   "\"DESCRIPTION\"=$2, "
   "\"PICUTRE\"=$3 "
-  "WHERE \"category_id\"=$4";
+  "WHERE \"CATEGORY_ID\"=$4";
 
   const char access::object_traits_impl< ::zango::northwind::categories, id_pgsql >::erase_statement[] =
   "DELETE FROM \"NORTHWIND\".\"CATEGORIES\" "
-  "WHERE \"category_id\"=$1";
+  "WHERE \"CATEGORY_ID\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::categories, id_pgsql >::query_statement[] =
   "SELECT "
-  "\"NORTHWIND\".\"CATEGORIES\".\"category_id\", "
+  "\"NORTHWIND\".\"CATEGORIES\".\"CATEGORY_ID\", "
   "\"NORTHWIND\".\"CATEGORIES\".\"CATEGORY_NAME\", "
   "\"NORTHWIND\".\"CATEGORIES\".\"DESCRIPTION\", "
   "\"NORTHWIND\".\"CATEGORIES\".\"PICUTRE\" "
@@ -828,7 +828,7 @@ namespace odb
         case 1:
         {
           db.execute ("CREATE TABLE \"NORTHWIND\".\"CATEGORIES\" (\n"
-                      "  \"category_id\" INTEGER NOT NULL PRIMARY KEY,\n"
+                      "  \"CATEGORY_ID\" INTEGER NOT NULL PRIMARY KEY,\n"
                       "  \"CATEGORY_NAME\" TEXT NOT NULL,\n"
                       "  \"DESCRIPTION\" TEXT NULL,\n"
                       "  \"PICUTRE\" BYTEA NULL)");

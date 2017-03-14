@@ -151,26 +151,26 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_oracle >::persist_statement[] =
   "INSERT INTO \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\" "
-  "(\"employee_id\", "
-  "\"territory_id\") "
+  "(\"EMPLOYEE_ID\", "
+  "\"TERRITORY_ID\") "
   "VALUES "
   "(:1, :2)";
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_oracle >::find_statement[] =
   "SELECT "
-  "\"NORTHWIND\".\"EMPLOYEE_TERRITORIES\".\"employee_id\", "
-  "\"NORTHWIND\".\"EMPLOYEE_TERRITORIES\".\"territory_id\" "
+  "\"NORTHWIND\".\"EMPLOYEE_TERRITORIES\".\"EMPLOYEE_ID\", "
+  "\"NORTHWIND\".\"EMPLOYEE_TERRITORIES\".\"TERRITORY_ID\" "
   "FROM \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\" "
-  "WHERE \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\".\"employee_id\"=:1 AND \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\".\"territory_id\"=:2";
+  "WHERE \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\".\"EMPLOYEE_ID\"=:1 AND \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\".\"TERRITORY_ID\"=:2";
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_oracle >::erase_statement[] =
   "DELETE FROM \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\" "
-  "WHERE \"employee_id\"=:1 AND \"territory_id\"=:2";
+  "WHERE \"EMPLOYEE_ID\"=:1 AND \"TERRITORY_ID\"=:2";
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_oracle >::query_statement[] =
   "SELECT "
-  "\"NORTHWIND\".\"EMPLOYEE_TERRITORIES\".\"employee_id\", "
-  "\"NORTHWIND\".\"EMPLOYEE_TERRITORIES\".\"territory_id\" "
+  "\"NORTHWIND\".\"EMPLOYEE_TERRITORIES\".\"EMPLOYEE_ID\", "
+  "\"NORTHWIND\".\"EMPLOYEE_TERRITORIES\".\"TERRITORY_ID\" "
   "FROM \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\"";
 
   const char access::object_traits_impl< ::zango::northwind::employee_territories, id_oracle >::erase_query_statement[] =
@@ -533,10 +533,10 @@ namespace odb
         case 1:
         {
           db.execute ("CREATE TABLE \"NORTHWIND\".\"EMPLOYEE_TERRITORIES\" (\n"
-                      "  \"employee_id\" NUMBER(10) NOT NULL,\n"
-                      "  \"territory_id\" VARCHAR2(512) NOT NULL,\n"
-                      "  PRIMARY KEY (\"employee_id\",\n"
-                      "               \"territory_id\"))");
+                      "  \"EMPLOYEE_ID\" NUMBER(10) NOT NULL,\n"
+                      "  \"TERRITORY_ID\" VARCHAR2(512) NOT NULL,\n"
+                      "  PRIMARY KEY (\"EMPLOYEE_ID\",\n"
+                      "               \"TERRITORY_ID\"))");
           return false;
         }
       }

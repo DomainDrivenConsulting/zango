@@ -115,7 +115,7 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::territory, id_oracle, A >::territory_id_class_::value_type_
   query_columns< ::zango::northwind::territory, id_oracle, A >::territory_id_class_::
-  value (A::table_name, "\"territory_id\"", 0, 512);
+  value (A::table_name, "\"TERRITORY_ID\"", 0, 512);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::territory, id_oracle, A >::territory_id_class_
@@ -129,7 +129,7 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::territory, id_oracle, A >::region_id_class_::value_type_
   query_columns< ::zango::northwind::territory, id_oracle, A >::region_id_class_::
-  value (A::table_name, "\"region_id\"", 0, 10);
+  value (A::table_name, "\"REGION_ID\"", 0, 10);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::territory, id_oracle, A >::region_id_class_

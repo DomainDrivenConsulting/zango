@@ -115,7 +115,7 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::customer_customer_demo, id_pgsql, A >::customer_customer_demo_key_class_::customer_id_class_1_::value_type_
   query_columns< ::zango::northwind::customer_customer_demo, id_pgsql, A >::customer_customer_demo_key_class_::customer_id_class_1_::
-  value (A::table_name, "\"customer_id\"", 0);
+  value (A::table_name, "\"CUSTOMER_ID\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::customer_customer_demo, id_pgsql, A >::customer_customer_demo_key_class_::customer_id_class_1_
@@ -124,7 +124,7 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::customer_customer_demo, id_pgsql, A >::customer_customer_demo_key_class_::customer_type_id_class_1_::value_type_
   query_columns< ::zango::northwind::customer_customer_demo, id_pgsql, A >::customer_customer_demo_key_class_::customer_type_id_class_1_::
-  value (A::table_name, "\"customer_type_id\"", 0);
+  value (A::table_name, "\"CUSTOMER_TYPE_ID\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::customer_customer_demo, id_pgsql, A >::customer_customer_demo_key_class_::customer_type_id_class_1_

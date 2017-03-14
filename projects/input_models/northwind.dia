@@ -65,22 +65,22 @@
   <dia:layer name="Background" visible="true" active="true">
     <dia:object type="UML - Note" version="0" id="O0">
       <dia:attribute name="obj_pos">
-        <dia:point val="86,-142"/>
+        <dia:point val="97,-136"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="85.95,-142.05;112.745,-130.65"/>
+        <dia:rectangle val="96.95,-136.05;123.745,-123.05"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="86,-142"/>
+        <dia:point val="97,-136"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="26.695"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="11.300000000000001"/>
+        <dia:real val="12.9"/>
       </dia:attribute>
       <dia:attribute name="line_width">
         <dia:real val="0.10000000000000001"/>
@@ -105,8 +105,10 @@ It's objective is to test Dogen integration with ODB.
 #DOGEN quilt.cpp.hash.enabled=false
 #DOGEN quilt.csharp.enabled=false
 #DOGEN annotations.profile=dogen
-#DOGEN odb_database=oracle
-#DOGEN odb_database=pgsql#</dia:string>
+#DOGEN yarn.orm.database_system=oracle
+#DOGEN yarn.orm.database_system=postgresql
+#DOGEN yarn.orm.letter_case=upper_case
+#DOGEN yarn.orm.schema_name=northwind#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
             <dia:font family="monospace" style="0" name="Courier"/>
@@ -115,7 +117,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:real val="0.80000000000000004"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="86.35,-140.755"/>
+            <dia:point val="97.35,-134.755"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -128,16 +130,16 @@ It's objective is to test Dogen integration with ODB.
     </dia:object>
     <dia:object type="UML - Class" version="0" id="O1">
       <dia:attribute name="obj_pos">
-        <dia:point val="117,-100"/>
+        <dia:point val="113,-100"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="116.95,-100.05;122.555,-96.95"/>
+        <dia:rectangle val="112.95,-100.05;122.79,-96.95"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="117,-100"/>
+        <dia:point val="113,-100"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="5.5049999999999999"/>
+        <dia:real val="9.7400000000000002"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
         <dia:real val="3"/>
@@ -146,12 +148,10 @@ It's objective is to test Dogen integration with ODB.
         <dia:string>#product_id#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>#primitive#</dia:string>
+        <dia:string>#orm_value, primitive#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN yarn.primitive.underlying_element=int
-#DOGEN odb_pragma=schema("NORTHWIND")
-#</dia:string>
+        <dia:string>##DOGEN yarn.primitive.underlying_element=int#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -240,28 +240,28 @@ It's objective is to test Dogen integration with ODB.
     </dia:object>
     <dia:object type="UML - Class" version="0" id="O2">
       <dia:attribute name="obj_pos">
-        <dia:point val="110,-89"/>
+        <dia:point val="108,-89"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="109.95,-89.05;124.41,-78.95"/>
+        <dia:rectangle val="107.95,-89.05;120.485,-78.15"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="110,-89"/>
+        <dia:point val="108,-89"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="14.359999999999999"/>
+        <dia:real val="12.434999999999999"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="10"/>
+        <dia:real val="10.799999999999999"/>
       </dia:attribute>
       <dia:attribute name="name">
         <dia:string>#products#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>##</dia:string>
+        <dia:string>#orm_object#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
+        <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -347,14 +347,13 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#product_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::product_id#</dia:string>
+            <dia:string>#product_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=id
-#DOGEN odb_pragma=column("")#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_primary_key=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -377,7 +376,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=not_null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=false#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -394,14 +393,13 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#supplier_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::supplier_id#</dia:string>
+            <dia:string>#supplier_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null
-#DOGEN odb_pragma=column("")#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -418,14 +416,13 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#category_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::category_id#</dia:string>
+            <dia:string>#category_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null
-#DOGEN odb_pragma=column("")#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -587,13 +584,13 @@ It's objective is to test Dogen integration with ODB.
         <dia:point val="127,-100"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="126.95,-100.05;132.555,-96.95"/>
+        <dia:rectangle val="126.95,-100.05;136.79,-96.95"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
         <dia:point val="127,-100"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="5.5049999999999999"/>
+        <dia:real val="9.7400000000000002"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
         <dia:real val="3"/>
@@ -602,11 +599,10 @@ It's objective is to test Dogen integration with ODB.
         <dia:string>#supplier_id#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>#primitive#</dia:string>
+        <dia:string>#orm_value, primitive#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN yarn.primitive.underlying_element=int
-#DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
+        <dia:string>##DOGEN yarn.primitive.underlying_element=int#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -695,28 +691,28 @@ It's objective is to test Dogen integration with ODB.
     </dia:object>
     <dia:object type="UML - Class" version="0" id="O4">
       <dia:attribute name="obj_pos">
-        <dia:point val="132,-89"/>
+        <dia:point val="134,-89"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="131.95,-89.05;146.41,-77.35"/>
+        <dia:rectangle val="133.95,-89.05;144.945,-76.55"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="132,-89"/>
+        <dia:point val="134,-89"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="14.359999999999999"/>
+        <dia:real val="10.895"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="11.600000000000001"/>
+        <dia:real val="12.4"/>
       </dia:attribute>
       <dia:attribute name="name">
         <dia:string>#supplier#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>##</dia:string>
+        <dia:string>#orm_object#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
+        <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -802,14 +798,13 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#supplier_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::supplier_id#</dia:string>
+            <dia:string>#supplier_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=id
-#DOGEN odb_pragma=column("")#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_primary_key=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -855,7 +850,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -878,7 +873,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -901,7 +896,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -924,7 +919,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -947,7 +942,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -970,7 +965,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -993,7 +988,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -1016,7 +1011,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -1039,7 +1034,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -1062,7 +1057,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -1083,16 +1078,16 @@ It's objective is to test Dogen integration with ODB.
     </dia:object>
     <dia:object type="UML - Class" version="0" id="O5">
       <dia:attribute name="obj_pos">
-        <dia:point val="105,-100"/>
+        <dia:point val="99,-100"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="104.95,-100.05;110.778,-96.95"/>
+        <dia:rectangle val="98.95,-100.05;108.79,-96.95"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="105,-100"/>
+        <dia:point val="99,-100"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="5.7275"/>
+        <dia:real val="9.7400000000000002"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
         <dia:real val="3"/>
@@ -1101,11 +1096,10 @@ It's objective is to test Dogen integration with ODB.
         <dia:string>#category_id#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>#primitive#</dia:string>
+        <dia:string>#orm_value, primitive#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN yarn.primitive.underlying_element=int
-#DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
+        <dia:string>##DOGEN yarn.primitive.underlying_element=int#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -1194,28 +1188,28 @@ It's objective is to test Dogen integration with ODB.
     </dia:object>
     <dia:object type="UML - Class" version="0" id="O6">
       <dia:attribute name="obj_pos">
-        <dia:point val="194,-136"/>
+        <dia:point val="197,-136"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="193.95,-136.05;206.87,-132.35"/>
+        <dia:rectangle val="196.95,-136.05;209.87,-131.55"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="194,-136"/>
+        <dia:point val="197,-136"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
         <dia:real val="12.82"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="3.6000000000000001"/>
+        <dia:real val="4.4000000000000004"/>
       </dia:attribute>
       <dia:attribute name="name">
         <dia:string>#region#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>##</dia:string>
+        <dia:string>#orm_object#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
+        <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -1301,14 +1295,13 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#region_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::region_id#</dia:string>
+            <dia:string>#region_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=id
-#DOGEN odb_pragma=column("")#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_primary_key=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -1331,7 +1324,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=not_null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=false#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -1352,16 +1345,16 @@ It's objective is to test Dogen integration with ODB.
     </dia:object>
     <dia:object type="UML - Class" version="0" id="O7">
       <dia:attribute name="obj_pos">
-        <dia:point val="184,-136"/>
+        <dia:point val="181,-136"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="183.95,-136.05;189.555,-132.95"/>
+        <dia:rectangle val="180.95,-136.05;190.79,-132.95"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="184,-136"/>
+        <dia:point val="181,-136"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="5.5049999999999999"/>
+        <dia:real val="9.7400000000000002"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
         <dia:real val="3"/>
@@ -1370,12 +1363,10 @@ It's objective is to test Dogen integration with ODB.
         <dia:string>#region_id#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>#primitive#</dia:string>
+        <dia:string>#orm_value, primitive#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN yarn.primitive.underlying_element=int
-#DOGEN odb_pragma=schema("NORTHWIND")
-#</dia:string>
+        <dia:string>##DOGEN yarn.primitive.underlying_element=int#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -1464,28 +1455,28 @@ It's objective is to test Dogen integration with ODB.
     </dia:object>
     <dia:object type="UML - Class" version="0" id="O8">
       <dia:attribute name="obj_pos">
-        <dia:point val="134,-113"/>
+        <dia:point val="132,-113"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="133.95,-113.05;153.03,-107.75"/>
+        <dia:rectangle val="131.95,-113.05;146.795,-106.95"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="134,-113"/>
+        <dia:point val="132,-113"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="18.98"/>
+        <dia:real val="14.744999999999999"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="5.2000000000000011"/>
+        <dia:real val="6.0000000000000009"/>
       </dia:attribute>
       <dia:attribute name="name">
         <dia:string>#order_details#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>##</dia:string>
+        <dia:string>#orm_object#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
+        <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -1571,14 +1562,14 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#order_details_key#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::order_details_key#</dia:string>
+            <dia:string>#order_details_key#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=id
-#DOGEN odb_pragma=column("")#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_primary_key=true
+#DOGEN yarn.orm.is_composite=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -1601,7 +1592,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=not_null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=false#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -1624,7 +1615,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=not_null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=false#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -1647,7 +1638,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=not_null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=false#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -1668,29 +1659,28 @@ It's objective is to test Dogen integration with ODB.
     </dia:object>
     <dia:object type="UML - Class" version="0" id="O9">
       <dia:attribute name="obj_pos">
-        <dia:point val="116,-113"/>
+        <dia:point val="115,-113"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="115.95,-113.05;129.64,-109.35"/>
+        <dia:rectangle val="114.95,-113.05;124.405,-108.55"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="116,-113"/>
+        <dia:point val="115,-113"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="13.59"/>
+        <dia:real val="9.3550000000000004"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="3.6000000000000001"/>
+        <dia:real val="4.4000000000000004"/>
       </dia:attribute>
       <dia:attribute name="name">
         <dia:string>#order_details_key#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>##</dia:string>
+        <dia:string>#orm_value#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_is_value=true
-#DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
+        <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -1776,13 +1766,13 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#product_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::product_id#</dia:string>
+            <dia:string>#product_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=column("")#</dia:string>
+            <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -1799,13 +1789,13 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#order_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::order_id#</dia:string>
+            <dia:string>#order_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=column("")#</dia:string>
+            <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -1829,7 +1819,7 @@ It's objective is to test Dogen integration with ODB.
         <dia:point val="153,-89"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="152.95,-89.05;168.18,-75.75"/>
+        <dia:rectangle val="152.95,-89.05;168.18,-74.95"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
         <dia:point val="153,-89"/>
@@ -1838,16 +1828,16 @@ It's objective is to test Dogen integration with ODB.
         <dia:real val="15.130000000000001"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="13.200000000000003"/>
+        <dia:real val="14.000000000000002"/>
       </dia:attribute>
       <dia:attribute name="name">
         <dia:string>#orders#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>##</dia:string>
+        <dia:string>#orm_object#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
+        <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -1933,14 +1923,13 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#order_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::order_id#</dia:string>
+            <dia:string>#order_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=id
-#DOGEN odb_pragma=column("")#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_primary_key=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -1957,14 +1946,13 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#customer_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::customer_id#</dia:string>
+            <dia:string>#customer_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null
-#DOGEN odb_pragma=column("")#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -1981,14 +1969,13 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#employee_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::employee_id#</dia:string>
+            <dia:string>#employee_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null
-#DOGEN odb_pragma=column("EMPLOYEE_ID")#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -2011,7 +1998,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -2034,7 +2021,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -2057,7 +2044,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -2080,7 +2067,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -2103,7 +2090,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -2126,7 +2113,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -2149,7 +2136,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -2172,7 +2159,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -2195,7 +2182,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -2218,7 +2205,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -2241,7 +2228,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -2265,13 +2252,13 @@ It's objective is to test Dogen integration with ODB.
         <dia:point val="142,-100"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="141.95,-100.05;147.555,-96.95"/>
+        <dia:rectangle val="141.95,-100.05;151.79,-96.95"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
         <dia:point val="142,-100"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="5.5049999999999999"/>
+        <dia:real val="9.7400000000000002"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
         <dia:real val="3"/>
@@ -2280,11 +2267,10 @@ It's objective is to test Dogen integration with ODB.
         <dia:string>#order_id#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>#primitive#</dia:string>
+        <dia:string>#orm_value, primitive#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN yarn.primitive.underlying_element=int
-#DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
+        <dia:string>##DOGEN yarn.primitive.underlying_element=int#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -2373,16 +2359,16 @@ It's objective is to test Dogen integration with ODB.
     </dia:object>
     <dia:object type="UML - Class" version="0" id="O12">
       <dia:attribute name="obj_pos">
-        <dia:point val="161,-100"/>
+        <dia:point val="159,-100"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="160.95,-100.05;167.178,-96.95"/>
+        <dia:rectangle val="158.95,-100.05;168.79,-96.95"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="161,-100"/>
+        <dia:point val="159,-100"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="6.1274999999999995"/>
+        <dia:real val="9.7400000000000002"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
         <dia:real val="3"/>
@@ -2391,11 +2377,10 @@ It's objective is to test Dogen integration with ODB.
         <dia:string>#employee_id#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>#primitive#</dia:string>
+        <dia:string>#orm_value, primitive#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN yarn.primitive.underlying_element=int
-#DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
+        <dia:string>##DOGEN yarn.primitive.underlying_element=int#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -2484,28 +2469,28 @@ It's objective is to test Dogen integration with ODB.
     </dia:object>
     <dia:object type="UML - Class" version="0" id="O13">
       <dia:attribute name="obj_pos">
-        <dia:point val="98,-113"/>
+        <dia:point val="95,-113"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="97.95,-113.05;112.41,-107.75"/>
+        <dia:rectangle val="94.95,-113.05;105.945,-106.95"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="98,-113"/>
+        <dia:point val="95,-113"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="14.359999999999999"/>
+        <dia:real val="10.895"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="5.2000000000000011"/>
+        <dia:real val="6.0000000000000009"/>
       </dia:attribute>
       <dia:attribute name="name">
         <dia:string>#categories#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>##</dia:string>
+        <dia:string>#orm_object#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
+        <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -2591,14 +2576,13 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#category_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::category_id#</dia:string>
+            <dia:string>#category_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=id
-#DOGEN odb_pragma=column("")#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_primary_key=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -2644,7 +2628,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -2667,8 +2651,9 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null
-#DOGEN odb_pragma=pgsql:type("BYTEA") oracle:type("BLOB")#</dia:string>
+            <dia:string>##DOGEN yarn.orm.type_override=postgresql,BYTEA
+#DOGEN yarn.orm.type_override=oracle,BLOB
+#DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -2689,28 +2674,28 @@ It's objective is to test Dogen integration with ODB.
     </dia:object>
     <dia:object type="UML - Class" version="0" id="O14">
       <dia:attribute name="obj_pos">
-        <dia:point val="182,-124"/>
+        <dia:point val="183,-124"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="181.95,-124.05;196.41,-107.55"/>
+        <dia:rectangle val="182.95,-124.05;197.025,-106.75"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="182,-124"/>
+        <dia:point val="183,-124"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="14.359999999999999"/>
+        <dia:real val="13.975"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="16.400000000000002"/>
+        <dia:real val="17.200000000000003"/>
       </dia:attribute>
       <dia:attribute name="name">
         <dia:string>#employees#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>##</dia:string>
+        <dia:string>#orm_object#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
+        <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -2796,14 +2781,13 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#employee_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::employee_id#</dia:string>
+            <dia:string>#employee_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=id
-#DOGEN odb_pragma=column("EMPLOYEE_ID")#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_primary_key=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -2826,7 +2810,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=not_null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=false#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -2849,7 +2833,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=not_null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=false#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -2872,7 +2856,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -2895,7 +2879,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -2918,7 +2902,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -2941,7 +2925,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -2964,7 +2948,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -2987,7 +2971,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -3010,7 +2994,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -3033,7 +3017,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -3056,7 +3040,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -3079,7 +3063,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -3102,7 +3086,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -3125,8 +3109,9 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null
-#DOGEN odb_pragma=pgsql:type("BYTEA") oracle:type("BLOB")#</dia:string>
+            <dia:string>##DOGEN yarn.orm.type_override=postgresql,BYTEA
+#DOGEN yarn.orm.type_override=oracle,BLOB
+#DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -3149,7 +3134,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -3166,14 +3151,13 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#reports_to#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::employee_id#</dia:string>
+            <dia:string>#employee_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null
-#DOGEN odb_pragma=column("REPORTS_TO")#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -3196,7 +3180,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -3220,25 +3204,25 @@ It's objective is to test Dogen integration with ODB.
         <dia:point val="139,-124"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="138.95,-124.05;163.42,-121.15"/>
+        <dia:rectangle val="138.95,-124.05;159.185,-120.35"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
         <dia:point val="139,-124"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="24.369999999999997"/>
+        <dia:real val="20.134999999999998"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="2.7999999999999998"/>
+        <dia:real val="3.6000000000000001"/>
       </dia:attribute>
       <dia:attribute name="name">
         <dia:string>#employee_territories#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>##</dia:string>
+        <dia:string>#orm_object#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
+        <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -3324,14 +3308,14 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#employee_territories_key#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::employee_territories_key#</dia:string>
+            <dia:string>#employee_territories_key#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=id
-#DOGEN odb_pragma=column("")#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_primary_key=true
+#DOGEN yarn.orm.is_composite=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -3352,16 +3336,16 @@ It's objective is to test Dogen integration with ODB.
     </dia:object>
     <dia:object type="UML - Class" version="0" id="O16">
       <dia:attribute name="obj_pos">
-        <dia:point val="173,-124"/>
+        <dia:point val="169,-124"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="172.95,-124.05;178.638,-120.95"/>
+        <dia:rectangle val="168.95,-124.05;178.79,-120.95"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="173,-124"/>
+        <dia:point val="169,-124"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="5.5875000000000004"/>
+        <dia:real val="9.7400000000000002"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
         <dia:real val="3"/>
@@ -3370,11 +3354,10 @@ It's objective is to test Dogen integration with ODB.
         <dia:string>#territory_id#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>#primitive#</dia:string>
+        <dia:string>#orm_value, primitive#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN yarn.primitive.underlying_element=std::string
-#DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
+        <dia:string>##DOGEN yarn.primitive.underlying_element=std::string#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -3466,26 +3449,25 @@ It's objective is to test Dogen integration with ODB.
         <dia:point val="157,-113"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="156.95,-113.05;172.18,-109.35"/>
+        <dia:rectangle val="156.95,-113.05;168.915,-108.55"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
         <dia:point val="157,-113"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="15.130000000000001"/>
+        <dia:real val="11.865"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="3.6000000000000001"/>
+        <dia:real val="4.4000000000000004"/>
       </dia:attribute>
       <dia:attribute name="name">
         <dia:string>#employee_territories_key#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>##</dia:string>
+        <dia:string>#orm_value#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_is_value=true
-#DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
+        <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -3571,13 +3553,13 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#employee_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::employee_id#</dia:string>
+            <dia:string>#employee_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=column("EMPLOYEE_ID")#</dia:string>
+            <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -3594,13 +3576,13 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#territory_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::territory_id#</dia:string>
+            <dia:string>#territory_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=column("")#</dia:string>
+            <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -3621,28 +3603,28 @@ It's objective is to test Dogen integration with ODB.
     </dia:object>
     <dia:object type="UML - Class" version="0" id="O18">
       <dia:attribute name="obj_pos">
-        <dia:point val="163,-136"/>
+        <dia:point val="160,-136"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="162.95,-136.05;178.18,-131.55"/>
+        <dia:rectangle val="159.95,-136.05;174.025,-130.75"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="163,-136"/>
+        <dia:point val="160,-136"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="15.130000000000001"/>
+        <dia:real val="13.975"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="4.4000000000000004"/>
+        <dia:real val="5.2000000000000011"/>
       </dia:attribute>
       <dia:attribute name="name">
         <dia:string>#territory#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>##</dia:string>
+        <dia:string>#orm_object#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
+        <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -3728,14 +3710,13 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#territory_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::territory_id#</dia:string>
+            <dia:string>#territory_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=id
-#DOGEN odb_pragma=column("")#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_primary_key=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -3758,7 +3739,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=not_null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=false#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -3775,14 +3756,13 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#region_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::region_id#</dia:string>
+            <dia:string>#region_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=not_null
-#DOGEN odb_pragma=column("")#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=false#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -3803,16 +3783,16 @@ It's objective is to test Dogen integration with ODB.
     </dia:object>
     <dia:object type="UML - Class" version="0" id="O19">
       <dia:attribute name="obj_pos">
-        <dia:point val="154,-68"/>
+        <dia:point val="152,-69"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="153.95,-68.05;159.555,-64.95"/>
+        <dia:rectangle val="151.95,-69.05;161.79,-65.95"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="154,-68"/>
+        <dia:point val="152,-69"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="5.5049999999999999"/>
+        <dia:real val="9.7400000000000002"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
         <dia:real val="3"/>
@@ -3821,11 +3801,10 @@ It's objective is to test Dogen integration with ODB.
         <dia:string>#shipper_id#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>#primitive#</dia:string>
+        <dia:string>#orm_value, primitive#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN yarn.primitive.underlying_element=int
-#DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
+        <dia:string>##DOGEN yarn.primitive.underlying_element=int#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -3914,28 +3893,28 @@ It's objective is to test Dogen integration with ODB.
     </dia:object>
     <dia:object type="UML - Class" version="0" id="O20">
       <dia:attribute name="obj_pos">
-        <dia:point val="144,-58"/>
+        <dia:point val="168,-69"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="143.95,-58.05;157.64,-53.55"/>
+        <dia:rectangle val="167.95,-69.05;178.56,-63.75"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="144,-58"/>
+        <dia:point val="168,-69"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="13.59"/>
+        <dia:real val="10.51"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="4.4000000000000004"/>
+        <dia:real val="5.2000000000000011"/>
       </dia:attribute>
       <dia:attribute name="name">
         <dia:string>#shippers#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>##</dia:string>
+        <dia:string>#orm_object#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
+        <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -4021,14 +4000,13 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#shipper_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::shipper_id#</dia:string>
+            <dia:string>#shipper_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=id
-#DOGEN odb_pragma=column("")#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_primary_key=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -4098,13 +4076,13 @@ It's objective is to test Dogen integration with ODB.
         <dia:point val="178,-100"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="177.95,-100.05;184.02,-96.95"/>
+        <dia:rectangle val="177.95,-100.05;187.79,-96.95"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
         <dia:point val="178,-100"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="5.9700000000000006"/>
+        <dia:real val="9.7400000000000002"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
         <dia:real val="3"/>
@@ -4113,12 +4091,10 @@ It's objective is to test Dogen integration with ODB.
         <dia:string>#customer_id#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>#primitive#</dia:string>
+        <dia:string>#orm_value, primitive#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN yarn.primitive.underlying_element=int
-#DOGEN odb_pragma=schema("NORTHWIND")
-#</dia:string>
+        <dia:string>##DOGEN yarn.primitive.underlying_element=int#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -4210,25 +4186,25 @@ It's objective is to test Dogen integration with ODB.
         <dia:point val="175,-89"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="174.95,-89.05;189.41,-78.15"/>
+        <dia:rectangle val="174.95,-89.05;185.945,-77.35"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
         <dia:point val="175,-89"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="14.359999999999999"/>
+        <dia:real val="10.895"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="10.800000000000001"/>
+        <dia:real val="11.6"/>
       </dia:attribute>
       <dia:attribute name="name">
         <dia:string>#customers#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>##</dia:string>
+        <dia:string>#orm_object#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
+        <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -4314,14 +4290,13 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#customer_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::customer_id#</dia:string>
+            <dia:string>#customer_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=id
-#DOGEN odb_pragma=column("")#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_primary_key=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -4367,7 +4342,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -4390,7 +4365,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -4413,7 +4388,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -4436,7 +4411,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -4459,7 +4434,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -4482,7 +4457,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -4505,7 +4480,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -4528,7 +4503,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -4551,7 +4526,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -4575,26 +4550,25 @@ It's objective is to test Dogen integration with ODB.
         <dia:point val="194,-89"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="193.95,-89.05;212.26,-85.35"/>
+        <dia:rectangle val="193.95,-89.05;208.268,-84.55"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
         <dia:point val="194,-89"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="18.210000000000001"/>
+        <dia:real val="14.217500000000001"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="3.6000000000000001"/>
+        <dia:real val="4.4000000000000004"/>
       </dia:attribute>
       <dia:attribute name="name">
         <dia:string>#customer_customer_demo_key#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>##</dia:string>
+        <dia:string>#orm_value#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_is_value=true
-#DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
+        <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -4680,13 +4654,13 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#customer_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::customer_id#</dia:string>
+            <dia:string>#customer_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=column("")#</dia:string>
+            <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -4703,13 +4677,13 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#customer_type_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::customer_type_id#</dia:string>
+            <dia:string>#customer_type_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=column("")#</dia:string>
+            <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -4730,28 +4704,28 @@ It's objective is to test Dogen integration with ODB.
     </dia:object>
     <dia:object type="UML - Class" version="0" id="O24">
       <dia:attribute name="obj_pos">
-        <dia:point val="202,-113"/>
+        <dia:point val="203,-113"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="201.95,-113.05;220.26,-109.35"/>
+        <dia:rectangle val="202.95,-113.05;217.025,-108.55"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
-        <dia:point val="202,-113"/>
+        <dia:point val="203,-113"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="18.210000000000001"/>
+        <dia:real val="13.975"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="3.6000000000000001"/>
+        <dia:real val="4.4000000000000004"/>
       </dia:attribute>
       <dia:attribute name="name">
         <dia:string>#customer_demographics#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>##</dia:string>
+        <dia:string>#orm_object#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
+        <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -4837,14 +4811,13 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#customer_type_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::customer_type_id#</dia:string>
+            <dia:string>#customer_type_id#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=id
-#DOGEN odb_pragma=column("")#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_primary_key=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -4867,7 +4840,7 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=null#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_nullable=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -4891,13 +4864,13 @@ It's objective is to test Dogen integration with ODB.
         <dia:point val="200,-100"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="199.95,-100.05;208.44,-96.95"/>
+        <dia:rectangle val="199.95,-100.05;209.79,-96.95"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
         <dia:point val="200,-100"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="8.3900000000000006"/>
+        <dia:real val="9.7400000000000002"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
         <dia:real val="3"/>
@@ -4906,12 +4879,10 @@ It's objective is to test Dogen integration with ODB.
         <dia:string>#customer_type_id#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>#primitive#</dia:string>
+        <dia:string>#orm_value, primitive#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN yarn.primitive.underlying_element=std::string
-#DOGEN odb_pragma=schema("NORTHWIND")
-#</dia:string>
+        <dia:string>##DOGEN yarn.primitive.underlying_element=std::string#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -5036,19 +5007,19 @@ It's objective is to test Dogen integration with ODB.
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="117.18,-89"/>
+        <dia:point val="114.218,-89"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="116.43,-97.05;119.952,-88.2"/>
+        <dia:rectangle val="113.468,-97.05;118.07,-88.2"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="117.18,-89"/>
-        <dia:point val="117.18,-93"/>
-        <dia:point val="119.752,-93"/>
-        <dia:point val="119.752,-97"/>
+        <dia:point val="114.218,-89"/>
+        <dia:point val="114.218,-93"/>
+        <dia:point val="117.87,-93"/>
+        <dia:point val="117.87,-97"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>
@@ -5107,19 +5078,19 @@ It's objective is to test Dogen integration with ODB.
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="110,-89"/>
+        <dia:point val="108,-89"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="107.814,-97.05;110.75,-88.2"/>
+        <dia:rectangle val="103.82,-97.05;108.75,-88.2"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="110,-89"/>
-        <dia:point val="110,-93"/>
-        <dia:point val="107.864,-93"/>
-        <dia:point val="107.864,-97"/>
+        <dia:point val="108,-89"/>
+        <dia:point val="108,-93"/>
+        <dia:point val="103.87,-93"/>
+        <dia:point val="103.87,-97"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>
@@ -5178,19 +5149,19 @@ It's objective is to test Dogen integration with ODB.
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="105.18,-107.8"/>
+        <dia:point val="100.448,-107"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="104.43,-108.55;108.064,-99.2"/>
+        <dia:rectangle val="99.6975,-107.75;104.07,-99.2"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="105.18,-107.8"/>
-        <dia:point val="105.18,-103"/>
-        <dia:point val="107.864,-103"/>
-        <dia:point val="107.864,-100"/>
+        <dia:point val="100.448,-107"/>
+        <dia:point val="100.448,-103"/>
+        <dia:point val="103.87,-103"/>
+        <dia:point val="103.87,-100"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>
@@ -5249,17 +5220,17 @@ It's objective is to test Dogen integration with ODB.
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="124.36,-89"/>
+        <dia:point val="120.435,-89"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="123.61,-97.05;127.2,-88.2"/>
+        <dia:rectangle val="119.685,-97.05;127.2,-88.2"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="124.36,-89"/>
-        <dia:point val="124.36,-93"/>
+        <dia:point val="120.435,-89"/>
+        <dia:point val="120.435,-93"/>
         <dia:point val="127,-93"/>
         <dia:point val="127,-97"/>
       </dia:attribute>
@@ -5320,19 +5291,19 @@ It's objective is to test Dogen integration with ODB.
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="139.18,-89"/>
+        <dia:point val="139.447,-89"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="132.455,-97.05;139.93,-88.2"/>
+        <dia:rectangle val="136.69,-97.05;140.197,-88.2"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="139.18,-89"/>
-        <dia:point val="139.18,-93"/>
-        <dia:point val="132.505,-93"/>
-        <dia:point val="132.505,-97"/>
+        <dia:point val="139.447,-89"/>
+        <dia:point val="139.447,-93"/>
+        <dia:point val="136.74,-93"/>
+        <dia:point val="136.74,-97"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>
@@ -5391,19 +5362,19 @@ It's objective is to test Dogen integration with ODB.
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="116,-109.4"/>
+        <dia:point val="115,-108.6"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="115.25,-110.15;119.952,-99.2"/>
+        <dia:rectangle val="114.25,-109.35;118.07,-99.2"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="116,-109.4"/>
-        <dia:point val="116,-103"/>
-        <dia:point val="119.752,-103"/>
-        <dia:point val="119.752,-100"/>
+        <dia:point val="115,-108.6"/>
+        <dia:point val="115,-103"/>
+        <dia:point val="117.87,-103"/>
+        <dia:point val="117.87,-100"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>
@@ -5462,19 +5433,19 @@ It's objective is to test Dogen integration with ODB.
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="129.59,-109.4"/>
+        <dia:point val="124.355,-108.6"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="128.84,-110.15;144.952,-99.2"/>
+        <dia:rectangle val="123.605,-109.35;147.07,-99.2"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="129.59,-109.4"/>
-        <dia:point val="129.59,-103"/>
-        <dia:point val="144.752,-103"/>
-        <dia:point val="144.752,-100"/>
+        <dia:point val="124.355,-108.6"/>
+        <dia:point val="124.355,-103"/>
+        <dia:point val="146.87,-103"/>
+        <dia:point val="146.87,-100"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>
@@ -5533,19 +5504,19 @@ It's objective is to test Dogen integration with ODB.
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="143.49,-113"/>
+        <dia:point val="139.373,-113"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="122.745,-117.75;144.24,-112.2"/>
+        <dia:rectangle val="119.627,-117.75;140.123,-112.2"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="143.49,-113"/>
-        <dia:point val="143.49,-117"/>
-        <dia:point val="122.795,-117"/>
-        <dia:point val="122.795,-113"/>
+        <dia:point val="139.373,-113"/>
+        <dia:point val="139.373,-117"/>
+        <dia:point val="119.677,-117"/>
+        <dia:point val="119.677,-113"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>
@@ -5604,17 +5575,17 @@ It's objective is to test Dogen integration with ODB.
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="144.752,-97"/>
+        <dia:point val="146.87,-97"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="144.002,-97.75;153.2,-88.2"/>
+        <dia:rectangle val="146.12,-97.75;153.2,-88.2"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="144.752,-97"/>
-        <dia:point val="144.752,-93"/>
+        <dia:point val="146.87,-97"/>
+        <dia:point val="146.87,-93"/>
         <dia:point val="153,-93"/>
         <dia:point val="153,-89"/>
       </dia:attribute>
@@ -5678,7 +5649,7 @@ It's objective is to test Dogen integration with ODB.
         <dia:point val="160.565,-89"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="159.815,-96.9998;164.264,-88.2"/>
+        <dia:rectangle val="159.815,-96.9998;164.07,-88.2"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
@@ -5686,8 +5657,8 @@ It's objective is to test Dogen integration with ODB.
       <dia:attribute name="orth_points">
         <dia:point val="160.565,-89"/>
         <dia:point val="160.565,-93"/>
-        <dia:point val="164.064,-93"/>
-        <dia:point val="164.064,-96.9498"/>
+        <dia:point val="163.87,-93"/>
+        <dia:point val="163.87,-96.9498"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>
@@ -5746,19 +5717,19 @@ It's objective is to test Dogen integration with ODB.
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="189.18,-107.6"/>
+        <dia:point val="189.988,-106.8"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="167.077,-108.35;189.93,-99.2"/>
+        <dia:rectangle val="168.69,-107.55;190.738,-99.2"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="189.18,-107.6"/>
-        <dia:point val="189.18,-103"/>
-        <dia:point val="167.127,-103"/>
-        <dia:point val="167.127,-100"/>
+        <dia:point val="189.988,-106.8"/>
+        <dia:point val="189.988,-103"/>
+        <dia:point val="168.74,-103"/>
+        <dia:point val="168.74,-100"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>
@@ -5817,19 +5788,19 @@ It's objective is to test Dogen integration with ODB.
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="164.565,-109.4"/>
+        <dia:point val="162.933,-108.6"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="160.95,-110.15;165.315,-99.2"/>
+        <dia:rectangle val="158.95,-109.35;163.683,-99.2"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="164.565,-109.4"/>
-        <dia:point val="164.565,-103"/>
-        <dia:point val="161,-103"/>
-        <dia:point val="161,-100"/>
+        <dia:point val="162.933,-108.6"/>
+        <dia:point val="162.933,-103"/>
+        <dia:point val="159,-103"/>
+        <dia:point val="159,-100"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>
@@ -5888,17 +5859,17 @@ It's objective is to test Dogen integration with ODB.
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="151.185,-121.15"/>
+        <dia:point val="149.067,-120.35"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="150.435,-121.9;157.2,-112.2"/>
+        <dia:rectangle val="148.317,-121.1;157.2,-112.2"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="151.185,-121.15"/>
-        <dia:point val="151.185,-117"/>
+        <dia:point val="149.067,-120.35"/>
+        <dia:point val="149.067,-117"/>
         <dia:point val="157,-117"/>
         <dia:point val="157,-113"/>
       </dia:attribute>
@@ -5959,19 +5930,19 @@ It's objective is to test Dogen integration with ODB.
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="172.13,-113"/>
+        <dia:point val="168.865,-113"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="171.38,-121.05;175.994,-112.2"/>
+        <dia:rectangle val="168.115,-121.05;174.07,-112.2"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="172.13,-113"/>
-        <dia:point val="172.13,-117"/>
-        <dia:point val="175.794,-117"/>
-        <dia:point val="175.794,-121"/>
+        <dia:point val="168.865,-113"/>
+        <dia:point val="168.865,-117"/>
+        <dia:point val="173.87,-117"/>
+        <dia:point val="173.87,-121"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>
@@ -6030,19 +6001,19 @@ It's objective is to test Dogen integration with ODB.
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="170.565,-131.6"/>
+        <dia:point val="166.988,-130.8"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="169.815,-132.35;175.994,-123.2"/>
+        <dia:rectangle val="166.238,-131.55;174.07,-123.2"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="170.565,-131.6"/>
-        <dia:point val="170.565,-127"/>
-        <dia:point val="175.794,-127"/>
-        <dia:point val="175.794,-124"/>
+        <dia:point val="166.988,-130.8"/>
+        <dia:point val="166.988,-127"/>
+        <dia:point val="173.87,-127"/>
+        <dia:point val="173.87,-124"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>
@@ -6101,19 +6072,19 @@ It's objective is to test Dogen integration with ODB.
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="170.565,-136"/>
+        <dia:point val="166.988,-136"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="169.815,-139.517;184.2,-135.2"/>
+        <dia:rectangle val="166.238,-139.75;181.2,-135.2"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="170.565,-136"/>
-        <dia:point val="170.565,-138.767"/>
-        <dia:point val="184,-138.767"/>
-        <dia:point val="184,-136"/>
+        <dia:point val="166.988,-136"/>
+        <dia:point val="166.988,-139"/>
+        <dia:point val="181,-139"/>
+        <dia:point val="181,-136"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>
@@ -6172,19 +6143,19 @@ It's objective is to test Dogen integration with ODB.
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="200.41,-136"/>
+        <dia:point val="203.41,-136"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="189.455,-139.517;201.16,-135.2"/>
+        <dia:rectangle val="190.69,-139.75;204.16,-135.2"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="200.41,-136"/>
-        <dia:point val="200.41,-138.767"/>
-        <dia:point val="189.505,-138.767"/>
-        <dia:point val="189.505,-136"/>
+        <dia:point val="203.41,-136"/>
+        <dia:point val="203.41,-139"/>
+        <dia:point val="190.74,-139"/>
+        <dia:point val="190.74,-136"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>
@@ -6243,19 +6214,19 @@ It's objective is to test Dogen integration with ODB.
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="160.565,-75.8"/>
+        <dia:point val="160.565,-75"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="156.702,-76.55;161.315,-67.2"/>
+        <dia:rectangle val="156.82,-75.75;161.315,-68.2"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="160.565,-75.8"/>
+        <dia:point val="160.565,-75"/>
         <dia:point val="160.565,-72"/>
-        <dia:point val="156.752,-72"/>
-        <dia:point val="156.752,-68"/>
+        <dia:point val="156.87,-72"/>
+        <dia:point val="156.87,-69"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>
@@ -6314,19 +6285,19 @@ It's objective is to test Dogen integration with ODB.
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="150.795,-58"/>
+        <dia:point val="173.255,-63.8"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="150.045,-65.05;156.952,-57.2"/>
+        <dia:rectangle val="156.82,-66.05;174.005,-59.95"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="150.795,-58"/>
-        <dia:point val="150.795,-62"/>
-        <dia:point val="156.752,-62"/>
-        <dia:point val="156.752,-65"/>
+        <dia:point val="173.255,-63.8"/>
+        <dia:point val="173.255,-60"/>
+        <dia:point val="156.87,-60"/>
+        <dia:point val="156.87,-66"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>
@@ -6343,7 +6314,7 @@ It's objective is to test Dogen integration with ODB.
         <dia:color val="#000000"/>
       </dia:attribute>
       <dia:connections>
-        <dia:connection handle="0" to="O20" connection="1"/>
+        <dia:connection handle="0" to="O20" connection="6"/>
         <dia:connection handle="1" to="O19" connection="6"/>
       </dia:connections>
     </dia:object>
@@ -6456,19 +6427,19 @@ It's objective is to test Dogen integration with ODB.
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="182.18,-89"/>
+        <dia:point val="180.447,-89"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="180.935,-97.05;182.93,-88.2"/>
+        <dia:rectangle val="179.697,-97.05;183.07,-88.2"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="182.18,-89"/>
-        <dia:point val="182.18,-93"/>
-        <dia:point val="180.985,-93"/>
-        <dia:point val="180.985,-97"/>
+        <dia:point val="180.447,-89"/>
+        <dia:point val="180.447,-93"/>
+        <dia:point val="182.87,-93"/>
+        <dia:point val="182.87,-97"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>
@@ -6530,7 +6501,7 @@ It's objective is to test Dogen integration with ODB.
         <dia:point val="194,-89"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="183.92,-97.05;194.75,-88.2"/>
+        <dia:rectangle val="187.69,-97.05;194.75,-88.2"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
@@ -6538,8 +6509,8 @@ It's objective is to test Dogen integration with ODB.
       <dia:attribute name="orth_points">
         <dia:point val="194,-89"/>
         <dia:point val="194,-93"/>
-        <dia:point val="183.97,-93"/>
-        <dia:point val="183.97,-97"/>
+        <dia:point val="187.74,-93"/>
+        <dia:point val="187.74,-97"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>
@@ -6598,19 +6569,19 @@ It's objective is to test Dogen integration with ODB.
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="211.105,-109.4"/>
+        <dia:point val="209.988,-108.6"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="204.145,-110.15;211.855,-99.2"/>
+        <dia:rectangle val="204.82,-109.35;210.738,-99.2"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="211.105,-109.4"/>
-        <dia:point val="211.105,-103"/>
-        <dia:point val="204.195,-103"/>
-        <dia:point val="204.195,-100"/>
+        <dia:point val="209.988,-108.6"/>
+        <dia:point val="209.988,-103"/>
+        <dia:point val="204.87,-103"/>
+        <dia:point val="204.87,-100"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>
@@ -6669,19 +6640,19 @@ It's objective is to test Dogen integration with ODB.
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="212.21,-89"/>
+        <dia:point val="208.218,-89"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="204.145,-97.05;212.96,-88.2"/>
+        <dia:rectangle val="204.82,-97.05;208.968,-88.2"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="212.21,-89"/>
-        <dia:point val="212.21,-93"/>
-        <dia:point val="204.195,-93"/>
-        <dia:point val="204.195,-97"/>
+        <dia:point val="208.218,-89"/>
+        <dia:point val="208.218,-93"/>
+        <dia:point val="204.87,-93"/>
+        <dia:point val="204.87,-97"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>
@@ -6707,25 +6678,25 @@ It's objective is to test Dogen integration with ODB.
         <dia:point val="194,-78"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="193.95,-78.05;219.96,-75.15"/>
+        <dia:rectangle val="193.95,-78.05;215.725,-74.35"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
         <dia:point val="194,-78"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="25.91"/>
+        <dia:real val="21.675000000000001"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="2.7999999999999998"/>
+        <dia:real val="3.6000000000000001"/>
       </dia:attribute>
       <dia:attribute name="name">
         <dia:string>#customer_customer_demo#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
-        <dia:string>##</dia:string>
+        <dia:string>#orm_object#</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>##DOGEN odb_pragma=schema("NORTHWIND")#</dia:string>
+        <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -6811,14 +6782,14 @@ It's objective is to test Dogen integration with ODB.
             <dia:string>#customer_customer_demo_key#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#northwind::customer_customer_demo_key#</dia:string>
+            <dia:string>#customer_customer_demo_key#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="comment">
-            <dia:string>##DOGEN odb_pragma=id
-#DOGEN odb_pragma=column("")#</dia:string>
+            <dia:string>##DOGEN yarn.orm.is_primary_key=true
+#DOGEN yarn.orm.is_composite=true#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -6875,19 +6846,19 @@ It's objective is to test Dogen integration with ODB.
         <dia:boolean val="false"/>
       </dia:attribute>
       <dia:attribute name="obj_pos">
-        <dia:point val="203.105,-85.4"/>
+        <dia:point val="201.109,-84.6"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="202.355,-86.15;207.155,-77.2"/>
+        <dia:rectangle val="200.359,-85.35;205.037,-77.2"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="203.105,-85.4"/>
-        <dia:point val="203.105,-81"/>
-        <dia:point val="206.955,-81"/>
-        <dia:point val="206.955,-78"/>
+        <dia:point val="201.109,-84.6"/>
+        <dia:point val="201.109,-81"/>
+        <dia:point val="204.838,-81"/>
+        <dia:point val="204.838,-78"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>

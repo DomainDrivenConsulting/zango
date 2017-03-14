@@ -318,7 +318,7 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_pgsql >::persist_statement[] =
   "INSERT INTO \"NORTHWIND\".\"SHIPPERS\" "
-  "(\"shipper_id\", "
+  "(\"SHIPPER_ID\", "
   "\"COMPANY_NAME\", "
   "\"PHONE\") "
   "VALUES "
@@ -326,26 +326,26 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_pgsql >::find_statement[] =
   "SELECT "
-  "\"NORTHWIND\".\"SHIPPERS\".\"shipper_id\", "
+  "\"NORTHWIND\".\"SHIPPERS\".\"SHIPPER_ID\", "
   "\"NORTHWIND\".\"SHIPPERS\".\"COMPANY_NAME\", "
   "\"NORTHWIND\".\"SHIPPERS\".\"PHONE\" "
   "FROM \"NORTHWIND\".\"SHIPPERS\" "
-  "WHERE \"NORTHWIND\".\"SHIPPERS\".\"shipper_id\"=$1";
+  "WHERE \"NORTHWIND\".\"SHIPPERS\".\"SHIPPER_ID\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_pgsql >::update_statement[] =
   "UPDATE \"NORTHWIND\".\"SHIPPERS\" "
   "SET "
   "\"COMPANY_NAME\"=$1, "
   "\"PHONE\"=$2 "
-  "WHERE \"shipper_id\"=$3";
+  "WHERE \"SHIPPER_ID\"=$3";
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_pgsql >::erase_statement[] =
   "DELETE FROM \"NORTHWIND\".\"SHIPPERS\" "
-  "WHERE \"shipper_id\"=$1";
+  "WHERE \"SHIPPER_ID\"=$1";
 
   const char access::object_traits_impl< ::zango::northwind::shippers, id_pgsql >::query_statement[] =
   "SELECT "
-  "\"NORTHWIND\".\"SHIPPERS\".\"shipper_id\", "
+  "\"NORTHWIND\".\"SHIPPERS\".\"SHIPPER_ID\", "
   "\"NORTHWIND\".\"SHIPPERS\".\"COMPANY_NAME\", "
   "\"NORTHWIND\".\"SHIPPERS\".\"PHONE\" "
   "FROM \"NORTHWIND\".\"SHIPPERS\"";
@@ -769,7 +769,7 @@ namespace odb
         case 1:
         {
           db.execute ("CREATE TABLE \"NORTHWIND\".\"SHIPPERS\" (\n"
-                      "  \"shipper_id\" INTEGER NOT NULL PRIMARY KEY,\n"
+                      "  \"SHIPPER_ID\" INTEGER NOT NULL PRIMARY KEY,\n"
                       "  \"COMPANY_NAME\" TEXT NOT NULL,\n"
                       "  \"PHONE\" TEXT NOT NULL)");
           return false;

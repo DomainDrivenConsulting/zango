@@ -207,26 +207,26 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_pgsql >::persist_statement[] =
   "INSERT INTO \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\" "
-  "(\"customer_id\", "
-  "\"customer_type_id\") "
+  "(\"CUSTOMER_ID\", "
+  "\"CUSTOMER_TYPE_ID\") "
   "VALUES "
   "($1, $2)";
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_pgsql >::find_statement[] =
   "SELECT "
-  "\"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\".\"customer_id\", "
-  "\"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\".\"customer_type_id\" "
+  "\"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\".\"CUSTOMER_ID\", "
+  "\"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\".\"CUSTOMER_TYPE_ID\" "
   "FROM \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\" "
-  "WHERE \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\".\"customer_id\"=$1 AND \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\".\"customer_type_id\"=$2";
+  "WHERE \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\".\"CUSTOMER_ID\"=$1 AND \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\".\"CUSTOMER_TYPE_ID\"=$2";
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_pgsql >::erase_statement[] =
   "DELETE FROM \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\" "
-  "WHERE \"customer_id\"=$1 AND \"customer_type_id\"=$2";
+  "WHERE \"CUSTOMER_ID\"=$1 AND \"CUSTOMER_TYPE_ID\"=$2";
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_pgsql >::query_statement[] =
   "SELECT "
-  "\"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\".\"customer_id\", "
-  "\"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\".\"customer_type_id\" "
+  "\"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\".\"CUSTOMER_ID\", "
+  "\"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\".\"CUSTOMER_TYPE_ID\" "
   "FROM \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\"";
 
   const char access::object_traits_impl< ::zango::northwind::customer_customer_demo, id_pgsql >::erase_query_statement[] =
@@ -601,10 +601,10 @@ namespace odb
         case 1:
         {
           db.execute ("CREATE TABLE \"NORTHWIND\".\"CUSTOMER_CUSTOMER_DEMO\" (\n"
-                      "  \"customer_id\" INTEGER NOT NULL,\n"
-                      "  \"customer_type_id\" TEXT NOT NULL,\n"
-                      "  PRIMARY KEY (\"customer_id\",\n"
-                      "               \"customer_type_id\"))");
+                      "  \"CUSTOMER_ID\" INTEGER NOT NULL,\n"
+                      "  \"CUSTOMER_TYPE_ID\" TEXT NOT NULL,\n"
+                      "  PRIMARY KEY (\"CUSTOMER_ID\",\n"
+                      "               \"CUSTOMER_TYPE_ID\"))");
           return false;
         }
       }

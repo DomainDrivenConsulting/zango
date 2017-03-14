@@ -35,8 +35,8 @@ namespace northwind {
 
 #pragma db object(employee_territories) schema("NORTHWIND")
 
-#pragma db member(employee_territories::employee_territories_key_) column("")
 #pragma db member(employee_territories::employee_territories_key_) id
+#pragma db member(employee_territories::employee_territories_key_) column("")
 
 #endif
 

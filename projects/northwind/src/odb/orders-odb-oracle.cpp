@@ -662,9 +662,9 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::orders, id_oracle >::persist_statement[] =
   "INSERT INTO \"NORTHWIND\".\"ORDERS\" "
-  "(\"order_id\", "
-  "\"customer_id\", "
-  "\"employee_id\", "
+  "(\"ORDER_ID\", "
+  "\"CUSTOMER_ID\", "
+  "\"EMPLOYEE_ID\", "
   "\"ORDER_DATE\", "
   "\"REQUIRED_DATE\", "
   "\"SHIPPED_DATE\", "
@@ -681,9 +681,9 @@ namespace odb
 
   const char access::object_traits_impl< ::zango::northwind::orders, id_oracle >::find_statement[] =
   "SELECT "
-  "\"NORTHWIND\".\"ORDERS\".\"order_id\", "
-  "\"NORTHWIND\".\"ORDERS\".\"customer_id\", "
-  "\"NORTHWIND\".\"ORDERS\".\"employee_id\", "
+  "\"NORTHWIND\".\"ORDERS\".\"ORDER_ID\", "
+  "\"NORTHWIND\".\"ORDERS\".\"CUSTOMER_ID\", "
+  "\"NORTHWIND\".\"ORDERS\".\"EMPLOYEE_ID\", "
   "\"NORTHWIND\".\"ORDERS\".\"ORDER_DATE\", "
   "\"NORTHWIND\".\"ORDERS\".\"REQUIRED_DATE\", "
   "\"NORTHWIND\".\"ORDERS\".\"SHIPPED_DATE\", "
@@ -696,13 +696,13 @@ namespace odb
   "\"NORTHWIND\".\"ORDERS\".\"SHIP_POSTAL_CODE\", "
   "\"NORTHWIND\".\"ORDERS\".\"SHIP_COUNTRY\" "
   "FROM \"NORTHWIND\".\"ORDERS\" "
-  "WHERE \"NORTHWIND\".\"ORDERS\".\"order_id\"=:1";
+  "WHERE \"NORTHWIND\".\"ORDERS\".\"ORDER_ID\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::orders, id_oracle >::update_statement[] =
   "UPDATE \"NORTHWIND\".\"ORDERS\" "
   "SET "
-  "\"customer_id\"=:1, "
-  "\"employee_id\"=:2, "
+  "\"CUSTOMER_ID\"=:1, "
+  "\"EMPLOYEE_ID\"=:2, "
   "\"ORDER_DATE\"=:3, "
   "\"REQUIRED_DATE\"=:4, "
   "\"SHIPPED_DATE\"=:5, "
@@ -714,17 +714,17 @@ namespace odb
   "\"SHIP_REGION\"=:11, "
   "\"SHIP_POSTAL_CODE\"=:12, "
   "\"SHIP_COUNTRY\"=:13 "
-  "WHERE \"order_id\"=:14";
+  "WHERE \"ORDER_ID\"=:14";
 
   const char access::object_traits_impl< ::zango::northwind::orders, id_oracle >::erase_statement[] =
   "DELETE FROM \"NORTHWIND\".\"ORDERS\" "
-  "WHERE \"order_id\"=:1";
+  "WHERE \"ORDER_ID\"=:1";
 
   const char access::object_traits_impl< ::zango::northwind::orders, id_oracle >::query_statement[] =
   "SELECT "
-  "\"NORTHWIND\".\"ORDERS\".\"order_id\", "
-  "\"NORTHWIND\".\"ORDERS\".\"customer_id\", "
-  "\"NORTHWIND\".\"ORDERS\".\"employee_id\", "
+  "\"NORTHWIND\".\"ORDERS\".\"ORDER_ID\", "
+  "\"NORTHWIND\".\"ORDERS\".\"CUSTOMER_ID\", "
+  "\"NORTHWIND\".\"ORDERS\".\"EMPLOYEE_ID\", "
   "\"NORTHWIND\".\"ORDERS\".\"ORDER_DATE\", "
   "\"NORTHWIND\".\"ORDERS\".\"REQUIRED_DATE\", "
   "\"NORTHWIND\".\"ORDERS\".\"SHIPPED_DATE\", "
@@ -1144,9 +1144,9 @@ namespace odb
         case 1:
         {
           db.execute ("CREATE TABLE \"NORTHWIND\".\"ORDERS\" (\n"
-                      "  \"order_id\" NUMBER(10) NOT NULL PRIMARY KEY,\n"
-                      "  \"customer_id\" NUMBER(10) NULL,\n"
-                      "  \"employee_id\" NUMBER(10) NULL,\n"
+                      "  \"ORDER_ID\" NUMBER(10) NOT NULL PRIMARY KEY,\n"
+                      "  \"CUSTOMER_ID\" NUMBER(10) NULL,\n"
+                      "  \"EMPLOYEE_ID\" NUMBER(10) NULL,\n"
                       "  \"ORDER_DATE\" DATE NULL,\n"
                       "  \"REQUIRED_DATE\" DATE NULL,\n"
                       "  \"SHIPPED_DATE\" DATE NULL,\n"
