@@ -67,6 +67,11 @@ message(STATUS "${ODB_INCLUDE_DIRS}")
 add_subdirectory(${CMAKE_SOURCE_DIR}/projects/northwind)
 
 #
+# Use C++-14
+#
+set(CMAKE_CXX_STANDARD 14)
+
+#
 # Target for the application.
 #
 add_executable(application projects/application/main.cpp)
