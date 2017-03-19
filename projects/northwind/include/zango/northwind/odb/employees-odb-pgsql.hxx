@@ -236,9 +236,9 @@ namespace odb
     typedef
     pgsql::query_column<
       pgsql::value_traits<
-        ::std::vector< char >,
-        pgsql::id_bytea >::query_type,
-      pgsql::id_bytea >
+        ::std::string,
+        pgsql::id_string >::query_type,
+      pgsql::id_string >
     photo_type_;
 
     static const photo_type_ photo;
@@ -277,18 +277,6 @@ namespace odb
     };
 
     static const reports_to_class_ reports_to;
-
-    // photo_path
-    //
-    typedef
-    pgsql::query_column<
-      pgsql::value_traits<
-        ::std::string,
-        pgsql::id_string >::query_type,
-      pgsql::id_string >
-    photo_path_type_;
-
-    static const photo_path_type_ photo_path;
   };
 
   template <typename A>
@@ -303,12 +291,12 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_pgsql, A >::last_name_type_
   query_columns< ::zango::northwind::employees, id_pgsql, A >::
-  last_name (A::table_name, "\"LAST_NAME\"", 0);
+  last_name (A::table_name, "\"LASTNAME\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_pgsql, A >::first_name_type_
   query_columns< ::zango::northwind::employees, id_pgsql, A >::
-  first_name (A::table_name, "\"FIRST_NAME\"", 0);
+  first_name (A::table_name, "\"FIRSTNAME\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_pgsql, A >::title_type_
@@ -323,12 +311,12 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_pgsql, A >::birth_date_type_
   query_columns< ::zango::northwind::employees, id_pgsql, A >::
-  birth_date (A::table_name, "\"BIRTH_DATE\"", 0);
+  birth_date (A::table_name, "\"BIRTHDATE\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_pgsql, A >::hire_date_type_
   query_columns< ::zango::northwind::employees, id_pgsql, A >::
-  hire_date (A::table_name, "\"HIRE_DATE\"", 0);
+  hire_date (A::table_name, "\"HIREDATE\"", 0);
 
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_pgsql, A >::address_type_
@@ -383,11 +371,6 @@ namespace odb
   template <typename A>
   const typename query_columns< ::zango::northwind::employees, id_pgsql, A >::reports_to_class_
   query_columns< ::zango::northwind::employees, id_pgsql, A >::reports_to;
-
-  template <typename A>
-  const typename query_columns< ::zango::northwind::employees, id_pgsql, A >::photo_path_type_
-  query_columns< ::zango::northwind::employees, id_pgsql, A >::
-  photo_path (A::table_name, "\"PHOTO_PATH\"", 0);
 
   template <typename A>
   struct pointer_query_columns< ::zango::northwind::employees, id_pgsql, A >:
@@ -505,12 +488,6 @@ namespace odb
       //
       composite_value_traits< ::zango::northwind::employee_id, id_pgsql >::image_type reports_to_value;
 
-      // photo_path_
-      //
-      details::buffer photo_path_value;
-      std::size_t photo_path_size;
-      bool photo_path_null;
-
       std::size_t version;
     };
 
@@ -550,7 +527,7 @@ namespace odb
 
     typedef pgsql::query_base query_base_type;
 
-    static const std::size_t column_count = 18UL;
+    static const std::size_t column_count = 17UL;
     static const std::size_t id_column_count = 1UL;
     static const std::size_t inverse_column_count = 0UL;
     static const std::size_t readonly_column_count = 0UL;

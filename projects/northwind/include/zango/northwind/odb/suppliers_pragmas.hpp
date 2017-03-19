@@ -18,26 +18,34 @@
  * MA 02110-1301, USA.
  *
  */
-#ifndef ZANGO_NORTHWIND_ODB_CATEGORIES_PRAGMAS_HPP
-#define ZANGO_NORTHWIND_ODB_CATEGORIES_PRAGMAS_HPP
+#ifndef ZANGO_NORTHWIND_ODB_SUPPLIERS_PRAGMAS_HPP
+#define ZANGO_NORTHWIND_ODB_SUPPLIERS_PRAGMAS_HPP
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)
 #pragma once
 #endif
 
-#include "zango/northwind/types/categories.hpp"
-#include "zango/northwind/odb/category_id_pragmas.hpp"
+#include "zango/northwind/types/suppliers.hpp"
+#include "zango/northwind/odb/supplier_id_pragmas.hpp"
 
 namespace zango {
 namespace northwind {
 
 #ifdef ODB_COMPILER
 
-#pragma db object(categories) schema("NORTHWIND")
+#pragma db object(suppliers) schema("NORTHWIND")
 
-#pragma db member(categories::category_id_) id
-#pragma db member(categories::description_) null
-#pragma db member(categories::picutre_) null
+#pragma db member(suppliers::supplier_id_) id
+#pragma db member(suppliers::contact_name_) null
+#pragma db member(suppliers::contact_title_) null
+#pragma db member(suppliers::address_) null
+#pragma db member(suppliers::city_) null
+#pragma db member(suppliers::region_) null
+#pragma db member(suppliers::postal_code_) null
+#pragma db member(suppliers::country_) null
+#pragma db member(suppliers::phone_) null
+#pragma db member(suppliers::fax_) null
+#pragma db member(suppliers::home_page_) null
 
 #endif
 

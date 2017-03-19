@@ -35,18 +35,6 @@ std::string create_std_string(const unsigned int position) {
     return s.str();
 }
 
-char create_char(const unsigned int position) {
-    return static_cast<char>(((position % 95) + 32) == 34) ? 35 : ((position % 95) + 32);
-}
-
-std::vector<char> create_std_vector_char(unsigned int position) {
-    std::vector<char> r;
-    for (unsigned int i(0); i < 4; ++i) {
-        r.push_back(create_char(position + i));
-    }
-    return r;
-}
-
 }
 
 namespace zango {
@@ -59,7 +47,7 @@ populate(const unsigned int position, result_type& v) {
     v.category_id(create_zango_northwind_category_id(position + 0));
     v.category_name(create_std_string(position + 1));
     v.description(create_std_string(position + 2));
-    v.picutre(create_std_vector_char(position + 3));
+    v.picutre(create_std_string(position + 3));
 }
 
 categories_generator::result_type

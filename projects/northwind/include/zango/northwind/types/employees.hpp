@@ -26,7 +26,6 @@
 #endif
 
 #include <string>
-#include <vector>
 #include <algorithm>
 #include <boost/date_time/gregorian/gregorian_types.hpp>
 #include "zango/northwind/types/employee_id.hpp"
@@ -58,10 +57,9 @@ public:
         const std::string& country,
         const std::string& home_phone,
         const std::string& extension,
-        const std::vector<char>& photo,
+        const std::string& photo,
         const std::string& notes,
-        const zango::northwind::employee_id& reports_to,
-        const std::string& photo_path);
+        const zango::northwind::employee_id& reports_to);
 
 private:
     template<typename Archive>
@@ -141,10 +139,10 @@ public:
     void extension(const std::string& v);
     void extension(const std::string&& v);
 
-    const std::vector<char>& photo() const;
-    std::vector<char>& photo();
-    void photo(const std::vector<char>& v);
-    void photo(const std::vector<char>&& v);
+    const std::string& photo() const;
+    std::string& photo();
+    void photo(const std::string& v);
+    void photo(const std::string&& v);
 
     const std::string& notes() const;
     std::string& notes();
@@ -155,11 +153,6 @@ public:
     zango::northwind::employee_id& reports_to();
     void reports_to(const zango::northwind::employee_id& v);
     void reports_to(const zango::northwind::employee_id&& v);
-
-    const std::string& photo_path() const;
-    std::string& photo_path();
-    void photo_path(const std::string& v);
-    void photo_path(const std::string&& v);
 
 public:
     bool operator==(const employees& rhs) const;
@@ -186,10 +179,9 @@ private:
     std::string country_;
     std::string home_phone_;
     std::string extension_;
-    std::vector<char> photo_;
+    std::string photo_;
     std::string notes_;
     zango::northwind::employee_id reports_to_;
-    std::string photo_path_;
 };
 
 } }

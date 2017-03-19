@@ -32,20 +32,6 @@ inline std::string tidy_up_string(std::string s) {
     return s;
 }
 
-namespace std {
-
-inline std::ostream& operator<<(std::ostream& s, const std::vector<char>& v) {
-    s << "[ ";
-    for (auto i(v.begin()); i != v.end(); ++i) {
-        if (i != v.begin()) s << ", ";
-        s << "\"" << *i << "\"";
-    }
-    s << "] ";
-    return s;
-}
-
-}
-
 namespace zango {
 namespace northwind {
 
@@ -66,10 +52,9 @@ std::ostream& operator<<(std::ostream& s, const employees& v) {
       << "\"country\": " << "\"" << tidy_up_string(v.country()) << "\"" << ", "
       << "\"home_phone\": " << "\"" << tidy_up_string(v.home_phone()) << "\"" << ", "
       << "\"extension\": " << "\"" << tidy_up_string(v.extension()) << "\"" << ", "
-      << "\"photo\": " << v.photo() << ", "
+      << "\"photo\": " << "\"" << tidy_up_string(v.photo()) << "\"" << ", "
       << "\"notes\": " << "\"" << tidy_up_string(v.notes()) << "\"" << ", "
-      << "\"reports_to\": " << v.reports_to() << ", "
-      << "\"photo_path\": " << "\"" << tidy_up_string(v.photo_path()) << "\""
+      << "\"reports_to\": " << v.reports_to()
       << " }";
     return(s);
 }

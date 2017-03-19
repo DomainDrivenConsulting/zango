@@ -18,28 +18,35 @@
  * MA 02110-1301, USA.
  *
  */
-#ifndef ZANGO_NORTHWIND_ODB_CATEGORIES_PRAGMAS_HPP
-#define ZANGO_NORTHWIND_ODB_CATEGORIES_PRAGMAS_HPP
+#ifndef ZANGO_NORTHWIND_TEST_DATA_SUPPLIERS_TD_HPP
+#define ZANGO_NORTHWIND_TEST_DATA_SUPPLIERS_TD_HPP
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)
 #pragma once
 #endif
 
-#include "zango/northwind/types/categories.hpp"
-#include "zango/northwind/odb/category_id_pragmas.hpp"
+#include "zango/northwind/types/suppliers.hpp"
 
 namespace zango {
 namespace northwind {
 
-#ifdef ODB_COMPILER
+class suppliers_generator {
+public:
+    suppliers_generator();
 
-#pragma db object(categories) schema("NORTHWIND")
+public:
+    typedef zango::northwind::suppliers result_type;
 
-#pragma db member(categories::category_id_) id
-#pragma db member(categories::description_) null
-#pragma db member(categories::picutre_) null
+public:
+    static void populate(const unsigned int position, result_type& v);
+    static result_type create(const unsigned int position);
+    result_type operator()();
 
-#endif
+private:
+    unsigned int position_;
+public:
+    static result_type* create_ptr(const unsigned int position);
+};
 
 } }
 

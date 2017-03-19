@@ -26,7 +26,6 @@
 #endif
 
 #include <string>
-#include <vector>
 #include <algorithm>
 #include "zango/northwind/types/category_id.hpp"
 #include "zango/northwind/serialization/categories_fwd_ser.hpp"
@@ -46,7 +45,7 @@ public:
         const zango::northwind::category_id& category_id,
         const std::string& category_name,
         const std::string& description,
-        const std::vector<char>& picutre);
+        const std::string& picutre);
 
 private:
     template<typename Archive>
@@ -71,10 +70,10 @@ public:
     void description(const std::string& v);
     void description(const std::string&& v);
 
-    const std::vector<char>& picutre() const;
-    std::vector<char>& picutre();
-    void picutre(const std::vector<char>& v);
-    void picutre(const std::vector<char>&& v);
+    const std::string& picutre() const;
+    std::string& picutre();
+    void picutre(const std::string& v);
+    void picutre(const std::string&& v);
 
 public:
     bool operator==(const categories& rhs) const;
@@ -90,7 +89,7 @@ private:
     zango::northwind::category_id category_id_;
     std::string category_name_;
     std::string description_;
-    std::vector<char> picutre_;
+    std::string picutre_;
 };
 
 } }

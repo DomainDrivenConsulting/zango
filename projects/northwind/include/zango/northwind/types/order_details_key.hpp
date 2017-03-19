@@ -42,8 +42,8 @@ public:
 
 public:
     order_details_key(
-        const zango::northwind::product_id& product_id,
-        const zango::northwind::order_id& order_id);
+        const zango::northwind::order_id& order_id,
+        const zango::northwind::product_id& product_id);
 
 private:
     template<typename Archive>
@@ -53,15 +53,15 @@ private:
     friend void boost::serialization::load(Archive& ar, zango::northwind::order_details_key& v, unsigned int version);
 
 public:
-    const zango::northwind::product_id& product_id() const;
-    zango::northwind::product_id& product_id();
-    void product_id(const zango::northwind::product_id& v);
-    void product_id(const zango::northwind::product_id&& v);
-
     const zango::northwind::order_id& order_id() const;
     zango::northwind::order_id& order_id();
     void order_id(const zango::northwind::order_id& v);
     void order_id(const zango::northwind::order_id&& v);
+
+    const zango::northwind::product_id& product_id() const;
+    zango::northwind::product_id& product_id();
+    void product_id(const zango::northwind::product_id& v);
+    void product_id(const zango::northwind::product_id&& v);
 
 public:
     bool operator==(const order_details_key& rhs) const;
@@ -74,8 +74,8 @@ public:
     order_details_key& operator=(order_details_key other);
 
 private:
-    zango::northwind::product_id product_id_;
     zango::northwind::order_id order_id_;
+    zango::northwind::product_id product_id_;
 };
 
 } }

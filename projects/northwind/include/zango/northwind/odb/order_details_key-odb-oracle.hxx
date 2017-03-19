@@ -58,13 +58,13 @@ namespace odb
 
     struct image_type
     {
-      // product_id_
-      //
-      composite_value_traits< ::zango::northwind::product_id, id_oracle >::image_type product_id_value;
-
       // order_id_
       //
       composite_value_traits< ::zango::northwind::order_id, id_oracle >::image_type order_id_value;
+
+      // product_id_
+      //
+      composite_value_traits< ::zango::northwind::product_id, id_oracle >::image_type product_id_value;
     };
 
     static void

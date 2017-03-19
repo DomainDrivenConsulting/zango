@@ -18,8 +18,8 @@
  * MA 02110-1301, USA.
  *
  */
-#ifndef ZANGO_NORTHWIND_TYPES_CUSTOMERS_HPP
-#define ZANGO_NORTHWIND_TYPES_CUSTOMERS_HPP
+#ifndef ZANGO_NORTHWIND_TYPES_SUPPLIERS_HPP
+#define ZANGO_NORTHWIND_TYPES_SUPPLIERS_HPP
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)
 #pragma once
@@ -27,23 +27,22 @@
 
 #include <string>
 #include <algorithm>
-#include "zango/northwind/types/customer_id.hpp"
-#include "zango/northwind/serialization/customers_fwd_ser.hpp"
+#include "zango/northwind/types/supplier_id.hpp"
+#include "zango/northwind/serialization/suppliers_fwd_ser.hpp"
 
 namespace zango {
 namespace northwind {
 
-class customers final {
+class suppliers final {
 public:
-    customers() = default;
-    customers(const customers&) = default;
-    customers(customers&&) = default;
-    ~customers() = default;
+    suppliers() = default;
+    suppliers(const suppliers&) = default;
+    suppliers(suppliers&&) = default;
+    ~suppliers() = default;
 
 public:
-    customers(
-        const zango::northwind::customer_id& customer_id,
-        const std::string& customer_code,
+    suppliers(
+        const zango::northwind::supplier_id& supplier_id,
         const std::string& company_name,
         const std::string& contact_name,
         const std::string& contact_title,
@@ -53,25 +52,21 @@ public:
         const std::string& postal_code,
         const std::string& country,
         const std::string& phone,
-        const std::string& fax);
+        const std::string& fax,
+        const std::string& home_page);
 
 private:
     template<typename Archive>
-    friend void boost::serialization::save(Archive& ar, const zango::northwind::customers& v, unsigned int version);
+    friend void boost::serialization::save(Archive& ar, const zango::northwind::suppliers& v, unsigned int version);
 
     template<typename Archive>
-    friend void boost::serialization::load(Archive& ar, zango::northwind::customers& v, unsigned int version);
+    friend void boost::serialization::load(Archive& ar, zango::northwind::suppliers& v, unsigned int version);
 
 public:
-    const zango::northwind::customer_id& customer_id() const;
-    zango::northwind::customer_id& customer_id();
-    void customer_id(const zango::northwind::customer_id& v);
-    void customer_id(const zango::northwind::customer_id&& v);
-
-    const std::string& customer_code() const;
-    std::string& customer_code();
-    void customer_code(const std::string& v);
-    void customer_code(const std::string&& v);
+    const zango::northwind::supplier_id& supplier_id() const;
+    zango::northwind::supplier_id& supplier_id();
+    void supplier_id(const zango::northwind::supplier_id& v);
+    void supplier_id(const zango::northwind::supplier_id&& v);
 
     const std::string& company_name() const;
     std::string& company_name();
@@ -123,19 +118,23 @@ public:
     void fax(const std::string& v);
     void fax(const std::string&& v);
 
+    const std::string& home_page() const;
+    std::string& home_page();
+    void home_page(const std::string& v);
+    void home_page(const std::string&& v);
+
 public:
-    bool operator==(const customers& rhs) const;
-    bool operator!=(const customers& rhs) const {
+    bool operator==(const suppliers& rhs) const;
+    bool operator!=(const suppliers& rhs) const {
         return !this->operator==(rhs);
     }
 
 public:
-    void swap(customers& other) noexcept;
-    customers& operator=(customers other);
+    void swap(suppliers& other) noexcept;
+    suppliers& operator=(suppliers other);
 
 private:
-    zango::northwind::customer_id customer_id_;
-    std::string customer_code_;
+    zango::northwind::supplier_id supplier_id_;
     std::string company_name_;
     std::string contact_name_;
     std::string contact_title_;
@@ -146,6 +145,7 @@ private:
     std::string country_;
     std::string phone_;
     std::string fax_;
+    std::string home_page_;
 };
 
 } }
@@ -154,8 +154,8 @@ namespace std {
 
 template<>
 inline void swap(
-    zango::northwind::customers& lhs,
-    zango::northwind::customers& rhs) {
+    zango::northwind::suppliers& lhs,
+    zango::northwind::suppliers& rhs) {
     lhs.swap(rhs);
 }
 

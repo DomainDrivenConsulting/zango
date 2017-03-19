@@ -38,10 +38,9 @@ employees::employees(
     const std::string& country,
     const std::string& home_phone,
     const std::string& extension,
-    const std::vector<char>& photo,
+    const std::string& photo,
     const std::string& notes,
-    const zango::northwind::employee_id& reports_to,
-    const std::string& photo_path)
+    const zango::northwind::employee_id& reports_to)
     : employee_id_(employee_id),
       last_name_(last_name),
       first_name_(first_name),
@@ -58,8 +57,7 @@ employees::employees(
       extension_(extension),
       photo_(photo),
       notes_(notes),
-      reports_to_(reports_to),
-      photo_path_(photo_path) { }
+      reports_to_(reports_to) { }
 
 void employees::swap(employees& other) noexcept {
     using std::swap;
@@ -80,7 +78,6 @@ void employees::swap(employees& other) noexcept {
     swap(photo_, other.photo_);
     swap(notes_, other.notes_);
     swap(reports_to_, other.reports_to_);
-    swap(photo_path_, other.photo_path_);
 }
 
 bool employees::operator==(const employees& rhs) const {
@@ -100,8 +97,7 @@ bool employees::operator==(const employees& rhs) const {
         extension_ == rhs.extension_ &&
         photo_ == rhs.photo_ &&
         notes_ == rhs.notes_ &&
-        reports_to_ == rhs.reports_to_ &&
-        photo_path_ == rhs.photo_path_;
+        reports_to_ == rhs.reports_to_;
 }
 
 employees& employees::operator=(employees other) {
@@ -334,19 +330,19 @@ void employees::extension(const std::string&& v) {
     extension_ = std::move(v);
 }
 
-const std::vector<char>& employees::photo() const {
+const std::string& employees::photo() const {
     return photo_;
 }
 
-std::vector<char>& employees::photo() {
+std::string& employees::photo() {
     return photo_;
 }
 
-void employees::photo(const std::vector<char>& v) {
+void employees::photo(const std::string& v) {
     photo_ = v;
 }
 
-void employees::photo(const std::vector<char>&& v) {
+void employees::photo(const std::string&& v) {
     photo_ = std::move(v);
 }
 
@@ -380,22 +376,6 @@ void employees::reports_to(const zango::northwind::employee_id& v) {
 
 void employees::reports_to(const zango::northwind::employee_id&& v) {
     reports_to_ = std::move(v);
-}
-
-const std::string& employees::photo_path() const {
-    return photo_path_;
-}
-
-std::string& employees::photo_path() {
-    return photo_path_;
-}
-
-void employees::photo_path(const std::string& v) {
-    photo_path_ = v;
-}
-
-void employees::photo_path(const std::string&& v) {
-    photo_path_ = std::move(v);
 }
 
 } }

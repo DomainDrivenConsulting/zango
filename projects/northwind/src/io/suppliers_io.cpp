@@ -20,8 +20,8 @@
  */
 #include <ostream>
 #include <boost/algorithm/string.hpp>
-#include "zango/northwind/io/categories_io.hpp"
-#include "zango/northwind/io/category_id_io.hpp"
+#include "zango/northwind/io/suppliers_io.hpp"
+#include "zango/northwind/io/supplier_id_io.hpp"
 
 inline std::string tidy_up_string(std::string s) {
     boost::replace_all(s, "\r\n", "<new_line>");
@@ -34,13 +34,21 @@ inline std::string tidy_up_string(std::string s) {
 namespace zango {
 namespace northwind {
 
-std::ostream& operator<<(std::ostream& s, const categories& v) {
+std::ostream& operator<<(std::ostream& s, const suppliers& v) {
     s << " { "
-      << "\"__type__\": " << "\"zango::northwind::categories\"" << ", "
-      << "\"category_id\": " << v.category_id() << ", "
-      << "\"category_name\": " << "\"" << tidy_up_string(v.category_name()) << "\"" << ", "
-      << "\"description\": " << "\"" << tidy_up_string(v.description()) << "\"" << ", "
-      << "\"picutre\": " << "\"" << tidy_up_string(v.picutre()) << "\""
+      << "\"__type__\": " << "\"zango::northwind::suppliers\"" << ", "
+      << "\"supplier_id\": " << v.supplier_id() << ", "
+      << "\"company_name\": " << "\"" << tidy_up_string(v.company_name()) << "\"" << ", "
+      << "\"contact_name\": " << "\"" << tidy_up_string(v.contact_name()) << "\"" << ", "
+      << "\"contact_title\": " << "\"" << tidy_up_string(v.contact_title()) << "\"" << ", "
+      << "\"address\": " << "\"" << tidy_up_string(v.address()) << "\"" << ", "
+      << "\"city\": " << "\"" << tidy_up_string(v.city()) << "\"" << ", "
+      << "\"region\": " << "\"" << tidy_up_string(v.region()) << "\"" << ", "
+      << "\"postal_code\": " << "\"" << tidy_up_string(v.postal_code()) << "\"" << ", "
+      << "\"country\": " << "\"" << tidy_up_string(v.country()) << "\"" << ", "
+      << "\"phone\": " << "\"" << tidy_up_string(v.phone()) << "\"" << ", "
+      << "\"fax\": " << "\"" << tidy_up_string(v.fax()) << "\"" << ", "
+      << "\"home_page\": " << "\"" << tidy_up_string(v.home_page()) << "\""
       << " }";
     return(s);
 }

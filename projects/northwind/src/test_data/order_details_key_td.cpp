@@ -24,14 +24,14 @@
 
 namespace {
 
-zango::northwind::product_id
-create_zango_northwind_product_id(const unsigned int position) {
-    return zango::northwind::product_id_generator::create(position);
-}
-
 zango::northwind::order_id
 create_zango_northwind_order_id(const unsigned int position) {
     return zango::northwind::order_id_generator::create(position);
+}
+
+zango::northwind::product_id
+create_zango_northwind_product_id(const unsigned int position) {
+    return zango::northwind::product_id_generator::create(position);
 }
 
 }
@@ -43,8 +43,8 @@ order_details_key_generator::order_details_key_generator() : position_(0) { }
 
 void order_details_key_generator::
 populate(const unsigned int position, result_type& v) {
-    v.product_id(create_zango_northwind_product_id(position + 0));
-    v.order_id(create_zango_northwind_order_id(position + 1));
+    v.order_id(create_zango_northwind_order_id(position + 0));
+    v.product_id(create_zango_northwind_product_id(position + 1));
 }
 
 order_details_key_generator::result_type

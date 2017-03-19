@@ -24,42 +24,26 @@ namespace zango {
 namespace northwind {
 
 order_details_key::order_details_key(
-    const zango::northwind::product_id& product_id,
-    const zango::northwind::order_id& order_id)
-    : product_id_(product_id),
-      order_id_(order_id) { }
+    const zango::northwind::order_id& order_id,
+    const zango::northwind::product_id& product_id)
+    : order_id_(order_id),
+      product_id_(product_id) { }
 
 void order_details_key::swap(order_details_key& other) noexcept {
     using std::swap;
-    swap(product_id_, other.product_id_);
     swap(order_id_, other.order_id_);
+    swap(product_id_, other.product_id_);
 }
 
 bool order_details_key::operator==(const order_details_key& rhs) const {
-    return product_id_ == rhs.product_id_ &&
-        order_id_ == rhs.order_id_;
+    return order_id_ == rhs.order_id_ &&
+        product_id_ == rhs.product_id_;
 }
 
 order_details_key& order_details_key::operator=(order_details_key other) {
     using std::swap;
     swap(*this, other);
     return *this;
-}
-
-const zango::northwind::product_id& order_details_key::product_id() const {
-    return product_id_;
-}
-
-zango::northwind::product_id& order_details_key::product_id() {
-    return product_id_;
-}
-
-void order_details_key::product_id(const zango::northwind::product_id& v) {
-    product_id_ = v;
-}
-
-void order_details_key::product_id(const zango::northwind::product_id&& v) {
-    product_id_ = std::move(v);
 }
 
 const zango::northwind::order_id& order_details_key::order_id() const {
@@ -76,6 +60,22 @@ void order_details_key::order_id(const zango::northwind::order_id& v) {
 
 void order_details_key::order_id(const zango::northwind::order_id&& v) {
     order_id_ = std::move(v);
+}
+
+const zango::northwind::product_id& order_details_key::product_id() const {
+    return product_id_;
+}
+
+zango::northwind::product_id& order_details_key::product_id() {
+    return product_id_;
+}
+
+void order_details_key::product_id(const zango::northwind::product_id& v) {
+    product_id_ = v;
+}
+
+void order_details_key::product_id(const zango::northwind::product_id&& v) {
+    product_id_ = std::move(v);
 }
 
 } }

@@ -18,28 +18,23 @@
  * MA 02110-1301, USA.
  *
  */
-#ifndef ZANGO_NORTHWIND_ODB_CATEGORIES_PRAGMAS_HPP
-#define ZANGO_NORTHWIND_ODB_CATEGORIES_PRAGMAS_HPP
+#ifndef ZANGO_NORTHWIND_SERIALIZATION_SUPPLIERS_FWD_SER_HPP
+#define ZANGO_NORTHWIND_SERIALIZATION_SUPPLIERS_FWD_SER_HPP
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)
 #pragma once
 #endif
 
-#include "zango/northwind/types/categories.hpp"
-#include "zango/northwind/odb/category_id_pragmas.hpp"
+#include "zango/northwind/types/suppliers_fwd.hpp"
 
-namespace zango {
-namespace northwind {
+namespace boost {
+namespace serialization {
 
-#ifdef ODB_COMPILER
+template<class Archive>
+void save(Archive& ar, const zango::northwind::suppliers& v, unsigned int version);
 
-#pragma db object(categories) schema("NORTHWIND")
-
-#pragma db member(categories::category_id_) id
-#pragma db member(categories::description_) null
-#pragma db member(categories::picutre_) null
-
-#endif
+template<class Archive>
+void load(Archive& ar, zango::northwind::suppliers& v, unsigned int version);
 
 } }
 
