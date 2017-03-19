@@ -22,19 +22,19 @@
 #include <boost/exception/diagnostic_information.hpp>
 #include <odb/database.hxx>
 #include <odb/transaction.hxx>
+#include <odb/result.hxx>
 #include <odb/oracle/database.hxx>
-#include <odb/schema-catalog.hxx>
 #include "zango/northwind/types/customers.hpp"
 #include "zango/northwind/io/customers_io.hpp"
 #include "zango/northwind/test_data/customers_td.hpp"
 #include "zango/northwind/odb/customers-odb-oracle.hxx"
-// #include "zango/northwind/odb/customers-odb-pgsql.hxx"
 #include "zango/northwind/odb/customers-odb.hxx"
 
 namespace odb {
-extern bool create_schema (database& db, unsigned short pass, bool drop);
-}
 
+extern bool create_schema (database& db, unsigned short pass, bool drop);
+
+}
 
 int main(int argc, char *argv[]) {
     if (argc != 2) {
@@ -42,24 +42,17 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    zango::northwind::customers_generator g;
-    const auto c(g());
-    std::cout << c << std::endl;
-
     const auto password(argv[1]);
     std::unique_ptr<odb::oracle::database> db(
         new odb::oracle::database("northwind", password, "XE", "lorenz", 1521));
 
     {
         odb::oracle::transaction t(db->begin());
-        odb::schema_catalog::create_schema(*db);
-        t.commit();
-    }
 
-    {
-        odb::oracle::transaction t(db->begin());
-        db->persist(c);
-        t.commit();
+        auto r(db->query<zango::northwind::customers>());
+        for (auto i(r.begin ()); i != r.end (); ++i) {
+            std::cout << "Customer: " << *i << std::endl;
+        }
     }
 
     return 0;
