@@ -31,7 +31,7 @@ create_zango_northwind_customer_id(const unsigned int position) {
 
 std::string create_std_string(const unsigned int position) {
     std::ostringstream s;
-    s << "a_string_" << position;
+    s << position;
     return s.str();
 }
 

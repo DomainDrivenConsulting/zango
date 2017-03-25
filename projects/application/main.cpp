@@ -18,22 +18,61 @@
  * MA 02110-1301, USA.
  *
  */
+#include <list>
+#include <vector>
+#include <sstream>
 #include <iostream>
-#include <boost/exception/diagnostic_information.hpp>
+#include <boost/filesystem/path.hpp>
+#include <boost/filesystem/fstream.hpp>
+#include <boost/serialization/list.hpp>
+#include <boost/archive/binary_oarchive.hpp>
+#include <boost/archive/binary_iarchive.hpp>
 #include <odb/database.hxx>
 #include <odb/transaction.hxx>
 #include <odb/result.hxx>
 #include <odb/oracle/database.hxx>
+#include <hiredis/hiredis.h>
 #include "zango/northwind/types/customers.hpp"
 #include "zango/northwind/io/customers_io.hpp"
+#include "zango/northwind/test_data/customers_td.hpp"
+#include "zango/northwind/serialization/customers_ser.hpp"
 #include "zango/northwind/test_data/customers_td.hpp"
 #include "zango/northwind/odb/customers-odb-oracle.hxx"
 #include "zango/northwind/odb/customers-odb.hxx"
 
-namespace odb {
+std::vector<zango::northwind::customers> generate_customers() {
+    std::vector<zango::northwind::customers> r;
+    const auto total(10 * 1000);
+    r.reserve(total);
 
-extern bool create_schema (database& db, unsigned short pass, bool drop);
+    zango::northwind::customers_generator g;
+    for (int i = 0; i < total; ++i) {
+        const auto c(g());
+        if (i > 100)
+            r.push_back(g());
+    }
 
+    return r;
+}
+
+void save_customers(odb::oracle::database& db,
+    const std::vector<zango::northwind::customers>& customers) {
+
+    odb::transaction t(db.begin());
+    for (const auto c : customers)
+        db.persist(c);
+    t.commit();
+}
+
+std::list<zango::northwind::customers>
+load_customers(odb::oracle::database& db) {
+    odb::oracle::transaction t(db.begin());
+
+    std::list<zango::northwind::customers> r;
+    auto rs(db.query<zango::northwind::customers>());
+    for (auto i(rs.begin ()); i != rs.end (); ++i)
+        r.push_back(*i);
+    return r;
 }
 
 int main(int argc, char *argv[]) {
@@ -42,17 +81,95 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    const auto password(argv[1]);
-    std::unique_ptr<odb::oracle::database> db(
-        new odb::oracle::database("northwind", password, "XE", "lorenz", 1521));
+    const std::string password(argv[1]);
+    using odb::oracle::database;
+    std::unique_ptr<database>
+        db(new database("northwind", password, "XE", "localhost", 1521));
+    std::cout << "Reading customers." << std::endl;
 
+    const auto customers(load_customers(*db));
+    std::cout << "Total customers read: " << customers.size() << std::endl;
+    // for (auto i(r.begin ()); i != r.end (); ++i) {
+    //     std::cout << "Customer: " << *i << std::endl;
+
+    std::cout << "Front customer (database): "
+              << customers.front() << std::endl;
+
+    boost::filesystem::path file("a_file.bin");
     {
-        odb::oracle::transaction t(db->begin());
+        boost::filesystem::ofstream os(file);
+        boost::archive::binary_oarchive oa(os);
+        oa << customers;
+    }
 
-        auto r(db->query<zango::northwind::customers>());
-        for (auto i(r.begin ()); i != r.end (); ++i) {
-            std::cout << "Customer: " << *i << std::endl;
+    std::cout << "Wrote customers to file: "
+              << file.generic_string() << std::endl;
+
+    std::list<zango::northwind::customers> customers_from_file;
+    {
+        boost::filesystem::ifstream is(file);
+        boost::archive::binary_iarchive ia(is);
+        ia >> customers_from_file;
+    }
+    std::cout << "Front customer (file): "
+              << customers_from_file.front() << std::endl;
+
+    std::cout << "Generating customers..." << std::endl;
+    const auto generated_customers(generate_customers());
+    std::cout << "Generated customers. Size: "
+              << generated_customers.size() << std::endl;
+
+    std::cout << "Saving customers..." << std::endl;
+    // save_customers(*db, generated_customers);
+    std::cout << "Saved customers." << std::endl;
+
+    redisContext *c;
+    redisReply *reply;
+    const char *hostname = "localhost";
+    int port = 6379;
+    struct timeval timeout = { 1, 500000 }; // 1.5 seconds
+    c = redisConnectWithTimeout(hostname, port, timeout);
+    if (c == NULL || c->err) {
+        if (c) {
+            printf("Connection error: %s\n", c->errstr);
+            redisFree(c);
+        } else {
+            printf("Connection error: can't allocate redis context\n");
         }
+        exit(1);
+    }
+
+    // Redis
+    {
+        std::ostringstream os;
+        boost::archive::binary_oarchive oa(os);
+        oa << customers;
+        const auto value(os.str());
+        const std::string key("customers");
+        reply = (redisReply*)redisCommand(c, "SET %b %b", key.c_str(),
+            (size_t) key.size(), value.c_str(), (size_t) value.size());
+        if (!reply)
+            return REDIS_ERR;
+        freeReplyObject(reply);
+
+        reply = (redisReply*)redisCommand(c, "GET %b", key.c_str(),
+            (size_t) key.size());
+        if ( !reply )
+            return REDIS_ERR;
+        if ( reply->type != REDIS_REPLY_STRING ) {
+            printf("ERROR: %s", reply->str);
+        } else {
+            const std::string redis_value(reply->str, reply->len);
+            std::istringstream is(redis_value);
+            std::list<zango::northwind::customers> customers_from_redis;
+            boost::archive::binary_iarchive ia(is);
+            ia >> customers_from_redis;
+            std::cout << "Read from redis: " << customers_from_redis.size()
+                      << std::endl;
+            std::cout << "Front customer (redis): "
+                      << customers_from_redis.front() << std::endl;
+        }
+        freeReplyObject(reply);
     }
 
     return 0;

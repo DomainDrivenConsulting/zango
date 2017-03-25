@@ -54,11 +54,18 @@ find_package(ODB REQUIRED COMPONENTS boost oracle OPTIONAL_COMPONENTS pgsql)
 find_package(Dogen REQUIRED)
 
 #
+# Hiredis
+#
+find_package(Hiredis REQUIRED)
+
+#
 # Add all dependencies to the include and library directories.
 #
-include_directories(SYSTEM ${ORACLE_INCLUDE_DIR} ${ODB_INCLUDE_DIRS})
+include_directories(SYSTEM ${ORACLE_INCLUDE_DIR} ${ODB_INCLUDE_DIRS}
+    ${LIBHIREDIS_INCLUDE_DIR})
 include_directories(${CMAKE_SOURCE_DIR}/projects/northwind/include)
-set(LIBS ${LIBS} ${ORACLE_LIBRARY} ${ODB_LIBRARIES} ${Boost_LIBRARIES})
+set(LIBS ${LIBS} ${ORACLE_LIBRARY} ${ODB_LIBRARIES} ${Boost_LIBRARIES}
+    ${LIBHIREDIS_LIBRARIES})
 message(STATUS "${ODB_INCLUDE_DIRS}")
 
 #
@@ -77,7 +84,8 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/projects/northwind)
 add_executable(application projects/application/main.cpp)
 target_link_libraries(application
     -Wl,--whole-archive northwind -Wl,--no-whole-archive
-    ${ORACLE_LIBRARY} ${ODB_LIBRARIES} ${Boost_LIBRARIES})
+    ${ORACLE_LIBRARY} ${ODB_LIBRARIES} ${Boost_LIBRARIES}
+    ${LIBHIREDIS_LIBRARIES})
 
 add_custom_target(knit_northwind
     COMMENT "Knitting Northwind model" VERBATIM
