@@ -19,6 +19,7 @@
  *
  */
 #include <list>
+#include <chrono>
 #include <vector>
 #include <sstream>
 #include <iostream>
@@ -75,25 +76,8 @@ load_customers(odb::oracle::database& db) {
     return r;
 }
 
-int main(int argc, char *argv[]) {
-    if (argc != 2) {
-        std::cerr << "Expected password." << std::endl;
-        return 1;
-    }
-
-    const std::string password(argv[1]);
-    using odb::oracle::database;
-    std::unique_ptr<database>
-        db(new database("northwind", password, "XE", "localhost", 1521));
-    std::cout << "Reading customers." << std::endl;
-
-    const auto customers(load_customers(*db));
-    std::cout << "Total customers read: " << customers.size() << std::endl;
-    // for (auto i(r.begin ()); i != r.end (); ++i) {
-    //     std::cout << "Customer: " << *i << std::endl;
-
-    std::cout << "Front customer (database): "
-              << customers.front() << std::endl;
+void serialise_to_file(
+    const std::list<zango::northwind::customers>& customers) {
 
     boost::filesystem::path file("a_file.bin");
     {
@@ -111,18 +95,32 @@ int main(int argc, char *argv[]) {
         boost::archive::binary_iarchive ia(is);
         ia >> customers_from_file;
     }
+
     std::cout << "Front customer (file): "
               << customers_from_file.front() << std::endl;
+}
 
+void from_test_data_generation(odb::oracle::database& db) {
     std::cout << "Generating customers..." << std::endl;
     const auto generated_customers(generate_customers());
     std::cout << "Generated customers. Size: "
               << generated_customers.size() << std::endl;
 
     std::cout << "Saving customers..." << std::endl;
-    // save_customers(*db, generated_customers);
+    save_customers(db, generated_customers);
     std::cout << "Saved customers." << std::endl;
 
+    auto start = std::chrono::steady_clock::now();
+    const auto oracle_generated_customers(load_customers(db));
+    auto end = std::chrono::steady_clock::now();
+    auto diff = end - start;
+    std::cout << "Read generated customers. Size: "
+              << oracle_generated_customers.size() << " time (ms): "
+              << std::chrono::duration<double, std::milli>(diff).count()
+              << std::endl;
+}
+
+int from_redis(const std::list<zango::northwind::customers>& customers) {
     redisContext *c;
     redisReply *reply;
     const char *hostname = "localhost";
@@ -131,46 +129,71 @@ int main(int argc, char *argv[]) {
     c = redisConnectWithTimeout(hostname, port, timeout);
     if (c == NULL || c->err) {
         if (c) {
-            printf("Connection error: %s\n", c->errstr);
+            std::cerr << "Connection error: " << c->errstr << std::endl;
             redisFree(c);
         } else {
-            printf("Connection error: can't allocate redis context\n");
-        }
-        exit(1);
-    }
-
-    // Redis
-    {
-        std::ostringstream os;
-        boost::archive::binary_oarchive oa(os);
-        oa << customers;
-        const auto value(os.str());
-        const std::string key("customers");
-        reply = (redisReply*)redisCommand(c, "SET %b %b", key.c_str(),
-            (size_t) key.size(), value.c_str(), (size_t) value.size());
-        if (!reply)
-            return REDIS_ERR;
-        freeReplyObject(reply);
-
-        reply = (redisReply*)redisCommand(c, "GET %b", key.c_str(),
-            (size_t) key.size());
-        if ( !reply )
-            return REDIS_ERR;
-        if ( reply->type != REDIS_REPLY_STRING ) {
-            printf("ERROR: %s", reply->str);
-        } else {
-            const std::string redis_value(reply->str, reply->len);
-            std::istringstream is(redis_value);
-            std::list<zango::northwind::customers> customers_from_redis;
-            boost::archive::binary_iarchive ia(is);
-            ia >> customers_from_redis;
-            std::cout << "Read from redis: " << customers_from_redis.size()
+            std::cerr << "Connection error: can't allocate redis context"
                       << std::endl;
-            std::cout << "Front customer (redis): "
-                      << customers_from_redis.front() << std::endl;
         }
-        freeReplyObject(reply);
+        return 1;
     }
+
+    std::ostringstream os;
+    boost::archive::binary_oarchive oa(os);
+    oa << customers;
+    const auto value(os.str());
+    const std::string key("customers");
+    reply = (redisReply*)redisCommand(c, "SET %b %b", key.c_str(),
+        (size_t) key.size(), value.c_str(), (size_t) value.size());
+    if (!reply)
+        return REDIS_ERR;
+    freeReplyObject(reply);
+
+    reply = (redisReply*)redisCommand(c, "GET %b", key.c_str(),
+        (size_t) key.size());
+    if (!reply)
+        return REDIS_ERR;
+
+    if ( reply->type != REDIS_REPLY_STRING ) {
+        std::cerr << "ERROR: " << reply->str << std::endl;
+        return 1;
+    }
+
+    const std::string redis_value(reply->str, reply->len);
+    std::istringstream is(redis_value);
+    std::list<zango::northwind::customers> customers_from_redis;
+    boost::archive::binary_iarchive ia(is);
+    ia >> customers_from_redis;
+    std::cout << "Read from redis: " << customers_from_redis.size()
+              << std::endl;
+    std::cout << "Front customer (redis): "
+              << customers_from_redis.front() << std::endl;
+    freeReplyObject(reply);
+}
+
+int main(int argc, char *argv[]) {
+    if (argc != 2) {
+        std::cerr << "Expected password." << std::endl;
+        return 1;
+    }
+
+    const std::string password(argv[1]);
+    using odb::oracle::database;
+    std::unique_ptr<database>
+        db(new database("northwind", password, "XE", "localhost", 1521));
+
+    std::cout << "Reading customers." << std::endl;
+    const auto customers(load_customers(*db));
+    std::cout << "Total customers read: " << customers.size() << std::endl;
+    // for (auto i(r.begin ()); i != r.end (); ++i) {
+    //     std::cout << "Customer: " << *i << std::endl;
+
+    std::cout << "Front customer (database): "
+              << customers.front() << std::endl;
+
+    serialise_to_file(customers);
+    from_test_data_generation(*db);
+    from_redis(customers);
 
     return 0;
 }
